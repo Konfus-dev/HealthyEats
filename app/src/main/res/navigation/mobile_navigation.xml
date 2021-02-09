@@ -25,7 +25,7 @@
 
     <fragment
         android:id="@+id/navigation_account"
-        android:name="com.example.healthyeats.ui.grocerylist.GrocerylistFragment"
+        android:name="com.example.healthyeats.ui.account.AccountFragment"
         android:label="@string/title_account"
         tools:layout="@layout/fragment_account" />
 </navigation>
