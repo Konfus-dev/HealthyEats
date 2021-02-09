@@ -2,9 +2,7 @@
 <resources>
     <color name="backgroundColor">#F1F9FF</color>
     <color name="navBackgroundColor">#2699FB</color>
-    <color name="fadedIconColor">##68B8FC</color>
+    <color name="fadedIconColor">#68B8FC</color>
     <color name="white">#FFFFFFFF</color>
     <color name="black">#FF000000</color>
-    <color name="teal_200">#FF03DAC5</color>
-    <color name="teal_700">#FF018786</color>
 </resources>
