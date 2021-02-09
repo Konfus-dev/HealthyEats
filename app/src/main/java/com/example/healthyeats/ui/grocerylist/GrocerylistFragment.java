@@ -1,4 +1,4 @@
-package com.example.healthyeats.ui.notifications;
+package com.example.healthyeats.ui.grocerylist;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.healthyeats.R;
 
-public class NotificationsFragment extends Fragment {
+public class GrocerylistFragment extends Fragment {
 
-    private NotificationsViewModel notificationsViewModel;
+    private GrocerylistViewModel groceryListViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        notificationsViewModel =
-                new ViewModelProvider(this).get(NotificationsViewModel.class);
+        groceryListViewModel =
+                new ViewModelProvider(this).get(GrocerylistViewModel.class);
         View root = inflater.inflate(R.layout.fragment_grocerylist, container, false);
         final TextView textView = root.findViewById(R.id.text_notifications);
-        notificationsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        groceryListViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);

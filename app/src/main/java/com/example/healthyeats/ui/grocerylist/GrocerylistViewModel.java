@@ -1,16 +1,16 @@
-package com.example.healthyeats.ui.notifications;
+package com.example.healthyeats.ui.grocerylist;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class NotificationsViewModel extends ViewModel {
+public class GrocerylistViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public NotificationsViewModel() {
+    public GrocerylistViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is notifications fragment");
+        mText.setValue("This is grocerylist fragment");
     }
 
     public LiveData<String> getText() {
