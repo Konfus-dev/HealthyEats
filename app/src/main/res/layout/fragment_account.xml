@@ -10,116 +10,35 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout_editor_absoluteX="117dp"
-        tools:layout_editor_absoluteY="333dp">
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="167dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" />
+            android:layout_height="wrap_content">
+
+            <SearchView
+                android:layout_width="300dp"
+                android:layout_height="35dp"
+                android:layout_marginLeft="20sp"
+                android:layout_marginTop="20sp"
+                android:background="@color/white"
+                android:iconifiedByDefault="false"
+                android:queryHint="Search settings here"
+                android:queryBackground="@android:color/transparent">
+            </SearchView>
+
+            <ImageButton
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_marginTop="20sp"
+                android:layout_marginLeft="15sp"
+                android:src="@drawable/filter_icon"
+                android:background="@color/backgroundColor">
+
+            </ImageButton>
+        </LinearLayout>
+
     </ScrollView>
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="John Doe"
-        tools:layout_editor_absoluteX="107dp"
-        tools:layout_editor_absoluteY="108dp" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="San Francisco, CA"
-        tools:layout_editor_absoluteX="107dp"
-        tools:layout_editor_absoluteY="126dp" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Novice"
-        tools:layout_editor_absoluteX="44dp"
-        tools:layout_editor_absoluteY="168dp" />
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Weekly Budget"
-        tools:layout_editor_absoluteX="58dp"
-        tools:layout_editor_absoluteY="256dp" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/price_1"
-        tools:layout_editor_absoluteX="34dp"
-        tools:layout_editor_absoluteY="258dp" />
-
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Number of People in Household"
-        tools:layout_editor_absoluteX="60dp"
-        tools:layout_editor_absoluteY="200dp" />
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/symbol_6__1"
-        tools:layout_editor_absoluteX="60dp"
-        tools:layout_editor_absoluteY="117dp" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Master Chef"
-        tools:layout_editor_absoluteX="280dp"
-        tools:layout_editor_absoluteY="168dp" />
-
-    <TextView
-        android:id="@+id/text_dashboard"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:gravity="center_horizontal"
-        android:textAlignment="center"
-        android:textSize="20sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/price"
-        tools:layout_editor_absoluteX="34dp"
-        tools:layout_editor_absoluteY="200dp" />
-
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="312dp"
-        android:layout_height="18dp"
-        tools:layout_editor_absoluteX="45dp"
-        tools:layout_editor_absoluteY="153dp" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/symbol_144__1"
-        tools:layout_editor_absoluteX="307dp"
-        tools:layout_editor_absoluteY="108dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
