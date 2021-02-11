@@ -18,18 +18,18 @@ public class GrocerylistFragment extends Fragment {
 
     private GrocerylistViewModel groceryListViewModel;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        groceryListViewModel =
-                new ViewModelProvider(this).get(GrocerylistViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_grocerylist, container, false);
-        final TextView textView = root.findViewById(R.id.text_notifications);
-        groceryListViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
-        return root;
-    }
+//    public View onCreateView(@NonNull LayoutInflater inflater,
+//                             ViewGroup container, Bundle savedInstanceState) {
+//        groceryListViewModel =
+//                new ViewModelProvider(this).get(GrocerylistViewModel.class);
+//        View root = inflater.inflate(R.layout.fragment_grocerylist, container, false);
+//        final TextView textView = root.findViewById(R.id.text_notifications);
+//        groceryListViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+//            @Override
+//            public void onChanged(@Nullable String s) {
+//                textView.setText(s);
+//            }
+//        });
+//        return root;
+//    }
 }
