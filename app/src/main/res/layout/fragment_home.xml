@@ -4,21 +4,396 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     android:background="@color/backgroundColor"
     tools:context=".ui.home.HomeFragment">
 
-    <TextView
-        android:id="@+id/text_home"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
+        android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:gravity="center_horizontal" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/homeWeeklyMeals"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="60dp"
+                android:fontFamily="sans-serif"
+                android:text="This Weeks Meals"
+                android:textColor="#707070"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollView1"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="20dp"
+                android:scrollbars="none">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <!--region RecipeCard-->
+                    <ImageButton
+                        android:id="@+id/weeklyMealImage1"
+                        android:layout_width="223dp"
+                        android:layout_height="299dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:adjustViewBounds="false"
+                        android:cropToPadding="false"
+                        android:padding="0dp"
+                        android:paddingLeft="0dp"
+                        android:paddingTop="0dp"
+                        android:paddingRight="0dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/finallysomegoodfuckingfood_img"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageButton
+                        android:id="@+id/weeklyMealHeart1"
+                        android:layout_width="46dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="175dp"
+                        android:layout_marginLeft="175dp"
+                        android:layout_marginTop="5dp"
+                        android:background="#00FFFFFF"
+                        android:scaleX="1.5"
+                        android:scaleY="1.5"
+                        android:src="@drawable/heartempty_icon"
+                        app:layout_constraintStart_toStartOf="@+id/weeklyMealImage1"
+                        app:layout_constraintTop_toTopOf="@+id/weeklyMealImage1" />
+
+                    <ImageView
+                        android:id="@+id/weeklyMealsInfoView1"
+                        android:layout_width="223dp"
+                        android:layout_height="86dp"
+                        android:src="@android:drawable/screen_background_light"
+                        app:layout_constraintBottom_toBottomOf="@+id/weeklyMealImage1"
+                        app:layout_constraintEnd_toEndOf="@+id/weeklyMealImage1"
+                        app:layout_constraintStart_toStartOf="@+id/weeklyMealImage1" />
+
+                    <TextView
+                        android:id="@+id/weeklyMealName1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Lorem Ipsum"
+                        app:layout_constraintStart_toStartOf="@+id/weeklyMealsInfoView1"
+                        app:layout_constraintTop_toTopOf="@+id/weeklyMealsInfoView1" />
+
+                    <TextView
+                        android:id="@+id/weeklyMealPrice1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginRight="15dp"
+                        android:text="$5"
+                        app:layout_constraintEnd_toEndOf="@+id/weeklyMealsInfoView1"
+                        app:layout_constraintTop_toTopOf="@+id/weeklyMealsInfoView1" />
+
+                    <ImageView
+                        android:id="@+id/weeklyMealDifficultyIcon1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/difficultyeasy_icon"
+                        app:layout_constraintStart_toStartOf="@+id/weeklyMealName1"
+                        app:layout_constraintTop_toBottomOf="@+id/weeklyMealName1" />
+
+                    <TextView
+                        android:id="@+id/weeklyMealDifficultyText1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="20dp"
+                        android:text="Beginner"
+                        app:layout_constraintStart_toEndOf="@+id/weeklyMealDifficultyIcon1"
+                        app:layout_constraintTop_toBottomOf="@+id/weeklyMealName1" />
+
+                    <ImageView
+                        android:id="@+id/weeklyDietIcon1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/forkgreen_icon"
+                        app:layout_constraintEnd_toStartOf="@+id/weeklyDietText1"
+                        app:layout_constraintTop_toBottomOf="@+id/weeklyMealPrice1" />
+
+                    <TextView
+                        android:id="@+id/weeklyDietText1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Vegetarian"
+                        app:layout_constraintEnd_toEndOf="@+id/weeklyMealPrice1"
+                        app:layout_constraintTop_toBottomOf="@+id/weeklyMealPrice1" />
+                    <!--endregion11-->
+
+                    <!--region RecipeCard-->
+                    <ImageButton
+                        android:id="@+id/weeklyMealImage2"
+                        android:layout_width="223dp"
+                        android:layout_height="299dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:adjustViewBounds="false"
+                        android:cropToPadding="false"
+                        android:padding="0dp"
+                        android:paddingLeft="0dp"
+                        android:paddingTop="0dp"
+                        android:paddingRight="0dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/finallysomegoodfuckingfood_img"
+                        app:layout_constraintStart_toEndOf="@id/weeklyMealImage1"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageButton
+                        android:id="@+id/weeklyMealHeart2"
+                        android:layout_width="46dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="175dp"
+                        android:layout_marginLeft="175dp"
+                        android:layout_marginTop="5dp"
+                        android:background="#00FFFFFF"
+                        android:scaleX="1.5"
+                        android:scaleY="1.5"
+                        android:src="@drawable/heartempty_icon"
+                        app:layout_constraintStart_toStartOf="@+id/weeklyMealImage2"
+                        app:layout_constraintTop_toTopOf="@+id/weeklyMealImage2" />
+
+                    <ImageView
+                        android:id="@+id/weeklyMealsInfoView2"
+                        android:layout_width="223dp"
+                        android:layout_height="86dp"
+                        android:src="@android:drawable/screen_background_light"
+                        app:layout_constraintBottom_toBottomOf="@+id/weeklyMealImage2"
+                        app:layout_constraintEnd_toEndOf="@+id/weeklyMealImage2"
+                        app:layout_constraintStart_toStartOf="@+id/weeklyMealImage2" />
+
+                    <TextView
+                        android:id="@+id/weeklyMealName2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Lorem Ipsum"
+                        app:layout_constraintStart_toStartOf="@+id/weeklyMealsInfoView2"
+                        app:layout_constraintTop_toTopOf="@+id/weeklyMealsInfoView2" />
+
+                    <TextView
+                        android:id="@+id/weeklyMealPrice2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginRight="15dp"
+                        android:text="$5"
+                        app:layout_constraintEnd_toEndOf="@+id/weeklyMealsInfoView2"
+                        app:layout_constraintTop_toTopOf="@+id/weeklyMealsInfoView2" />
+
+                    <ImageView
+                        android:id="@+id/weeklyMealDifficultyIcon2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/difficultyeasy_icon"
+                        app:layout_constraintStart_toStartOf="@+id/weeklyMealName2"
+                        app:layout_constraintTop_toBottomOf="@+id/weeklyMealName2" />
+
+                    <TextView
+                        android:id="@+id/weeklyMealDifficultyText2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="20dp"
+                        android:text="Beginner"
+                        app:layout_constraintStart_toEndOf="@+id/weeklyMealDifficultyIcon2"
+                        app:layout_constraintTop_toBottomOf="@+id/weeklyMealName2" />
+
+                    <ImageView
+                        android:id="@+id/weeklyDietIcon2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/forkgreen_icon"
+                        app:layout_constraintEnd_toStartOf="@+id/weeklyDietText2"
+                        app:layout_constraintTop_toBottomOf="@+id/weeklyMealPrice2" />
+
+                    <TextView
+                        android:id="@+id/weeklyDietText2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Vegetarian"
+                        app:layout_constraintEnd_toEndOf="@+id/weeklyMealPrice2"
+                        app:layout_constraintTop_toBottomOf="@+id/weeklyMealPrice2" />
+                    <!--endregion-->
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/homeFavoriteMeals"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="0dp"
+                android:fontFamily="sans-serif"
+                android:text="Your Favorites"
+                android:textColor="#707070"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <HorizontalScrollView
+                android:id="@+id/horizontalScrollView2"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="20dp"
+                android:scrollbars="none">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <!--region RecipeCard-->
+                    <ImageButton
+                        android:id="@+id/favoriteMealImage1"
+                        android:layout_width="223dp"
+                        android:layout_height="299dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:adjustViewBounds="false"
+                        android:cropToPadding="false"
+                        android:padding="0dp"
+                        android:paddingLeft="0dp"
+                        android:paddingTop="0dp"
+                        android:paddingRight="0dp"
+                        android:scaleType="centerInside"
+                        android:src="@drawable/finallysomegoodfuckingfood_img"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageButton
+                        android:id="@+id/favoriteMealHeart1"
+                        android:layout_width="46dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="175dp"
+                        android:layout_marginLeft="175dp"
+                        android:layout_marginTop="5dp"
+                        android:background="#00FFFFFF"
+                        android:scaleX="1.5"
+                        android:scaleY="1.5"
+                        android:src="@drawable/heartempty_icon"
+                        app:layout_constraintStart_toStartOf="@+id/favoriteMealImage1"
+                        app:layout_constraintTop_toTopOf="@+id/favoriteMealImage1" />
+
+                    <ImageView
+                        android:id="@+id/favoriteMealsInfoView1"
+                        android:layout_width="223dp"
+                        android:layout_height="86dp"
+                        android:src="@android:drawable/screen_background_light"
+                        app:layout_constraintBottom_toBottomOf="@+id/favoriteMealImage1"
+                        app:layout_constraintEnd_toEndOf="@+id/favoriteMealImage1"
+                        app:layout_constraintStart_toStartOf="@+id/favoriteMealImage1" />
+
+                    <TextView
+                        android:id="@+id/favoriteMealName1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginTop="10dp"
+                        android:text="Lorem Ipsum"
+                        app:layout_constraintStart_toStartOf="@+id/favoriteMealsInfoView1"
+                        app:layout_constraintTop_toTopOf="@+id/favoriteMealsInfoView1" />
+
+                    <TextView
+                        android:id="@+id/favoriteMealPrice1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginRight="15dp"
+                        android:text="$5"
+                        app:layout_constraintEnd_toEndOf="@+id/favoriteMealsInfoView1"
+                        app:layout_constraintTop_toTopOf="@+id/favoriteMealsInfoView1" />
+
+                    <ImageView
+                        android:id="@+id/favoriteMealDifficultyIcon1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:src="@drawable/difficultyeasy_icon"
+                        app:layout_constraintStart_toStartOf="@+id/favoriteMealName1"
+                        app:layout_constraintTop_toBottomOf="@+id/favoriteMealName1" />
+
+                    <TextView
+                        android:id="@+id/favoriteMealDifficultyText1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="20dp"
+                        android:text="Beginner"
+                        app:layout_constraintStart_toEndOf="@+id/favoriteMealDifficultyIcon1"
+                        app:layout_constraintTop_toBottomOf="@+id/favoriteMealName1" />
+
+                    <ImageView
+                        android:id="@+id/favoriteDietIcon1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/forkgreen_icon"
+                        app:layout_constraintEnd_toStartOf="@+id/favoriteDietText1"
+                        app:layout_constraintTop_toBottomOf="@+id/favoriteMealPrice1" />
+
+                    <TextView
+                        android:id="@+id/favoriteDietText1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:text="Vegetarian"
+                        app:layout_constraintEnd_toEndOf="@+id/favoriteMealPrice1"
+                        app:layout_constraintTop_toBottomOf="@+id/favoriteMealPrice1" />
+                    <!--endregion-->
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </HorizontalScrollView>
+
+        </LinearLayout>
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
