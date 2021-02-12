@@ -13,8 +13,12 @@ import java.util.ArrayList;
 
 public class jsonReader
 {
+    public jsonReader(){
+    
+    }
+    
     @SuppressWarnings("unchecked")
-    public static void main(String[] args)
+    public ArrayList<Recipe> recipieParser()
     {
         //JSON parser object to parse read file
         JSONParser jsonParser = new JSONParser();
@@ -22,18 +26,8 @@ public class jsonReader
         {
             Object obj  = jsonParser.parse(reader);
             JSONObject recipeList =  (JSONObject) obj;
-              
             ArrayList<Recipe> recipes =  parseRecipiesObject(recipeList);
-         //    employeeList.forEach( emp -> parseEmployeeObject( (JSONObject) emp ) );
-            //Read JSON file
-           /* Object obj = jsonParser.parse(reader);
-
-            JSONArray employeeList = (JSONArray) obj;
-            System.out.println(employeeList);
-
-            //Iterate over employee array
-            employeeList.forEach( emp -> parseEmployeeObject( (JSONObject) emp ) );*/
-
+            return recipes;
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -43,7 +37,7 @@ public class jsonReader
         }
     }
 
-    private static  ArrayList<Recipe> parseRecipiesObject(JSONObject recipeList)
+    private ArrayList<Recipe> parseRecipiesObject(JSONObject recipeList)
     {
             ArrayList<Recipe> recipes = new ArrayList<Recipe>();
             for (Object name : recipeList.keySet()) {
