@@ -6,10 +6,10 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class jsonReader
 {
@@ -21,9 +21,10 @@ public class jsonReader
         try (FileReader reader= new FileReader("db-recipes.json"))
         {
             Object obj  = jsonParser.parse(reader);
-            JSONArray recipieList =  (JSONArray) obj;
-            recipieList.forEach( rep -> parseEmployeeObject( (JSONObject) rep ) );
-        
+            JSONObject recipeList =  (JSONObject) obj;
+              
+            ArrayList<Recipe> recipes =  parseEmployeeObject(recipeList);
+         //    employeeList.forEach( emp -> parseEmployeeObject( (JSONObject) emp ) );
             //Read JSON file
            /* Object obj = jsonParser.parse(reader);
 
@@ -42,21 +43,44 @@ public class jsonReader
         }
     }
 
-    private static void parseEmployeeObject(JSONObject employee)
+    private static  ArrayList<Recipe> parseEmployeeObject(JSONObject recipeList)
     {
-        //Get employee object within list
-        JSONObject employeeObject = (JSONObject) employee.get("id44");
+            ArrayList<Recipe> recipes = new ArrayList<Recipe>();
+            for (Object name : recipeList.keySet()) {
+               Recipe recipeTemp = new Recipe();
+               JSONObject recipe = (JSONObject) recipeList.get(name);
+               recipeTemp.setId((String)recipe.get("id"));
+               recipeTemp.setName((String) recipe.get("name"));
+               recipeTemp.setSource((String) recipe.get("source"));
+               recipeTemp.setPrepTime(((Long)recipe.get("preptime")).intValue());
+               recipeTemp.setWaitTime(((Long)recipe.get("waittime")).intValue());
+               recipeTemp.setCookTime(((Long)recipe.get("cooktime")).intValue());
+               recipeTemp.setServings(((Long)recipe.get("servings")).intValue());
+               recipeTemp.setComments((String) recipe.get("comments"));
+               recipeTemp.setCalories(((Long)recipe.get("calories")).intValue());
+               recipeTemp.setFat(((Long)recipe.get("fat")).intValue());
+               recipeTemp.setSatFat(((Long)recipe.get("satfat")).intValue());
+               recipeTemp.setCarbs(((Long)recipe.get("carbs")).intValue());
+               recipeTemp.setFiber(((Long)recipe.get("fiber")).intValue());
+               recipeTemp.setSugar(((Long)recipe.get("sugar")).intValue());
+               recipeTemp.setProtein(((Long)recipe.get("protein")).intValue());
+               recipeTemp.setInstructions((String) recipe.get("instructions"));
+               JSONArray ingredients = (JSONArray) recipe.get("ingredients");
+               String[] ingredientsArray = new String[ingredients.size()];
+               for(int j = 0; j < ingredientsArray.length; j++){
+                   ingredientsArray[j] = (String)ingredients.get(j);
 
-        //Get employee first name
-        String firstName = (String) employeeObject.get("id");
-        System.out.println(firstName);
+               }
+               recipeTemp.setIngredients(ingredientsArray);
+               JSONArray tags = (JSONArray) recipe.get("tags");
+               String[] tagsArray = new String[tags.size()];
+               for(int j = 0; j < tagsArray.length; j++){
+                   tagsArray[j] = (String)tags.get(j);
 
-        //Get employee last name
-       // String lastName = (String) employeeObject.get("lastName");
-      //  System.out.println(lastName);
-
-        //Get employee website name
-      //  String website = (String) employeeObject.get("website");
-       // System.out.println(website);
+               }
+               recipeTemp.setTags(tagsArray);
+               recipes.add(recipeTemp);   
+            }
+        return recipes;
     }
 }
