@@ -35,6 +35,7 @@ public class jsonReader
         } catch (ParseException e) {
             e.printStackTrace();
         }
+        return null;
     }
 
     private ArrayList<Recipe> parseRecipiesObject(JSONObject recipeList)
