@@ -23,7 +23,7 @@ public class jsonReader
             Object obj  = jsonParser.parse(reader);
             JSONObject recipeList =  (JSONObject) obj;
               
-            ArrayList<Recipe> recipes =  parseEmployeeObject(recipeList);
+            ArrayList<Recipe> recipes =  parseRecipiesObject(recipeList);
          //    employeeList.forEach( emp -> parseEmployeeObject( (JSONObject) emp ) );
             //Read JSON file
            /* Object obj = jsonParser.parse(reader);
@@ -43,7 +43,7 @@ public class jsonReader
         }
     }
 
-    private static  ArrayList<Recipe> parseEmployeeObject(JSONObject recipeList)
+    private static  ArrayList<Recipe> parseRecipiesObject(JSONObject recipeList)
     {
             ArrayList<Recipe> recipes = new ArrayList<Recipe>();
             for (Object name : recipeList.keySet()) {
