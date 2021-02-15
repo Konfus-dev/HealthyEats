@@ -2,10 +2,194 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:cardView="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundColor"
     tools:context=".ui.grocerylist.GrocerylistFragment">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="167dp">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Linear Layout for Account Search bar -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="15sp"
+                    android:layout_marginTop="20sp"
+                    android:src="@drawable/settings_icon"
+                    android:background="@color/backgroundColor">
+
+                </ImageButton>
+
+                <SearchView
+                    android:layout_width="260dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="10sp"
+                    android:layout_marginTop="20sp"
+                    android:background="@color/white"
+                    android:iconifiedByDefault="false"
+                    android:queryHint="Search grocery list here"
+                    android:queryBackground="@android:color/transparent">
+                </SearchView>
+
+                <ImageButton
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="20sp"
+                    android:layout_marginLeft="15sp"
+                    android:src="@drawable/filter_icon"
+                    android:background="@color/backgroundColor">
+
+                </ImageButton>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Grocery List"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10sp"
+                    android:textSize="35dp">
+
+                </TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Jan 4 to Jan 11, 2021"
+                    android:textSize = "20dp"
+                    android:layout_marginBottom="30dp">
+
+                </TextView>
+            </LinearLayout>
+
+            <!-- Grocery List Starting Here -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- A Category -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.cardview.widget.CardView
+                        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/card_viewLeft"
+                        android:layout_gravity="center"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_marginRight="15dp"
+                        android:layout_marginLeft="30dp"
+                        card_view:cardCornerRadius="4dp"
+                        android:layout_weight="1">
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <ImageButton
+                                android:layout_width="match_parent"
+                                android:layout_height="90dp"
+                                android:src="@drawable/checkgreenbackground_icon"
+                                android:background="@tools:sample/backgrounds/scenic">
+
+                            </ImageButton>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Lorem"
+                                android:textSize="20dp"
+                                android:layout_marginTop="5sp"
+                                android:layout_marginLeft="5sp">
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="5$"
+                                android:textSize="15dp"
+                                android:layout_marginTop="5sp"
+                                android:layout_marginLeft="5sp">
+
+                            </TextView>
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                        android:id="@+id/card_viewRight"
+                        android:layout_gravity="center"
+                        android:layout_width="0dp"
+                        android:layout_height="150dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="30dp"
+                        card_view:cardCornerRadius="4dp"
+                        android:layout_weight="1">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <ImageButton
+                                android:layout_width="match_parent"
+                                android:layout_height="90dp"
+                                android:src="@drawable/checkgreenbackground_icon"
+                                android:background="@tools:sample/backgrounds/scenic">
+
+                            </ImageButton>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Lorem"
+                                android:textSize="20dp"
+                                android:layout_marginTop="5sp"
+                                android:layout_marginLeft="5sp">
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="5$"
+                                android:textSize="15dp"
+                                android:layout_marginTop="5sp"
+                                android:layout_marginLeft="5sp">
+
+                            </TextView>
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <!-- End of Grocery List -->
+
+        </LinearLayout>
+
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

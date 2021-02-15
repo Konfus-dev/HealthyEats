@@ -10,6 +10,8 @@ import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
+import java.util.List;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -25,6 +27,25 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
+    }
+
+    private List<GroceryItem> groceryList;
+//    Creating hard coded data on grocery list (Just to test)
+    private void prepareGroceryList() {
+        GroceryItem item = new GroceryItem("Cheese", "cheese.jpg", 5, 4.99);
+        groceryList.add(item);
+        item = new GroceryItem("Apple", "apple.jpg", 3, 2.99);
+        groceryList.add(item);
+        item = new GroceryItem("Artichoke", "artichoke.jpg", 2, 3.99);
+        groceryList.add(item);
+        item = new GroceryItem("Arugula", "arugula.jpg", 3, 2.00);
+        groceryList.add(item);
+        item = new GroceryItem("Crab", "crab.jpg", 2, 20.99);
+        groceryList.add(item);
+        item = new GroceryItem("Zucchini", "zucchini.jpg", 1, 3.99);
+        groceryList.add(item);
+        item = new GroceryItem("Licorice", "licorice.jpg", 50, 0.50);
+        groceryList.add(item);
     }
 
 }
