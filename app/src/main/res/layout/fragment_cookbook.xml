@@ -21,13 +21,48 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="15sp"
+                    android:layout_marginTop="20sp"
+                    android:background="@color/backgroundColor"
+                    android:src="@drawable/settings_icon">
+
+                </ImageButton>
+
+                <SearchView
+                    android:layout_width="260dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="10sp"
+                    android:layout_marginTop="20sp"
+                    android:background="@color/white"
+                    android:iconifiedByDefault="false"
+                    android:queryBackground="@android:color/transparent"
+                    android:queryHint="Search recipes here"></SearchView>
+
+                <ImageButton
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="15sp"
+                    android:layout_marginTop="20sp"
+                    android:background="@color/backgroundColor"
+                    android:src="@drawable/filter_icon">
+
+                </ImageButton>
+            </LinearLayout>
+
             <TextView
                 android:id="@+id/TrendingHeader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="30dp"
                 android:fontFamily="sans-serif"
                 android:text="Trending"
                 android:textColor="#707070"
