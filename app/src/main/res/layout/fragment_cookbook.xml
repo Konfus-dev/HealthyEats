@@ -22,7 +22,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/CookbookTrending"
+                android:id="@+id/TrendingHeader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -400,7 +400,7 @@
             </HorizontalScrollView>
 
             <TextView
-                android:id="@+id/CookbookOurFavorites"
+                android:id="@+id/OurFavoritesHeader"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
@@ -413,7 +413,7 @@
                 android:textStyle="bold" />
 
             <HorizontalScrollView
-                android:id="@+id/YourFavoritesScrollView"
+                android:id="@+id/OurFavoritesScrollView"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="10dp"
@@ -427,7 +427,7 @@
                     android:layout_height="match_parent">
 
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/OurFavoriteCardView1"
+                        android:id="@+id/OurFavoritesCardView1"
                         android:layout_width="222dp"
                         android:layout_height="298dp"
                         android:layout_marginStart="10dp"
@@ -440,7 +440,7 @@
                             android:layout_height="match_parent">
 
                             <ImageButton
-                                android:id="@+id/OurFavoriteMealImage1"
+                                android:id="@+id/OurFavoritesImage1"
                                 android:layout_width="223dp"
                                 android:layout_height="299dp"
                                 android:adjustViewBounds="false"
@@ -455,7 +455,7 @@
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <ImageButton
-                                android:id="@+id/OurFavoriteMealHeart1"
+                                android:id="@+id/OurFavoritesMealHeart1"
                                 android:layout_width="46dp"
                                 android:layout_height="40dp"
                                 android:layout_marginEnd="1dp"
@@ -465,19 +465,19 @@
                                 android:scaleY="1.5"
                                 android:src="@drawable/heartempty_icon"
                                 app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintTop_toTopOf="@+id/OurFavoriteMealImage1" />
+                                app:layout_constraintTop_toTopOf="@+id/OurFavoritesImage1" />
 
                             <ImageView
-                                android:id="@+id/OurFavoriteMealsInfoView1"
+                                android:id="@+id/OurFavoritesMealsInfoView1"
                                 android:layout_width="223dp"
                                 android:layout_height="86dp"
                                 android:layout_marginTop="215dp"
                                 android:src="@android:drawable/screen_background_light"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="@+id/OurFavoriteMealImage1" />
+                                app:layout_constraintTop_toTopOf="@+id/OurFavoritesImage1" />
 
                             <TextView
-                                android:id="@+id/OurFavoriteMealPrice1"
+                                android:id="@+id/OurFavoritesMealPrice1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="10dp"
@@ -485,70 +485,70 @@
                                 android:layout_marginRight="15dp"
                                 android:text="$5"
                                 app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintTop_toTopOf="@+id/OurFavoriteMealsInfoView1" />
+                                app:layout_constraintTop_toTopOf="@+id/OurFavoritesMealsInfoView1" />
 
                             <TextView
-                                android:id="@+id/OurFavoriteDietText1"
+                                android:id="@+id/OurFavoritesDietText1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="20dp"
                                 android:layout_marginEnd="15dp"
                                 android:layout_marginRight="15dp"
                                 android:text="Vegetarian"
-                                app:layout_constraintEnd_toEndOf="@+id/OurFavoriteMealsInfoView1"
-                                app:layout_constraintTop_toBottomOf="@+id/OurFavoriteMealPrice1" />
+                                app:layout_constraintEnd_toEndOf="@+id/OurFavoritesMealsInfoView1"
+                                app:layout_constraintTop_toBottomOf="@+id/OurFavoritesMealPrice1" />
 
                             <ImageView
-                                android:id="@+id/OurFavoriteMealDifficultyIcon1"
+                                android:id="@+id/OurFavoritesDifficultyIcon1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="15dp"
                                 android:layout_marginLeft="15dp"
                                 android:layout_marginTop="20dp"
                                 android:src="@drawable/difficultyeasy_icon"
-                                app:layout_constraintStart_toStartOf="@+id/OurFavoriteMealsInfoView1"
-                                app:layout_constraintTop_toBottomOf="@+id/FavoriteMealName1" />
+                                app:layout_constraintStart_toStartOf="@+id/OurFavoritesMealsInfoView1"
+                                app:layout_constraintTop_toBottomOf="@+id/YourFavoritesName1" />
 
                             <TextView
-                                android:id="@+id/OurFavoriteMealName1"
+                                android:id="@+id/OurFavoritesName1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="15dp"
                                 android:layout_marginLeft="15dp"
                                 android:layout_marginTop="10dp"
                                 android:text="Lorem Ipsum"
-                                app:layout_constraintStart_toStartOf="@+id/OurFavoriteMealsInfoView1"
-                                app:layout_constraintTop_toTopOf="@+id/OurFavoriteMealsInfoView1" />
+                                app:layout_constraintStart_toStartOf="@+id/OurFavoritesMealsInfoView1"
+                                app:layout_constraintTop_toTopOf="@+id/OurFavoritesMealsInfoView1" />
 
                             <ImageView
-                                android:id="@+id/OurFavoriteDietIcon1"
+                                android:id="@+id/OurFavoritesDietIcon1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginEnd="5dp"
                                 android:layout_marginRight="5dp"
                                 android:src="@drawable/forkgreen_icon"
-                                app:layout_constraintEnd_toStartOf="@+id/OurFavoriteDietText1"
-                                app:layout_constraintTop_toTopOf="@+id/OurFavoriteDietText1" />
+                                app:layout_constraintEnd_toStartOf="@+id/OurFavoritesDietText1"
+                                app:layout_constraintTop_toTopOf="@+id/OurFavoritesDietText1" />
 
                             <TextView
-                                android:id="@+id/OurFavoriteMealDifficultyText1"
+                                android:id="@+id/OurFavoritesDifficultyText1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="5dp"
                                 android:layout_marginLeft="5dp"
                                 android:text="Beginner"
-                                app:layout_constraintStart_toEndOf="@+id/OurFavoriteMealDifficultyIcon1"
-                                app:layout_constraintTop_toTopOf="@+id/OurFavoriteMealDifficultyIcon1" />
+                                app:layout_constraintStart_toEndOf="@+id/OurFavoritesDifficultyIcon1"
+                                app:layout_constraintTop_toTopOf="@+id/OurFavoritesDifficultyIcon1" />
                         </androidx.constraintlayout.widget.ConstraintLayout>
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/OurFavoriteCardView2"
+                        android:id="@+id/OurFavoritesCardView2"
                         android:layout_width="222dp"
                         android:layout_height="298dp"
                         android:layout_marginStart="10dp"
                         android:layout_marginLeft="10dp"
-                        app:layout_constraintStart_toEndOf="@+id/OurFavoriteCardView1"
+                        app:layout_constraintStart_toEndOf="@+id/OurFavoritesCardView1"
                         app:layout_constraintTop_toTopOf="parent">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
@@ -556,7 +556,7 @@
                             android:layout_height="match_parent">
 
                             <ImageButton
-                                android:id="@+id/OurFavoriteMealImage2"
+                                android:id="@+id/OurFavoritesImage2"
                                 android:layout_width="223dp"
                                 android:layout_height="299dp"
                                 android:adjustViewBounds="false"
@@ -571,7 +571,7 @@
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <ImageButton
-                                android:id="@+id/OurFavoriteMealHeart2"
+                                android:id="@+id/OurFavoritesHeart2"
                                 android:layout_width="46dp"
                                 android:layout_height="40dp"
                                 android:layout_marginEnd="1dp"
@@ -581,19 +581,19 @@
                                 android:scaleY="1.5"
                                 android:src="@drawable/heartempty_icon"
                                 app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintTop_toTopOf="@+id/OurFavoriteMealImage2" />
+                                app:layout_constraintTop_toTopOf="@+id/OurFavoritesImage2" />
 
                             <ImageView
-                                android:id="@+id/OurFavoriteMealsInfoView2"
+                                android:id="@+id/OurFavoritesInfoView2"
                                 android:layout_width="223dp"
                                 android:layout_height="86dp"
                                 android:layout_marginTop="215dp"
                                 android:src="@android:drawable/screen_background_light"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="@+id/OurFavoriteMealImage2" />
+                                app:layout_constraintTop_toTopOf="@+id/OurFavoritesImage2" />
 
                             <TextView
-                                android:id="@+id/OurFavoriteMealPrice2"
+                                android:id="@+id/OurFavoritesPrice2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="10dp"
@@ -601,70 +601,70 @@
                                 android:layout_marginRight="15dp"
                                 android:text="$5"
                                 app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintTop_toTopOf="@+id/FavoriteMealsInfoView2" />
+                                app:layout_constraintTop_toTopOf="@+id/YourFavoritesInfoView2" />
 
                             <TextView
-                                android:id="@+id/OurFavoriteDietText2"
+                                android:id="@+id/OurFavoritesDietText2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="20dp"
                                 android:layout_marginEnd="15dp"
                                 android:layout_marginRight="15dp"
                                 android:text="Vegetarian"
-                                app:layout_constraintEnd_toEndOf="@+id/OurFavoriteMealsInfoView2"
-                                app:layout_constraintTop_toBottomOf="@+id/OurFavoriteMealPrice2" />
+                                app:layout_constraintEnd_toEndOf="@+id/OurFavoritesInfoView2"
+                                app:layout_constraintTop_toBottomOf="@+id/OurFavoritesPrice2" />
 
                             <ImageView
-                                android:id="@+id/OurFavoriteMealDifficultyIcon2"
+                                android:id="@+id/OurFavoritesDifficultyIcon2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="15dp"
                                 android:layout_marginLeft="15dp"
                                 android:layout_marginTop="20dp"
                                 android:src="@drawable/difficultyeasy_icon"
-                                app:layout_constraintStart_toStartOf="@+id/OurFavoriteMealsInfoView2"
-                                app:layout_constraintTop_toBottomOf="@+id/OurFavoriteMealName2" />
+                                app:layout_constraintStart_toStartOf="@+id/OurFavoritesInfoView2"
+                                app:layout_constraintTop_toBottomOf="@+id/OurFavoritesName2" />
 
                             <TextView
-                                android:id="@+id/OurFavoriteMealName2"
+                                android:id="@+id/OurFavoritesName2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="15dp"
                                 android:layout_marginLeft="15dp"
                                 android:layout_marginTop="10dp"
                                 android:text="Lorem Ipsum"
-                                app:layout_constraintStart_toStartOf="@+id/OurFavoriteMealsInfoView2"
-                                app:layout_constraintTop_toTopOf="@+id/OurFavoriteMealsInfoView2" />
+                                app:layout_constraintStart_toStartOf="@+id/OurFavoritesInfoView2"
+                                app:layout_constraintTop_toTopOf="@+id/OurFavoritesInfoView2" />
 
                             <ImageView
-                                android:id="@+id/OurFavoriteDietIcon2"
+                                android:id="@+id/OurFavoritesDietIcon2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginEnd="5dp"
                                 android:layout_marginRight="5dp"
                                 android:src="@drawable/forkgreen_icon"
-                                app:layout_constraintEnd_toStartOf="@+id/OurFavoriteDietText2"
-                                app:layout_constraintTop_toTopOf="@+id/OurFavoriteDietText2" />
+                                app:layout_constraintEnd_toStartOf="@+id/OurFavoritesDietText2"
+                                app:layout_constraintTop_toTopOf="@+id/OurFavoritesDietText2" />
 
                             <TextView
-                                android:id="@+id/OurFavoriteMealDifficultyText2"
+                                android:id="@+id/OurFavoritesDifficultyText2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="5dp"
                                 android:layout_marginLeft="5dp"
                                 android:text="Beginner"
-                                app:layout_constraintStart_toEndOf="@+id/OurFavoriteMealDifficultyIcon2"
-                                app:layout_constraintTop_toTopOf="@+id/OurFavoriteMealDifficultyIcon2" />
+                                app:layout_constraintStart_toEndOf="@+id/OurFavoritesDifficultyIcon2"
+                                app:layout_constraintTop_toTopOf="@+id/OurFavoritesDifficultyIcon2" />
                         </androidx.constraintlayout.widget.ConstraintLayout>
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/OurFavoriteCardView3"
+                        android:id="@+id/OurFavoritesCardView3"
                         android:layout_width="222dp"
                         android:layout_height="298dp"
                         android:layout_marginStart="10dp"
                         android:layout_marginLeft="10dp"
-                        app:layout_constraintStart_toEndOf="@+id/OurFavoriteCardView2"
+                        app:layout_constraintStart_toEndOf="@+id/OurFavoritesCardView2"
                         app:layout_constraintTop_toTopOf="parent">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
@@ -672,7 +672,7 @@
                             android:layout_height="match_parent">
 
                             <ImageButton
-                                android:id="@+id/OurFavoriteMealImage3"
+                                android:id="@+id/OurFavoritesImage3"
                                 android:layout_width="223dp"
                                 android:layout_height="299dp"
                                 android:adjustViewBounds="false"
@@ -687,7 +687,7 @@
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <ImageButton
-                                android:id="@+id/OurFavoriteMealHeart3"
+                                android:id="@+id/OurFavoritesHeart3"
                                 android:layout_width="46dp"
                                 android:layout_height="40dp"
                                 android:layout_marginEnd="1dp"
@@ -697,19 +697,19 @@
                                 android:scaleY="1.5"
                                 android:src="@drawable/heartempty_icon"
                                 app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintTop_toTopOf="@+id/OurFavoriteMealImage3" />
+                                app:layout_constraintTop_toTopOf="@+id/OurFavoritesImage3" />
 
                             <ImageView
-                                android:id="@+id/OurFavoriteMealsInfoView3"
+                                android:id="@+id/OurFavoritesInfoView3"
                                 android:layout_width="223dp"
                                 android:layout_height="86dp"
                                 android:layout_marginTop="215dp"
                                 android:src="@android:drawable/screen_background_light"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="@+id/OurFavoriteMealImage3" />
+                                app:layout_constraintTop_toTopOf="@+id/OurFavoritesImage3" />
 
                             <TextView
-                                android:id="@+id/OurFavoriteMealPrice3"
+                                android:id="@+id/OurFavoritesPrice3"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="10dp"
@@ -717,60 +717,60 @@
                                 android:layout_marginRight="15dp"
                                 android:text="$5"
                                 app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintTop_toTopOf="@+id/OurFavoriteMealsInfoView3" />
+                                app:layout_constraintTop_toTopOf="@+id/OurFavoritesInfoView3" />
 
                             <TextView
-                                android:id="@+id/OurFavoriteDietText3"
+                                android:id="@+id/OurFavoritesDietText3"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="20dp"
                                 android:layout_marginEnd="15dp"
                                 android:layout_marginRight="15dp"
                                 android:text="Vegetarian"
-                                app:layout_constraintEnd_toEndOf="@+id/OurFavoriteMealsInfoView3"
-                                app:layout_constraintTop_toBottomOf="@+id/OurFavoriteMealPrice3" />
+                                app:layout_constraintEnd_toEndOf="@+id/OurFavoritesInfoView3"
+                                app:layout_constraintTop_toBottomOf="@+id/OurFavoritesPrice3" />
 
                             <ImageView
-                                android:id="@+id/OurFavoriteMealDifficultyIcon3"
+                                android:id="@+id/OurFavoritesDifficultyIcon3"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="15dp"
                                 android:layout_marginLeft="15dp"
                                 android:layout_marginTop="20dp"
                                 android:src="@drawable/difficultyeasy_icon"
-                                app:layout_constraintStart_toStartOf="@+id/OurFavoriteMealsInfoView3"
-                                app:layout_constraintTop_toBottomOf="@+id/OurFavoriteMealName3" />
+                                app:layout_constraintStart_toStartOf="@+id/OurFavoritesInfoView3"
+                                app:layout_constraintTop_toBottomOf="@+id/OurFavoritesName3" />
 
                             <TextView
-                                android:id="@+id/OurFavoriteMealName3"
+                                android:id="@+id/OurFavoritesName3"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="15dp"
                                 android:layout_marginLeft="15dp"
                                 android:layout_marginTop="10dp"
                                 android:text="Lorem Ipsum"
-                                app:layout_constraintStart_toStartOf="@+id/OurFavoriteMealsInfoView3"
-                                app:layout_constraintTop_toTopOf="@+id/OurFavoriteMealsInfoView3" />
+                                app:layout_constraintStart_toStartOf="@+id/OurFavoritesInfoView3"
+                                app:layout_constraintTop_toTopOf="@+id/OurFavoritesInfoView3" />
 
                             <ImageView
-                                android:id="@+id/OurFavoriteDietIcon3"
+                                android:id="@+id/OurFavoritesDietIcon3"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginEnd="5dp"
                                 android:layout_marginRight="5dp"
                                 android:src="@drawable/forkgreen_icon"
-                                app:layout_constraintEnd_toStartOf="@+id/OurFavoriteDietText3"
-                                app:layout_constraintTop_toTopOf="@+id/OurFavoriteDietText3" />
+                                app:layout_constraintEnd_toStartOf="@+id/OurFavoritesDietText3"
+                                app:layout_constraintTop_toTopOf="@+id/OurFavoritesDietText3" />
 
                             <TextView
-                                android:id="@+id/OurFavoriteMealDifficultyText3"
+                                android:id="@+id/OurFavoritesDifficultyText3"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="5dp"
                                 android:layout_marginLeft="5dp"
                                 android:text="Beginner"
-                                app:layout_constraintStart_toEndOf="@+id/OurFavoriteMealDifficultyIcon3"
-                                app:layout_constraintTop_toTopOf="@+id/OurFavoriteMealDifficultyIcon3" />
+                                app:layout_constraintStart_toEndOf="@+id/OurFavoritesDifficultyIcon3"
+                                app:layout_constraintTop_toTopOf="@+id/OurFavoritesDifficultyIcon3" />
                         </androidx.constraintlayout.widget.ConstraintLayout>
                     </androidx.cardview.widget.CardView>
 
@@ -778,7 +778,7 @@
             </HorizontalScrollView>
 
             <TextView
-                android:id="@+id/CookbookBangForYourBuck"
+                android:id="@+id/BangForYourBuckHeader"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="20dp"
