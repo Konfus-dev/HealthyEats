@@ -7,19 +7,1154 @@
     android:background="@color/backgroundColor"
     tools:context=".ui.cookbook.CookbookFragment">
 
-    <TextView
-        android:id="@+id/text_dashboard"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:gravity="center_horizontal" />
+        app:layout_constraintTop_toTopOf="parent">
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/TrendingHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="60dp"
+                android:fontFamily="sans-serif"
+                android:text="Trending"
+                android:textColor="#707070"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <HorizontalScrollView
+                android:id="@+id/TrendingScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="20dp"
+                android:scrollbars="none">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/TrendingCardView1"
+                        android:layout_width="222dp"
+                        android:layout_height="298dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageButton
+                                android:id="@+id/TrendingImage1"
+                                android:layout_width="223dp"
+                                android:layout_height="299dp"
+                                android:adjustViewBounds="false"
+                                android:cropToPadding="false"
+                                android:padding="0dp"
+                                android:paddingLeft="0dp"
+                                android:paddingTop="0dp"
+                                android:paddingRight="0dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/bluebackground_img"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageButton
+                                android:id="@+id/TrendingHeart1"
+                                android:layout_width="46dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="#00FFFFFF"
+                                android:scaleX="1.5"
+                                android:scaleY="1.5"
+                                android:src="@drawable/heartempty_icon"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/TrendingImage1" />
+
+                            <ImageView
+                                android:id="@+id/TrendingInfoView1"
+                                android:layout_width="223dp"
+                                android:layout_height="86dp"
+                                android:layout_marginTop="215dp"
+                                android:src="@android:drawable/screen_background_light"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/TrendingImage1" />
+
+                            <TextView
+                                android:id="@+id/TrendingPrice1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="15dp"
+                                android:layout_marginRight="15dp"
+                                android:text="$5"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/TrendingInfoView1" />
+
+                            <TextView
+                                android:id="@+id/TrendingDietText1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginEnd="15dp"
+                                android:layout_marginRight="15dp"
+                                android:text="Vegetarian"
+                                app:layout_constraintEnd_toEndOf="@+id/TrendingInfoView1"
+                                app:layout_constraintTop_toBottomOf="@+id/TrendingPrice1" />
+
+                            <ImageView
+                                android:id="@+id/TrendingDifficultyIcon1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginTop="20dp"
+                                android:src="@drawable/difficultyeasy_icon"
+                                app:layout_constraintStart_toStartOf="@+id/TrendingInfoView1"
+                                app:layout_constraintTop_toBottomOf="@+id/TrendingName1" />
+
+                            <TextView
+                                android:id="@+id/TrendingName1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginTop="10dp"
+                                android:text="Lorem Ipsum"
+                                app:layout_constraintStart_toStartOf="@+id/TrendingInfoView1"
+                                app:layout_constraintTop_toTopOf="@+id/TrendingInfoView1" />
+
+                            <ImageView
+                                android:id="@+id/TrendingDietIcon1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginRight="5dp"
+                                android:src="@drawable/forkgreen_icon"
+                                app:layout_constraintEnd_toStartOf="@+id/TrendingDietText1"
+                                app:layout_constraintTop_toTopOf="@+id/TrendingDietText1" />
+
+                            <TextView
+                                android:id="@+id/TrendingDifficultyText1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:text="Beginner"
+                                app:layout_constraintStart_toEndOf="@+id/TrendingDifficultyIcon1"
+                                app:layout_constraintTop_toTopOf="@+id/TrendingDifficultyIcon1" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/TrendingCardView2"
+                        android:layout_width="222dp"
+                        android:layout_height="298dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        app:layout_constraintStart_toEndOf="@+id/TrendingCardView1"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageButton
+                                android:id="@+id/TreningImage2"
+                                android:layout_width="223dp"
+                                android:layout_height="299dp"
+                                android:adjustViewBounds="false"
+                                android:cropToPadding="false"
+                                android:padding="0dp"
+                                android:paddingLeft="0dp"
+                                android:paddingTop="0dp"
+                                android:paddingRight="0dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/bluebackground_img"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageButton
+                                android:id="@+id/TrendingHeart2"
+                                android:layout_width="46dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="#00FFFFFF"
+                                android:scaleX="1.5"
+                                android:scaleY="1.5"
+                                android:src="@drawable/heartempty_icon"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/TreningImage2" />
+
+                            <ImageView
+                                android:id="@+id/TrendingInfoView2"
+                                android:layout_width="223dp"
+                                android:layout_height="86dp"
+                                android:layout_marginTop="215dp"
+                                android:src="@android:drawable/screen_background_light"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/TreningImage2" />
+
+                            <TextView
+                                android:id="@+id/TrendingPrice2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="15dp"
+                                android:layout_marginRight="15dp"
+                                android:text="$5"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/TrendingInfoView2" />
+
+                            <TextView
+                                android:id="@+id/TrendingDietText2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginEnd="15dp"
+                                android:layout_marginRight="15dp"
+                                android:text="Vegetarian"
+                                app:layout_constraintEnd_toEndOf="@+id/TrendingInfoView2"
+                                app:layout_constraintTop_toBottomOf="@+id/TrendingPrice2" />
+
+                            <ImageView
+                                android:id="@+id/TrendingDifficultyIcon2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginTop="20dp"
+                                android:src="@drawable/difficultyeasy_icon"
+                                app:layout_constraintStart_toStartOf="@+id/TrendingInfoView2"
+                                app:layout_constraintTop_toBottomOf="@+id/TrendingName2" />
+
+                            <TextView
+                                android:id="@+id/TrendingName2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginTop="10dp"
+                                android:text="Lorem Ipsum"
+                                app:layout_constraintStart_toStartOf="@+id/TrendingInfoView2"
+                                app:layout_constraintTop_toTopOf="@+id/TrendingInfoView2" />
+
+                            <ImageView
+                                android:id="@+id/TrendingDietIcon2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginRight="5dp"
+                                android:src="@drawable/forkgreen_icon"
+                                app:layout_constraintEnd_toStartOf="@+id/TrendingDietText2"
+                                app:layout_constraintTop_toTopOf="@+id/TrendingDietText2" />
+
+                            <TextView
+                                android:id="@+id/TrendingDifficultyText2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:text="Beginner"
+                                app:layout_constraintStart_toEndOf="@+id/TrendingDifficultyIcon2"
+                                app:layout_constraintTop_toTopOf="@+id/TrendingDifficultyIcon2" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/TrendingCardView3"
+                        android:layout_width="222dp"
+                        android:layout_height="298dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        app:layout_constraintStart_toEndOf="@+id/TrendingCardView2"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageButton
+                                android:id="@+id/TrendingImage3"
+                                android:layout_width="223dp"
+                                android:layout_height="299dp"
+                                android:adjustViewBounds="false"
+                                android:cropToPadding="false"
+                                android:padding="0dp"
+                                android:paddingLeft="0dp"
+                                android:paddingTop="0dp"
+                                android:paddingRight="0dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/bluebackground_img"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageButton
+                                android:id="@+id/TrendingHeart3"
+                                android:layout_width="46dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="#00FFFFFF"
+                                android:scaleX="1.5"
+                                android:scaleY="1.5"
+                                android:src="@drawable/heartempty_icon"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/TrendingImage3" />
+
+                            <ImageView
+                                android:id="@+id/TrendingMealInfoView3"
+                                android:layout_width="223dp"
+                                android:layout_height="86dp"
+                                android:layout_marginTop="215dp"
+                                android:src="@android:drawable/screen_background_light"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/TrendingImage3" />
+
+                            <TextView
+                                android:id="@+id/TrendingMealPrice3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="15dp"
+                                android:layout_marginRight="15dp"
+                                android:text="$5"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/TrendingMealInfoView3" />
+
+                            <TextView
+                                android:id="@+id/TrendingDietText3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginEnd="15dp"
+                                android:layout_marginRight="15dp"
+                                android:text="Vegetarian"
+                                app:layout_constraintEnd_toEndOf="@+id/TrendingMealInfoView3"
+                                app:layout_constraintTop_toBottomOf="@+id/TrendingMealPrice3" />
+
+                            <ImageView
+                                android:id="@+id/TrendingDifficultyIcon3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginTop="20dp"
+                                android:src="@drawable/difficultyeasy_icon"
+                                app:layout_constraintStart_toStartOf="@+id/TrendingMealInfoView3"
+                                app:layout_constraintTop_toBottomOf="@+id/TrendingName3" />
+
+                            <TextView
+                                android:id="@+id/TrendingName3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginTop="10dp"
+                                android:text="Lorem Ipsum"
+                                app:layout_constraintStart_toStartOf="@+id/TrendingMealInfoView3"
+                                app:layout_constraintTop_toTopOf="@+id/TrendingMealInfoView3" />
+
+                            <ImageView
+                                android:id="@+id/TrendingDietIcon3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginRight="5dp"
+                                android:src="@drawable/forkgreen_icon"
+                                app:layout_constraintEnd_toStartOf="@+id/TrendingDietText3"
+                                app:layout_constraintTop_toTopOf="@+id/TrendingDietText3" />
+
+                            <TextView
+                                android:id="@+id/TrendingDifficultyText3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:text="Beginner"
+                                app:layout_constraintStart_toEndOf="@+id/TrendingDifficultyIcon3"
+                                app:layout_constraintTop_toTopOf="@+id/TrendingDifficultyIcon3" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/OurFavoritesHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="0dp"
+                android:fontFamily="sans-serif"
+                android:text="Our Favorites"
+                android:textColor="#707070"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <HorizontalScrollView
+                android:id="@+id/OurFavoritesScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="20dp"
+                android:scrollbars="none">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/OurFavoritesCardView1"
+                        android:layout_width="222dp"
+                        android:layout_height="298dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageButton
+                                android:id="@+id/OurFavoritesImage1"
+                                android:layout_width="223dp"
+                                android:layout_height="299dp"
+                                android:adjustViewBounds="false"
+                                android:cropToPadding="false"
+                                android:padding="0dp"
+                                android:paddingLeft="0dp"
+                                android:paddingTop="0dp"
+                                android:paddingRight="0dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/bluebackground_img"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageButton
+                                android:id="@+id/OurFavoritesMealHeart1"
+                                android:layout_width="46dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="#00FFFFFF"
+                                android:scaleX="1.5"
+                                android:scaleY="1.5"
+                                android:src="@drawable/heartempty_icon"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/OurFavoritesImage1" />
+
+                            <ImageView
+                                android:id="@+id/OurFavoritesMealsInfoView1"
+                                android:layout_width="223dp"
+                                android:layout_height="86dp"
+                                android:layout_marginTop="215dp"
+                                android:src="@android:drawable/screen_background_light"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/OurFavoritesImage1" />
+
+                            <TextView
+                                android:id="@+id/OurFavoritesMealPrice1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="15dp"
+                                android:layout_marginRight="15dp"
+                                android:text="$5"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/OurFavoritesMealsInfoView1" />
+
+                            <TextView
+                                android:id="@+id/OurFavoritesDietText1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginEnd="15dp"
+                                android:layout_marginRight="15dp"
+                                android:text="Vegetarian"
+                                app:layout_constraintEnd_toEndOf="@+id/OurFavoritesMealsInfoView1"
+                                app:layout_constraintTop_toBottomOf="@+id/OurFavoritesMealPrice1" />
+
+                            <ImageView
+                                android:id="@+id/OurFavoritesDifficultyIcon1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginTop="20dp"
+                                android:src="@drawable/difficultyeasy_icon"
+                                app:layout_constraintStart_toStartOf="@+id/OurFavoritesMealsInfoView1"
+                                app:layout_constraintTop_toBottomOf="@+id/YourFavoritesName1" />
+
+                            <TextView
+                                android:id="@+id/OurFavoritesName1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginTop="10dp"
+                                android:text="Lorem Ipsum"
+                                app:layout_constraintStart_toStartOf="@+id/OurFavoritesMealsInfoView1"
+                                app:layout_constraintTop_toTopOf="@+id/OurFavoritesMealsInfoView1" />
+
+                            <ImageView
+                                android:id="@+id/OurFavoritesDietIcon1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginRight="5dp"
+                                android:src="@drawable/forkgreen_icon"
+                                app:layout_constraintEnd_toStartOf="@+id/OurFavoritesDietText1"
+                                app:layout_constraintTop_toTopOf="@+id/OurFavoritesDietText1" />
+
+                            <TextView
+                                android:id="@+id/OurFavoritesDifficultyText1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:text="Beginner"
+                                app:layout_constraintStart_toEndOf="@+id/OurFavoritesDifficultyIcon1"
+                                app:layout_constraintTop_toTopOf="@+id/OurFavoritesDifficultyIcon1" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/OurFavoritesCardView2"
+                        android:layout_width="222dp"
+                        android:layout_height="298dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        app:layout_constraintStart_toEndOf="@+id/OurFavoritesCardView1"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageButton
+                                android:id="@+id/OurFavoritesImage2"
+                                android:layout_width="223dp"
+                                android:layout_height="299dp"
+                                android:adjustViewBounds="false"
+                                android:cropToPadding="false"
+                                android:padding="0dp"
+                                android:paddingLeft="0dp"
+                                android:paddingTop="0dp"
+                                android:paddingRight="0dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/bluebackground_img"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageButton
+                                android:id="@+id/OurFavoritesHeart2"
+                                android:layout_width="46dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="#00FFFFFF"
+                                android:scaleX="1.5"
+                                android:scaleY="1.5"
+                                android:src="@drawable/heartempty_icon"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/OurFavoritesImage2" />
+
+                            <ImageView
+                                android:id="@+id/OurFavoritesInfoView2"
+                                android:layout_width="223dp"
+                                android:layout_height="86dp"
+                                android:layout_marginTop="215dp"
+                                android:src="@android:drawable/screen_background_light"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/OurFavoritesImage2" />
+
+                            <TextView
+                                android:id="@+id/OurFavoritesPrice2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="15dp"
+                                android:layout_marginRight="15dp"
+                                android:text="$5"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/YourFavoritesInfoView2" />
+
+                            <TextView
+                                android:id="@+id/OurFavoritesDietText2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginEnd="15dp"
+                                android:layout_marginRight="15dp"
+                                android:text="Vegetarian"
+                                app:layout_constraintEnd_toEndOf="@+id/OurFavoritesInfoView2"
+                                app:layout_constraintTop_toBottomOf="@+id/OurFavoritesPrice2" />
+
+                            <ImageView
+                                android:id="@+id/OurFavoritesDifficultyIcon2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginTop="20dp"
+                                android:src="@drawable/difficultyeasy_icon"
+                                app:layout_constraintStart_toStartOf="@+id/OurFavoritesInfoView2"
+                                app:layout_constraintTop_toBottomOf="@+id/OurFavoritesName2" />
+
+                            <TextView
+                                android:id="@+id/OurFavoritesName2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginTop="10dp"
+                                android:text="Lorem Ipsum"
+                                app:layout_constraintStart_toStartOf="@+id/OurFavoritesInfoView2"
+                                app:layout_constraintTop_toTopOf="@+id/OurFavoritesInfoView2" />
+
+                            <ImageView
+                                android:id="@+id/OurFavoritesDietIcon2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginRight="5dp"
+                                android:src="@drawable/forkgreen_icon"
+                                app:layout_constraintEnd_toStartOf="@+id/OurFavoritesDietText2"
+                                app:layout_constraintTop_toTopOf="@+id/OurFavoritesDietText2" />
+
+                            <TextView
+                                android:id="@+id/OurFavoritesDifficultyText2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:text="Beginner"
+                                app:layout_constraintStart_toEndOf="@+id/OurFavoritesDifficultyIcon2"
+                                app:layout_constraintTop_toTopOf="@+id/OurFavoritesDifficultyIcon2" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/OurFavoritesCardView3"
+                        android:layout_width="222dp"
+                        android:layout_height="298dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        app:layout_constraintStart_toEndOf="@+id/OurFavoritesCardView2"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageButton
+                                android:id="@+id/OurFavoritesImage3"
+                                android:layout_width="223dp"
+                                android:layout_height="299dp"
+                                android:adjustViewBounds="false"
+                                android:cropToPadding="false"
+                                android:padding="0dp"
+                                android:paddingLeft="0dp"
+                                android:paddingTop="0dp"
+                                android:paddingRight="0dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/bluebackground_img"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageButton
+                                android:id="@+id/OurFavoritesHeart3"
+                                android:layout_width="46dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="#00FFFFFF"
+                                android:scaleX="1.5"
+                                android:scaleY="1.5"
+                                android:src="@drawable/heartempty_icon"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/OurFavoritesImage3" />
+
+                            <ImageView
+                                android:id="@+id/OurFavoritesInfoView3"
+                                android:layout_width="223dp"
+                                android:layout_height="86dp"
+                                android:layout_marginTop="215dp"
+                                android:src="@android:drawable/screen_background_light"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/OurFavoritesImage3" />
+
+                            <TextView
+                                android:id="@+id/OurFavoritesPrice3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="15dp"
+                                android:layout_marginRight="15dp"
+                                android:text="$5"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/OurFavoritesInfoView3" />
+
+                            <TextView
+                                android:id="@+id/OurFavoritesDietText3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginEnd="15dp"
+                                android:layout_marginRight="15dp"
+                                android:text="Vegetarian"
+                                app:layout_constraintEnd_toEndOf="@+id/OurFavoritesInfoView3"
+                                app:layout_constraintTop_toBottomOf="@+id/OurFavoritesPrice3" />
+
+                            <ImageView
+                                android:id="@+id/OurFavoritesDifficultyIcon3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginTop="20dp"
+                                android:src="@drawable/difficultyeasy_icon"
+                                app:layout_constraintStart_toStartOf="@+id/OurFavoritesInfoView3"
+                                app:layout_constraintTop_toBottomOf="@+id/OurFavoritesName3" />
+
+                            <TextView
+                                android:id="@+id/OurFavoritesName3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginTop="10dp"
+                                android:text="Lorem Ipsum"
+                                app:layout_constraintStart_toStartOf="@+id/OurFavoritesInfoView3"
+                                app:layout_constraintTop_toTopOf="@+id/OurFavoritesInfoView3" />
+
+                            <ImageView
+                                android:id="@+id/OurFavoritesDietIcon3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginRight="5dp"
+                                android:src="@drawable/forkgreen_icon"
+                                app:layout_constraintEnd_toStartOf="@+id/OurFavoritesDietText3"
+                                app:layout_constraintTop_toTopOf="@+id/OurFavoritesDietText3" />
+
+                            <TextView
+                                android:id="@+id/OurFavoritesDifficultyText3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:text="Beginner"
+                                app:layout_constraintStart_toEndOf="@+id/OurFavoritesDifficultyIcon3"
+                                app:layout_constraintTop_toTopOf="@+id/OurFavoritesDifficultyIcon3" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/BangForYourBuckHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="0dp"
+                android:fontFamily="sans-serif"
+                android:text="Bang For Your Buck"
+                android:textColor="#707070"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            <HorizontalScrollView
+                android:id="@+id/BangForYourBuckScrollView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="20dp"
+                android:scrollbars="none">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/BangForYourBuckCardView1"
+                        android:layout_width="222dp"
+                        android:layout_height="298dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageButton
+                                android:id="@+id/BangForYourBuckImage1"
+                                android:layout_width="223dp"
+                                android:layout_height="299dp"
+                                android:adjustViewBounds="false"
+                                android:cropToPadding="false"
+                                android:padding="0dp"
+                                android:paddingLeft="0dp"
+                                android:paddingTop="0dp"
+                                android:paddingRight="0dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/bluebackground_img"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageButton
+                                android:id="@+id/BangForYourBuckHeart1"
+                                android:layout_width="46dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="#00FFFFFF"
+                                android:scaleX="1.5"
+                                android:scaleY="1.5"
+                                android:src="@drawable/heartempty_icon"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/BangForYourBuckImage1" />
+
+                            <ImageView
+                                android:id="@+id/BangForYourBuckInfoView1"
+                                android:layout_width="223dp"
+                                android:layout_height="86dp"
+                                android:layout_marginTop="215dp"
+                                android:src="@android:drawable/screen_background_light"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/BangForYourBuckImage1" />
+
+                            <TextView
+                                android:id="@+id/BangForYourBuckPrice1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="15dp"
+                                android:layout_marginRight="15dp"
+                                android:text="$5"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/BangForYourBuckInfoView1" />
+
+                            <TextView
+                                android:id="@+id/BangForYourBuckDietText1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginEnd="15dp"
+                                android:layout_marginRight="15dp"
+                                android:text="Vegetarian"
+                                app:layout_constraintEnd_toEndOf="@+id/BangForYourBuckInfoView1"
+                                app:layout_constraintTop_toBottomOf="@+id/BangForYourBuckPrice1" />
+
+                            <ImageView
+                                android:id="@+id/BangForYourBuckDifficultyIcon1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginTop="20dp"
+                                android:src="@drawable/difficultyeasy_icon"
+                                app:layout_constraintStart_toStartOf="@+id/BangForYourBuckInfoView1"
+                                app:layout_constraintTop_toBottomOf="@+id/BangForYourBuckName1" />
+
+                            <TextView
+                                android:id="@+id/BangForYourBuckName1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginTop="10dp"
+                                android:text="Lorem Ipsum"
+                                app:layout_constraintStart_toStartOf="@+id/BangForYourBuckInfoView1"
+                                app:layout_constraintTop_toTopOf="@+id/BangForYourBuckInfoView1" />
+
+                            <ImageView
+                                android:id="@+id/BangForYourBuckDietIcon1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginRight="5dp"
+                                android:src="@drawable/forkgreen_icon"
+                                app:layout_constraintEnd_toStartOf="@+id/BangForYourBuckDietText1"
+                                app:layout_constraintTop_toTopOf="@+id/BangForYourBuckDietText1" />
+
+                            <TextView
+                                android:id="@+id/BangForYourBuckDifficultyText1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:text="Beginner"
+                                app:layout_constraintStart_toEndOf="@+id/BangForYourBuckDifficultyIcon1"
+                                app:layout_constraintTop_toTopOf="@+id/BangForYourBuckDifficultyIcon1" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/BangForYourBuckCardView2"
+                        android:layout_width="222dp"
+                        android:layout_height="298dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        app:layout_constraintStart_toEndOf="@+id/BangForYourBuckCardView1"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageButton
+                                android:id="@+id/BangForYourBuckImage2"
+                                android:layout_width="223dp"
+                                android:layout_height="299dp"
+                                android:adjustViewBounds="false"
+                                android:cropToPadding="false"
+                                android:padding="0dp"
+                                android:paddingLeft="0dp"
+                                android:paddingTop="0dp"
+                                android:paddingRight="0dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/bluebackground_img"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageButton
+                                android:id="@+id/BangForYourBuckHeart2"
+                                android:layout_width="46dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="#00FFFFFF"
+                                android:scaleX="1.5"
+                                android:scaleY="1.5"
+                                android:src="@drawable/heartempty_icon"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/BangForYourBuckImage2" />
+
+                            <ImageView
+                                android:id="@+id/BangForYourBuckInfoView2"
+                                android:layout_width="223dp"
+                                android:layout_height="86dp"
+                                android:layout_marginTop="215dp"
+                                android:src="@android:drawable/screen_background_light"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/BangForYourBuckImage2" />
+
+                            <TextView
+                                android:id="@+id/BangForYourBuckPrice2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="15dp"
+                                android:layout_marginRight="15dp"
+                                android:text="$5"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/BangForYourBuckInfoView2" />
+
+                            <TextView
+                                android:id="@+id/BangForYourBuckDietText2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginEnd="15dp"
+                                android:layout_marginRight="15dp"
+                                android:text="Vegetarian"
+                                app:layout_constraintEnd_toEndOf="@+id/BangForYourBuckInfoView2"
+                                app:layout_constraintTop_toBottomOf="@+id/BangForYourBuckPrice2" />
+
+                            <ImageView
+                                android:id="@+id/BangForYourBuckDifficultyIcon2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginTop="20dp"
+                                android:src="@drawable/difficultyeasy_icon"
+                                app:layout_constraintStart_toStartOf="@+id/BangForYourBuckInfoView2"
+                                app:layout_constraintTop_toBottomOf="@+id/BangForYourBuckName2" />
+
+                            <TextView
+                                android:id="@+id/BangForYourBuckName2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginTop="10dp"
+                                android:text="Lorem Ipsum"
+                                app:layout_constraintStart_toStartOf="@+id/BangForYourBuckInfoView2"
+                                app:layout_constraintTop_toTopOf="@+id/BangForYourBuckInfoView2" />
+
+                            <ImageView
+                                android:id="@+id/BangForYourBuckDietIcon2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginRight="5dp"
+                                android:src="@drawable/forkgreen_icon"
+                                app:layout_constraintEnd_toStartOf="@+id/BangForYourBuckDietText2"
+                                app:layout_constraintTop_toTopOf="@+id/BangForYourBuckDietText2" />
+
+                            <TextView
+                                android:id="@+id/BangForYourBuckDifficultyText2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:text="Beginner"
+                                app:layout_constraintStart_toEndOf="@+id/BangForYourBuckDifficultyIcon2"
+                                app:layout_constraintTop_toTopOf="@+id/BangForYourBuckDifficultyIcon2" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/BangForYourBuckCardView3"
+                        android:layout_width="222dp"
+                        android:layout_height="298dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        app:layout_constraintStart_toEndOf="@+id/BangForYourBuckCardView2"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageButton
+                                android:id="@+id/BangForYourBuckImage3"
+                                android:layout_width="223dp"
+                                android:layout_height="299dp"
+                                android:adjustViewBounds="false"
+                                android:cropToPadding="false"
+                                android:padding="0dp"
+                                android:paddingLeft="0dp"
+                                android:paddingTop="0dp"
+                                android:paddingRight="0dp"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/bluebackground_img"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <ImageButton
+                                android:id="@+id/BangForYourBuckHeart3"
+                                android:layout_width="46dp"
+                                android:layout_height="40dp"
+                                android:layout_marginEnd="1dp"
+                                android:layout_marginRight="1dp"
+                                android:background="#00FFFFFF"
+                                android:scaleX="1.5"
+                                android:scaleY="1.5"
+                                android:src="@drawable/heartempty_icon"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/BangForYourBuckImage3" />
+
+                            <ImageView
+                                android:id="@+id/BangForYourBuckInfoView3"
+                                android:layout_width="223dp"
+                                android:layout_height="86dp"
+                                android:layout_marginTop="215dp"
+                                android:src="@android:drawable/screen_background_light"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/BangForYourBuckImage3" />
+
+                            <TextView
+                                android:id="@+id/BangForYourBuckPrice3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginEnd="15dp"
+                                android:layout_marginRight="15dp"
+                                android:text="$5"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/BangForYourBuckInfoView3" />
+
+                            <TextView
+                                android:id="@+id/BangForYourBuckDietText3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginEnd="15dp"
+                                android:layout_marginRight="15dp"
+                                android:text="Vegetarian"
+                                app:layout_constraintEnd_toEndOf="@+id/BangForYourBuckInfoView3"
+                                app:layout_constraintTop_toBottomOf="@+id/BangForYourBuckPrice3" />
+
+                            <ImageView
+                                android:id="@+id/BangForYourBuckDifficultyIcon3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginTop="20dp"
+                                android:src="@drawable/difficultyeasy_icon"
+                                app:layout_constraintStart_toStartOf="@+id/BangForYourBuckInfoView3"
+                                app:layout_constraintTop_toBottomOf="@+id/BangForYourBuckName3" />
+
+                            <TextView
+                                android:id="@+id/BangForYourBuckName3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="15dp"
+                                android:layout_marginLeft="15dp"
+                                android:layout_marginTop="10dp"
+                                android:text="Lorem Ipsum"
+                                app:layout_constraintStart_toStartOf="@+id/BangForYourBuckInfoView3"
+                                app:layout_constraintTop_toTopOf="@+id/BangForYourBuckInfoView3" />
+
+                            <ImageView
+                                android:id="@+id/BangForYourBuckDietIcon3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="5dp"
+                                android:layout_marginRight="5dp"
+                                android:src="@drawable/forkgreen_icon"
+                                app:layout_constraintEnd_toStartOf="@+id/BangForYourBuckDietText3"
+                                app:layout_constraintTop_toTopOf="@+id/BangForYourBuckDietText3" />
+
+                            <TextView
+                                android:id="@+id/BangForYourBuckDifficultyText3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="5dp"
+                                android:layout_marginLeft="5dp"
+                                android:text="Beginner"
+                                app:layout_constraintStart_toEndOf="@+id/BangForYourBuckDifficultyIcon3"
+                                app:layout_constraintTop_toTopOf="@+id/BangForYourBuckDifficultyIcon3" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </HorizontalScrollView>
+
+        </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
