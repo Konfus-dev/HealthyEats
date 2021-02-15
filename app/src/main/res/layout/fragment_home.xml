@@ -81,12 +81,14 @@
                                 android:id="@+id/WeeklyMealHeart1"
                                 android:layout_width="46dp"
                                 android:layout_height="40dp"
+                                android:layout_marginEnd="1dp"
+                                android:layout_marginRight="1dp"
                                 android:background="#00FFFFFF"
                                 android:scaleX="1.5"
                                 android:scaleY="1.5"
                                 android:src="@drawable/heartempty_icon"
-                                app:layout_constraintTop_toTopOf="@+id/WeeklyMealImage1"
-                                tools:layout_editor_absoluteX="175dp" />
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/WeeklyMealImage1" />
 
                             <ImageView
                                 android:id="@+id/WeeklyMealInfoView1"
@@ -94,6 +96,7 @@
                                 android:layout_height="86dp"
                                 android:layout_marginTop="215dp"
                                 android:src="@android:drawable/screen_background_light"
+                                app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="@+id/WeeklyMealImage1" />
 
                             <TextView
@@ -194,12 +197,14 @@
                                 android:id="@+id/WeeklyMealHeart2"
                                 android:layout_width="46dp"
                                 android:layout_height="40dp"
+                                android:layout_marginEnd="1dp"
+                                android:layout_marginRight="1dp"
                                 android:background="#00FFFFFF"
                                 android:scaleX="1.5"
                                 android:scaleY="1.5"
                                 android:src="@drawable/heartempty_icon"
-                                app:layout_constraintTop_toTopOf="@+id/WeeklyMealImage2"
-                                tools:layout_editor_absoluteX="175dp" />
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/WeeklyMealImage2" />
 
                             <ImageView
                                 android:id="@+id/WeeklyMealInfoView2"
@@ -207,6 +212,7 @@
                                 android:layout_height="86dp"
                                 android:layout_marginTop="215dp"
                                 android:src="@android:drawable/screen_background_light"
+                                app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="@+id/WeeklyMealImage2" />
 
                             <TextView
@@ -307,12 +313,14 @@
                                 android:id="@+id/WeeklyMealHeart3"
                                 android:layout_width="46dp"
                                 android:layout_height="40dp"
+                                android:layout_marginEnd="1dp"
+                                android:layout_marginRight="1dp"
                                 android:background="#00FFFFFF"
                                 android:scaleX="1.5"
                                 android:scaleY="1.5"
                                 android:src="@drawable/heartempty_icon"
-                                app:layout_constraintTop_toTopOf="@+id/WeeklyMealImage3"
-                                tools:layout_editor_absoluteX="175dp" />
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/WeeklyMealImage3" />
 
                             <ImageView
                                 android:id="@+id/WeeklyMealInfoView3"
@@ -320,6 +328,7 @@
                                 android:layout_height="86dp"
                                 android:layout_marginTop="215dp"
                                 android:src="@android:drawable/screen_background_light"
+                                app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="@+id/WeeklyMealImage3" />
 
                             <TextView
@@ -450,12 +459,14 @@
                                 android:id="@+id/FavoriteMealHeart1"
                                 android:layout_width="46dp"
                                 android:layout_height="40dp"
+                                android:layout_marginEnd="1dp"
+                                android:layout_marginRight="1dp"
                                 android:background="#00FFFFFF"
                                 android:scaleX="1.5"
                                 android:scaleY="1.5"
                                 android:src="@drawable/heartempty_icon"
-                                app:layout_constraintTop_toTopOf="@+id/FavoriteMealImage1"
-                                tools:layout_editor_absoluteX="175dp" />
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="@+id/FavoriteMealImage1" />
 
                             <ImageView
                                 android:id="@+id/FavoriteMealsInfoView1"
@@ -463,6 +474,7 @@
                                 android:layout_height="86dp"
                                 android:layout_marginTop="215dp"
                                 android:src="@android:drawable/screen_background_light"
+                                app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="@+id/FavoriteMealImage1" />
 
                             <TextView
@@ -623,7 +635,7 @@
                                 app:layout_constraintTop_toTopOf="@+id/FavoriteMealsInfoView2" />
 
                             <ImageView
-                                android:id="@+id/FavoriteDietIcon1"
+                                android:id="@+id/FavoriteDietIcon2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginEnd="5dp"
@@ -803,10 +815,10 @@
                         android:layout_width="372dp"
                         android:layout_height="107dp"
                         android:src="@android:drawable/screen_background_light"
+                        app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="1.0"
-                        app:layout_constraintStart_toStartOf="parent"
-                        tools:layout_editor_absoluteY="178dp" />
+                        app:layout_constraintStart_toStartOf="parent" />
 
                     <TextView
                         android:id="@+id/textView5"
@@ -946,6 +958,7 @@
                                 android:layout_height="86dp"
                                 android:layout_marginTop="215dp"
                                 android:src="@android:drawable/screen_background_light"
+                                app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="@+id/HealthyTipImage1" />
 
                             <TextView
@@ -996,6 +1009,7 @@
                                 android:layout_height="86dp"
                                 android:layout_marginTop="215dp"
                                 android:src="@android:drawable/screen_background_light"
+                                app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="@+id/HealthyTipImage2" />
 
                             <TextView
