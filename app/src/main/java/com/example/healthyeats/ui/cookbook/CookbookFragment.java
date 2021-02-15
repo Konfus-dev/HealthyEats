@@ -23,13 +23,7 @@ public class CookbookFragment extends Fragment {
         cookbookViewModel =
                 new ViewModelProvider(this).get(CookbookViewModel.class);
         View root = inflater.inflate(R.layout.fragment_cookbook, container, false);
-        final TextView textView = root.findViewById(R.id.text_dashboard);
-        cookbookViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+
         return root;
     }
 }
