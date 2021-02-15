@@ -507,7 +507,7 @@
                                 android:layout_marginTop="20dp"
                                 android:src="@drawable/difficultyeasy_icon"
                                 app:layout_constraintStart_toStartOf="@+id/OurFavoritesMealsInfoView1"
-                                app:layout_constraintTop_toBottomOf="@+id/YourFavoritesName1" />
+                                app:layout_constraintTop_toBottomOf="@+id/OurFavoritesName1" />
 
                             <TextView
                                 android:id="@+id/OurFavoritesName1"
@@ -600,8 +600,8 @@
                                 android:layout_marginEnd="15dp"
                                 android:layout_marginRight="15dp"
                                 android:text="$5"
-                                app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintTop_toTopOf="@+id/YourFavoritesInfoView2" />
+                                app:layout_constraintEnd_toEndOf="@+id/OurFavoritesInfoView2"
+                                app:layout_constraintTop_toTopOf="@+id/OurFavoritesInfoView2" />
 
                             <TextView
                                 android:id="@+id/OurFavoritesDietText2"
