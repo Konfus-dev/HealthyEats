@@ -1,7 +1,7 @@
 # HealthyEats
 
 ## Overview
-Board game made in the Java language.
+An app that displays healthy meals for users on a fixed budget!
 
 ## Implementors
 Jeremy Hummel
