@@ -2,7 +2,7 @@ package com.example.healthyeats;
 
 import java.util.Comparator;
 
-public class GroceryItem <GroceryItem> {
+public class GroceryItem implements Comparable<GroceryItem>{
     private String name;
     private String image;
     private int quantity;
@@ -73,10 +73,13 @@ public class GroceryItem <GroceryItem> {
     public void setDisplay(boolean disp) {
         this.display = disp;
     }
-
+    @Override
+    public int compareTo(GroceryItem g){
+        return this.name.compareTo(g.name);
+    }
     //Comparator to sort array by item name alphabetically from A-Z
-    public static Comparator<GroceryItem> itemAZComparator = new Comparator<GroceryItem>() {
-
+    public static final Comparator<GroceryItem> itemAZComparator = new Comparator<GroceryItem>() {
+        @Override
         public int compare(GroceryItem item1, GroceryItem item2) {
             if (item1.getName().compareTo(item2.getName()) < 0) {
                 return -1;
@@ -91,7 +94,8 @@ public class GroceryItem <GroceryItem> {
     };
 
     //Comparator to sort array by item name alphabetically from Z-A
-    public static Comparator<GroceryItem> itemZAComparator = new Comparator<GroceryItem>() {
+    public static final Comparator<GroceryItem> itemZAComparator = new Comparator<GroceryItem>() {
+        @Override
         public int compare(GroceryItem item1, GroceryItem item2) {
             if (item2.getName().compareTo(item1.getName()) < 0) {
                 return -1;
@@ -106,7 +110,8 @@ public class GroceryItem <GroceryItem> {
     };
 
     //Comparator to sort array by price low-high
-    public static Comparator<GroceryItem> itemLowHighComparator = new Comparator<GroceryItem>() {
+    public static final Comparator<GroceryItem> itemLowHighComparator = new Comparator<GroceryItem>() {
+        @Override
         public int compare(GroceryItem item1, GroceryItem item2) {
             if (item1.getPrice() > item2.getPrice()) {
                 return 1;
@@ -123,7 +128,8 @@ public class GroceryItem <GroceryItem> {
     };
 
     //Comparator to sort array by price high-low
-    public static Comparator<GroceryItem> itemHighLowComparator = new Comparator<GroceryItem>() {
+    public static final Comparator<GroceryItem> itemHighLowComparator = new Comparator<GroceryItem>() {
+        @Override
         public int compare(GroceryItem item1, GroceryItem item2) {
             if (item2.getPrice() > item1.getPrice()) {
                 return 1;
