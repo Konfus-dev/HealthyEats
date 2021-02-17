@@ -1,12 +1,73 @@
 package com.example.healthyeats;
+import android.os.Bundle;
+import android.widget.LinearLayout;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class GroceryList {
+
+public class GroceryList extends AppCompatActivity {
+    LinearLayout linearLayout;
     private ArrayList<GroceryItem> groceryList;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.fragment_grocerylist);
+        linearLayout = findViewById(R.id.groceryListStart);
+
+        addGroceryItem();
+    }
 
     //Constructor
     public GroceryList() {}
+
+    // Dynamically add card views on to grocery page
+    private void addGroceryItem() {
+        LinearLayout row = null;
+        int groceryItem = this.groceryList.size();
+        boolean newRow = false;
+
+        for (int i = 0; i < groceryItem; i++) {
+            // Create new horizontal layout within the vertical layout
+            if (newRow) {
+                newRow = false;
+                row = new LinearLayout(this);
+                row.setOrientation(LinearLayout.VERTICAL);
+                // Might need to set layout params in respect to parent here...
+
+                linearLayout.addView(row);
+            }
+
+            // Card on the left side
+            if (i % 2 == 0) {
+                CardView left = new CardView();
+
+                row.addView(left);
+            // Card on the right side
+            } else {
+                newRow = true;
+                CardView right = new CardView();
+
+                row.addView(right);
+            }
+
+            addLineSeperator();
+        }
+    }
+
+    private void addLineSeperator() {
+        LinearLayout lineLayout = new LinearLayout(this);
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                LinearLayout.LayoutParams.MATCH_PARENT,
+                2);
+        params.setMargins(0, 10, 0, 10);
+        lineLayout.setLayoutParams(params);
+        linearLayout.addView(lineLayout);
+    }
 
     //Add ingredient to list
     private void addIngredient(GroceryItem ingredient) {
