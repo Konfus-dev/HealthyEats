@@ -1,6 +1,6 @@
 package com.example.healthyeats;
-
-public class Recipe {
+import java.util.Comparator;
+public class Recipe implements Comparable<Recipe> {
     private String id;
     private String name;
     private String source;
@@ -20,8 +20,11 @@ public class Recipe {
     private String[] ingredients;
     private String[] tags;
 
+    //Empty Constructor
     public Recipe() {
     }
+
+    //Getters and setters organized by variable
     public String getId() {
         return id;
     }
@@ -165,4 +168,46 @@ public class Recipe {
     public void setTags(String[] tags) {
         this.tags = tags;
     }
+
+
+    @Override
+    public int compareTo(Recipe g){
+        return this.name.compareTo(g.name);
+    }
+    //Comparator to sort array by item name alphabetically from A-Z
+    public static final Comparator<Recipe> recipeAZComparator = new Comparator<Recipe>() {
+        @Override
+        public int compare(Recipe recipe1, Recipe recipe2) {
+            if (recipe1.getName().compareTo(recipe2.getName()) < 0) {
+                return -1;
+            }
+            else if (recipe1.getName().compareTo(recipe2.getName()) > 0) {
+                return 1;
+            }
+            else {
+                return 0;
+            }
+        }
+    };
+
+    //Comparator to sort array by item name alphabetically from Z-A
+    public static final Comparator<Recipe> recipeZAComparator = new Comparator<Recipe>() {
+        @Override
+        public int compare(Recipe recipe1, Recipe recipe2) {
+            if (recipe2.getName().compareTo(recipe1.getName()) < 0) {
+                return -1;
+            }
+            else if (recipe2.getName().compareTo(recipe1.getName()) > 0) {
+                return 1;
+            }
+            else {
+                return 0;
+            }
+        }
+    };
+
+    //Sort by calories low to high
+
+    //Sort by calories high to low
+
 }
