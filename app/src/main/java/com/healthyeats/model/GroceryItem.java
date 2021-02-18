@@ -1,4 +1,4 @@
-package com.healthyeats.controller;
+package com.healthyeats.model;
 
 import java.util.Comparator;
 

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
 
     android:background="@color/backgroundColor"
-    tools:context="com.healthyeats.view.home.HomeFragment">
+    tools:context="com.healthyeats.controller.HomeFragment">
 
     <ScrollView
         android:layout_width="match_parent"

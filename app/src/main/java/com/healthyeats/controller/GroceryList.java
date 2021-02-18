@@ -5,12 +5,12 @@ import android.view.ContextThemeWrapper;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import com.example.healthyeats.R;
+import com.healthyeats.model.GroceryItem;
 //package com.healthyeats.controller;
 
 import java.util.ArrayList;
