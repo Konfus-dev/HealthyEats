@@ -516,8 +516,8 @@
                     android:orientation = "horizontal"
                     android:layout_marginLeft = "15sp">
                     <ImageButton
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
+                        android:layout_width="35dp"
+                        android:layout_height="35dp"
                         android:scaleType="fitXY"
                         android:background = "@color/backgroundColor"
                         android:src = "@drawable/addbluebackground_icon">
@@ -530,7 +530,8 @@
                         android:text = "Ingredient Name"
                         android:layout_gravity="bottom"
                         android:textSize="20sp"
-                        android:layout_marginBottom = "5sp">
+                        android:layout_marginBottom = "2sp"
+                        android:layout_marginLeft = "3sp">
 
                     </TextView>
                 </LinearLayout>

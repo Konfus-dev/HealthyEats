@@ -48,9 +48,42 @@
         <item name = "android:layout_marginLeft">5sp</item>
     </style>
 
+    // Grocery List Image of Item
     <style name = "groceryItemImage" parent = "Widget.AppCompat.ImageButton">
         <item name = "android:layout_width">match_parent</item>
         <item name = "android:layout_height">90dp</item>
         <item name = "android:background">@drawable/ic_launcher_background</item>
+    </style>
+
+    // Card View for All Recipes on Home and Cookbook Page
+    <style name = "recipeCardView" parent = "CardView">
+        <item name = "android:layout_width">222dp</item>
+        <item name = "android:layout_height">298dp</item>
+        <item name = "android:layout_marginStart">10dp</item>
+        <item name = "android:layout_marginLeft">10dp</item>
+    </style>
+
+    // Background icon
+    <style name = "recipeBackgroundMain" parent = "Widget.AppCompat.ImageButton">
+        <item name = "android:layout_width">46dp</item>
+        <item name = "android:layout_height">40dp</item>
+        <iten name = "android:layout_marginLeft">170dp</iten>
+        <item name = "android:layout_marginTop">5dp</item>
+        <item name = "android:background">#00FFFFFF</item>
+        <item name = "android:scaleX">1.5</item>
+        <item name = "android:scaleY">1.5</item>
+        <item name = "android:src">@drawable/heartempty_icon</item>
+    </style>
+
+    // Heart icon
+    <style name = "recipeHeartIcon" parent = "Widget.AppCompat.ImageButton">
+        <item name = "android:layout_width">46dp</item>
+        <item name = "android:layout_height">40dp</item>
+        <iten name = "android:layout_marginLeft">170dp</iten>
+        <item name = "android:layout_marginTop">5dp</item>
+        <item name = "android:background">#00FFFFFF</item>
+        <item name = "android:scaleX">1.5</item>
+        <item name = "android:scaleY">1.5</item>
+        <item name = "android:src">@drawable/heartempty_icon</item>
     </style>
 </resources>
