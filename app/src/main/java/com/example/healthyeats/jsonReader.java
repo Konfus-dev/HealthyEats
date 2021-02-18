@@ -53,6 +53,11 @@ public class jsonReader
                recipeTemp.setServings(((Long)recipe.get("servings")).intValue());
                recipeTemp.setComments((String) recipe.get("comments"));
                recipeTemp.setCalories(((Long)recipe.get("calories")).intValue());
+
+               //Remove recipes that don't have calorie info
+               if (recipeTemp.getCalories() == 0) {
+                   continue;
+               }
                recipeTemp.setFat(((Long)recipe.get("fat")).intValue());
                recipeTemp.setSatFat(((Long)recipe.get("satfat")).intValue());
                recipeTemp.setCarbs(((Long)recipe.get("carbs")).intValue());

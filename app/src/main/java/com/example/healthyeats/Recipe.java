@@ -207,7 +207,36 @@ public class Recipe implements Comparable<Recipe> {
     };
 
     //Sort by calories low to high
+    public static final Comparator<Recipe> recipeLowHighCalComparator = new Comparator<Recipe>() {
+        @Override
+        public int compare(Recipe recipe1, Recipe recipe2) {
+            if (recipe1.getCalories() > recipe2.getCalories()) {
+                return 1;
+            }
+            else if (recipe1.getCalories() < recipe2.getCalories()) {
+                return 1;
+            }
+            else {
+                return 0;
+            }
+        }
+    };
+
 
     //Sort by calories high to low
+    public static final Comparator<Recipe> recipeHighLowCalComparator = new Comparator<Recipe>() {
+        @Override
+        public int compare(Recipe recipe1, Recipe recipe2) {
+            if (recipe2.getCalories() > recipe1.getCalories()) {
+                return 1;
+            }
+            else if (recipe2.getCalories() < recipe1.getCalories()) {
+                return 1;
+            }
+            else {
+                return 0;
+            }
+        }
+    };
 
 }

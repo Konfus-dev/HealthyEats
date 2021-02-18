@@ -57,6 +57,15 @@ public class RecipeList {
         Collections.sort(this.recipeList, Recipe.recipeZAComparator);
     }
 
+    //Sort by calories low-high
+    private void sortCalLowHigh() {
+        Collections.sort(this.recipeList, Recipe.recipeLowHighCalComparator);
+    }
+
+    //Sort by calories high-low
+    private void sortCalHighLow() {
+        Collections.sort(this.recipeList, Recipe.recipeHighLowCalComparator);
+    }
 
 
 
