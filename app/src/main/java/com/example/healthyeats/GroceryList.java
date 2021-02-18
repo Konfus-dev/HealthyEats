@@ -1,8 +1,11 @@
 package com.example.healthyeats;
 import android.os.Bundle;
+import android.view.ContextThemeWrapper;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -47,44 +50,57 @@ public class GroceryList extends AppCompatActivity {
 
             // Card on the left side
             if (i % 2 == 0) {
-                CardView left = createCardView(0);
+                CardView left = new CardView(new ContextThemeWrapper(GroceryList.this, R.style.groceryListCardViewLeft), null, 0);
                 row.addView(left);
+                LinearLayout inner = new LinearLayout(this);
+                inner.setLayoutParams(new LayoutParams(
+                        LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT
+                ));
+                inner.setOrientation(LinearLayout.VERTICAL);
+                left.addView(inner);
+                addGroceryContent("Lorem", 5.00, "img", inner);
             // Card on the right side
             } else {
                 newRow = true;
-                CardView right = createCardView(1);
+                CardView right = new CardView(new ContextThemeWrapper(GroceryList.this, R.style.groceryListCardViewRight), null, 0);;
                 row.addView(right);
+                LinearLayout inner = new LinearLayout(this);
+                inner.setLayoutParams(new LayoutParams(
+                        LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT
+                ));
+                inner.setOrientation(LinearLayout.VERTICAL);
+                right.addView(inner);
+                addGroceryContent("Lorem", 2.00, "img", inner);
             }
 
             addLineSeperator();
         }
     }
 
-    private CardView createCardView(int lr) {
-        CardView myCard = new CardView(getApplicationContext());
+    private void addGroceryContent(String name, double price, String image, LinearLayout parent) {
+        // Creates grocery Image
+        ImageButton groceryImage = new ImageButton(new ContextThemeWrapper(GroceryList.this, R.style.groceryItemImage), null, 0);
 
-        // Equivalent of layout_gravity = center here
-        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
-        params.addRule(RelativeLayout.CENTER_HORIZONTAL);
-        myCard.setLayoutParams(params);
-//        android:layout_width="0dp"
-//        android:layout_height="150dp"
-        myCard.setRadius(4);
-//        card_view:cardCornerRadius="4dp"
-//        android:layout_weight="1"
-//        myCard.wei
-        // Left Card
-        if (lr == 0) {
-//            myCard.mar
-//            android:layout_marginRight="15dp"
-//            android:layout_marginLeft="30dp"
-        // Right Card
-        } else if (lr == 1) {
-//            android:layout_marginLeft="15dp"
-//            android:layout_marginRight="30dp"
-        }
+        // Sets name of grocery item
+        TextView groceryName = new TextView(this);
+        groceryName.setLayoutParams(new LayoutParams(
+                LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT
+        ));
 
-        return myCard;
+        groceryName.setTextAppearance(this, R.style.groceryItemName);
+        groceryName.setText("Name");
+
+        // Sets price of grocery item
+        TextView groceryPrice = new TextView(this);
+        groceryPrice.setLayoutParams(new LayoutParams(
+                LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT
+        ));
+        groceryPrice.setTextAppearance(this, R.style.groceryItemPrice);
+        groceryPrice.setText("$" + String.valueOf(price));
+
+        parent.addView(groceryImage);
+        parent.addView(groceryName);
+        parent.addView(groceryPrice);
     }
 
     private void addLineSeperator() {
