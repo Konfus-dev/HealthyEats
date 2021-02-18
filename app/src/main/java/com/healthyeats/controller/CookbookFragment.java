@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.healthyeats.R;
+import com.healthyeats.R;
 import com.healthyeats.view.CookbookViewModel;
 
 public class CookbookFragment extends Fragment {
