@@ -6,12 +6,12 @@ import java.util.Collections;
 
 public class RecipeList {
     private ArrayList<Recipe> recipeList;
-    private jsonReader json;
+    private JsonReader json;
 
 
     public RecipeList() {
         //Import from JSON class
-        json = new jsonReader();
+        json = new JsonReader();
         recipeList = json.recipieParser();
     }
 
