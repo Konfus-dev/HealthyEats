@@ -95,14 +95,7 @@
                     android:layout_height="wrap_content">
 
                     <androidx.cardview.widget.CardView
-                        xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                        android:id="@+id/card_viewLeft"
-                        android:layout_gravity="center"
-                        android:layout_width="0dp"
-                        android:layout_height="150dp"
-                        android:layout_marginRight="15dp"
-                        android:layout_marginLeft="30dp"
-                        android:layout_weight="1">
+                        style = "@style/groceryListCardViewLeft">
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -140,14 +133,7 @@
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
-                        xmlns:card_view="http://schemas.android.com/apk/res-auto"
-                        android:id="@+id/card_viewRight"
-                        android:layout_gravity="center"
-                        android:layout_width="0dp"
-                        android:layout_height="150dp"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginRight="30dp"
-                        android:layout_weight="1">
+                        style = "@style/groceryListCardViewRight">
 
                         <LinearLayout
                             android:layout_width="match_parent"
