@@ -1,5 +1,7 @@
-package com.example.healthyeats;
+package com.healthyeats.controller;
+
 import java.util.Comparator;
+
 public class Recipe implements Comparable<Recipe> {
     private String id;
     private String name;

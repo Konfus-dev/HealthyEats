@@ -1,11 +1,9 @@
-package com.example.healthyeats;
-
+package com.healthyeats.controller;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -22,7 +20,7 @@ public class jsonReader
     {
         //JSON parser object to parse read file
         JSONParser jsonParser = new JSONParser();
-        try (FileReader reader= new FileReader("db-recipes.json"))
+        try (FileReader reader= new FileReader("../model/db-recipes.json"))
         {
             Object obj  = jsonParser.parse(reader);
             JSONObject recipeList =  (JSONObject) obj;

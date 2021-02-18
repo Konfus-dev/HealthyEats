@@ -1,16 +1,16 @@
-package com.example.healthyeats.ui.cookbook;
+package com.healthyeats.view.grocerylist;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class CookbookViewModel extends ViewModel {
+public class GrocerylistViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public CookbookViewModel() {
+    public GrocerylistViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is cookbook fragment");
+        mText.setValue("This is grocerylist fragment");
     }
 
     public LiveData<String> getText() {

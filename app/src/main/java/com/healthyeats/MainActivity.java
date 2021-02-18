@@ -1,14 +1,16 @@
-package com.example.healthyeats;
+package com.healthyeats;
 
 import android.os.Bundle;
-
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+
+import com.example.healthyeats.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.healthyeats.controller.GroceryItem;
 
 import java.util.List;
 

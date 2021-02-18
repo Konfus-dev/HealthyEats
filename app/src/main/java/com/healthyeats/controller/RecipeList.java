@@ -1,4 +1,4 @@
-package com.example.healthyeats;
+package com.healthyeats.controller;
 
 import java.util.Arrays;
 import java.util.ArrayList;

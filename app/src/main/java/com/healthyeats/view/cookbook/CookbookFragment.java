@@ -1,27 +1,25 @@
-package com.example.healthyeats.ui.account;
+package com.healthyeats.view.cookbook;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.healthyeats.R;
 
-public class AccountFragment extends Fragment {
-    private AccountViewModel accountViewModel;
+public class CookbookFragment extends Fragment {
+
+    private CookbookViewModel cookbookViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        accountViewModel =
-                new ViewModelProvider(this).get(AccountViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_account, container, false);
+        cookbookViewModel =
+                new ViewModelProvider(this).get(CookbookViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_cookbook, container, false);
 
         return root;
     }
