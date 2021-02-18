@@ -17,15 +17,18 @@
             android:id = "@+id/overallRecipe"
             android:orientation = "vertical">
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:background="#BCE0FD">
+<!--            <RelativeLayout-->
+<!--                android:layout_width="175dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginLeft = "15sp"-->
+<!--                android:layout_marginRight = "5sp">-->
 
-<!--                <LinearLayout-->
+<!--                <ImageView-->
 <!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:orientation="horizontal">-->
+<!--                    android:layout_height="200dp"-->
+<!--                    android:background="#BCE0FD">-->
+
+<!--&gt;-->
 <!--                    <ImageButton-->
 <!--                        android:layout_width="100dp"-->
 <!--                        android:layout_height="100dp"-->
@@ -42,8 +45,41 @@
 <!--                        android:background="#BCE0FD">-->
 
 <!--                    </ImageButton>-->
-<!--                </LinearLayout>-->
-            </ImageView>
+<!--                </ImageView>-->
+<!--            </RelativeLayout>-->
+            
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="175dp"
+                    android:src = "@drawable/bluebackground_img"
+                    android:scaleType="fitXY">
+                    
+                </ImageView>
+                
+                <ImageButton
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:background = "#BCE0FD"
+                    android:src = "@drawable/exit_icon"
+                    android:layout_marginLeft = "10sp"
+                    android:layout_marginTop = "10sp">
+
+                </ImageButton>
+
+                <ImageButton
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background = "#BCE0FD"
+                    android:scaleType="fitXY"
+                    android:src = "@drawable/heartempty_icon"
+                    android:layout_marginLeft = "340sp"
+                    android:layout_marginTop = "10sp">
+
+                </ImageButton>
+            </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -201,6 +237,7 @@
                 android:layout_marginLeft = "20sp"
                 android:layout_marginRight = "20sp"
                 android:textSize = "15sp"
+                android:id = "@+id/recipeDescriptionText"
                 android:text = " simplest way to create a new line on TextView is android:text attribute. android:text attribute allow us to display text on android app. we can add a simple '\n' to TextView text where we want to start a new line. in this way we can create a multiline TextView ">
             </TextView>
 
@@ -210,8 +247,7 @@
                 android:layout_height="wrap_content"
                 android:text = "Nutrition"
                 android:textSize = "35sp"
-                android:layout_marginLeft = "15sp"
-                android:id = "@+id/recipeDescriptionText">
+                android:layout_marginLeft = "15sp">
 
             </TextView>
 
@@ -220,36 +256,118 @@
                 android:layout_height="wrap_content"
                 android:orientation = "horizontal">
 
+                // Calories
                 <RelativeLayout
-                    android:layout_width="200dp"
+                    android:layout_width="175dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft = "15sp">
+                    android:layout_marginLeft = "15sp"
+                    android:layout_marginRight = "5sp">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:src = "@drawable/orange_rectangle">
-                    </ImageView>
+                        android:layout_width="180dp"
+                        android:layout_height="50dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/orange_rectangle"></ImageView>
 
                     <ImageView
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="10sp"
+                        android:layout_marginTop="2.5dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/white_ellipse"></ImageView>
+                    <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:src = "@drawable/white_ellipse">
-                    </ImageView>
+                        android:text = "300"
+                        android:id = "@+id/caloriesText"
+                        android:textColor="@color/white"
+                        android:layout_marginLeft = "20sp"
+                        android:layout_marginTop = "15sp">
+
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text = "Calories"
+                        android:textColor="@color/white"
+                        android:textSize = "20dp"
+                        android:layout_marginLeft = "70sp"
+                        android:layout_marginTop = "5sp">
+
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text = "kcal"
+                        android:textColor="@color/white"
+                        android:textSize = "15dp"
+                        android:layout_marginLeft = "70sp"
+                        android:layout_marginTop = "27sp"
+                        android:id = "@+id/caloriesMeasurement">
+
+                    </TextView>
 
                 </RelativeLayout>
 
-
+                // Carbs
                 <RelativeLayout
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content">
+                    android:layout_width="175dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight = "15sp"
+                    android:layout_marginLeft = "5sp">
 
                     <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="180dp"
+                        android:layout_height="50dp"
+                        android:scaleType="fitXY"
                         android:src = "@drawable/yellow_rectangle">
 
                     </ImageView>
+
+                    <ImageView
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="10sp"
+                        android:layout_marginTop="2.5dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/white_ellipse"></ImageView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text = "300"
+                        android:id = "@+id/CarbText"
+                        android:textColor="@color/white"
+                        android:layout_marginLeft = "20sp"
+                        android:layout_marginTop = "15sp"></TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text = "Carbs"
+                        android:textColor="@color/white"
+                        android:textSize = "20dp"
+                        android:layout_marginLeft = "70sp"
+                        android:layout_marginTop = "5sp">
+
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text = "Gram"
+                        android:textColor="@color/white"
+                        android:textSize = "15dp"
+                        android:layout_marginLeft = "70sp"
+                        android:layout_marginTop = "27sp"
+                        android:id = "@+id/carbMeasurement">
+
+                    </TextView>
 
                 </RelativeLayout>
 
@@ -258,7 +376,188 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation = "horizontal">
+                android:orientation = "horizontal"
+                android:layout_marginTop = "15sp">
+
+                // Protein
+                <RelativeLayout
+                    android:layout_width="175dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft = "15sp"
+                    android:layout_marginRight = "5sp">
+
+                    <ImageView
+                        android:layout_width="180dp"
+                        android:layout_height="50dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/pink_rectangle"></ImageView>
+
+                    <ImageView
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="10sp"
+                        android:layout_marginTop="2.5dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/white_ellipse"></ImageView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text = "300"
+                        android:id = "@+id/proteinText"
+                        android:textColor="@color/white"
+                        android:layout_marginLeft = "20sp"
+                        android:layout_marginTop = "15sp">
+
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text = "Protein"
+                        android:textColor="@color/white"
+                        android:textSize = "20dp"
+                        android:layout_marginLeft = "70sp"
+                        android:layout_marginTop = "5sp">
+
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text = "Gram"
+                        android:textColor="@color/white"
+                        android:textSize = "15dp"
+                        android:layout_marginLeft = "70sp"
+                        android:layout_marginTop = "27sp"
+                        android:id = "@+id/proteinMeasurement">
+
+                    </TextView>
+
+                </RelativeLayout>
+
+                // Calcium
+                <RelativeLayout
+                    android:layout_width="175dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight = "15sp"
+                    android:layout_marginLeft = "5sp">
+
+                    <ImageView
+                        android:layout_width="180dp"
+                        android:layout_height="50dp"
+                        android:scaleType="fitXY"
+                        android:src = "@drawable/blue_rectangle">
+
+                    </ImageView>
+
+                    <ImageView
+                        android:layout_width="44dp"
+                        android:layout_height="44dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="10sp"
+                        android:layout_marginTop="2.5dp"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/white_ellipse"></ImageView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text = "300"
+                        android:id = "@+id/CalciumText"
+                        android:textColor="@color/white"
+                        android:layout_marginLeft = "20sp"
+                        android:layout_marginTop = "15sp"></TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text = "Calcium"
+                        android:textColor="@color/white"
+                        android:textSize = "20dp"
+                        android:layout_marginLeft = "70sp"
+                        android:layout_marginTop = "5sp">
+
+                    </TextView>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text = "Gram"
+                        android:textColor="@color/white"
+                        android:textSize = "15dp"
+                        android:layout_marginLeft = "70sp"
+                        android:layout_marginTop = "27sp"
+                        android:id = "@+id/calciumMeasurement">
+
+                    </TextView>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            // Ingredients Information
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text = "Ingredients"
+                android:textSize = "35sp"
+                android:layout_marginLeft = "15sp"></TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id = "@+id/ingredientList"
+                android:orientation = "vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation = "horizontal"
+                    android:layout_marginLeft = "15sp">
+                    <ImageButton
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:scaleType="fitXY"
+                        android:background = "@color/backgroundColor"
+                        android:src = "@drawable/addbluebackground_icon">
+
+                    </ImageButton>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text = "Ingredient Name"
+                        android:layout_gravity="bottom"
+                        android:textSize="20sp"
+                        android:layout_marginBottom = "5sp">
+
+                    </TextView>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            // Instructions Information
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text = "Instructions"
+                android:textSize = "35sp"
+                android:layout_marginLeft = "15sp"></TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id = "@+id/instructionList"
+                android:orientation = "vertical"
+                android:layout_marginLeft="15sp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text = "askjflsakdjflsdfj adfjslkdfj asdf adsf asdf asfd">
+
+                </TextView>
 
             </LinearLayout>
 
