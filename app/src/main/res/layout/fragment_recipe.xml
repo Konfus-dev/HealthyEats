@@ -210,14 +210,14 @@
                 android:orientation = "horizontal">
 
                 <TextView
+                    android:id="@+id/recipeNameText"
                     android:layout_width="250dp"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft = "15sp"
-                    android:layout_marginTop = "15sp"
-                    android:textSize = "40sp"
-                    android:text = "Lorem \nIpsum"
-                    android:id = "@+id/recipeNameText">
-                </TextView>
+                    android:layout_marginStart="20sp"
+                    android:layout_marginLeft="20sp"
+                    android:layout_marginTop="15sp"
+                    android:text="Lorem \nIpsum"
+                    android:textSize="40sp"></TextView>
 
                 <TextView
                     android:layout_width="100dp"
@@ -242,26 +242,29 @@
             </TextView>
 
             // Nutrition Information
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text = "Nutrition"
-                android:textSize = "35sp"
-                android:layout_marginLeft = "15sp">
+                android:layout_marginStart="20sp"
+                android:layout_marginLeft="20sp"
+                android:text="Nutrition"
+                android:textSize="35sp">
 
             </TextView>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation = "horizontal">
+                android:orientation="horizontal">
 
                 // Calories
+
                 <RelativeLayout
                     android:layout_width="175dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft = "15sp"
-                    android:layout_marginRight = "5sp">
+                    android:layout_marginLeft="15sp"
+                    android:layout_marginRight="5sp">
 
                     <ImageView
                         android:layout_width="180dp"
@@ -277,54 +280,56 @@
                         android:layout_marginTop="2.5dp"
                         android:scaleType="fitXY"
                         android:src="@drawable/white_ellipse"></ImageView>
+
                     <TextView
+                        android:id="@+id/caloriesText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text = "300"
-                        android:id = "@+id/caloriesText"
-                        android:textColor="@color/white"
-                        android:layout_marginLeft = "20sp"
-                        android:layout_marginTop = "15sp">
+                        android:layout_marginLeft="20sp"
+                        android:layout_marginTop="15sp"
+                        android:text="300"
+                        android:textColor="@color/white">
 
                     </TextView>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text = "Calories"
+                        android:layout_marginLeft="70sp"
+                        android:layout_marginTop="5sp"
+                        android:text="Calories"
                         android:textColor="@color/white"
-                        android:textSize = "20dp"
-                        android:layout_marginLeft = "70sp"
-                        android:layout_marginTop = "5sp">
+                        android:textSize="20dp">
 
                     </TextView>
 
                     <TextView
+                        android:id="@+id/caloriesMeasurement"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text = "kcal"
+                        android:layout_marginLeft="70sp"
+                        android:layout_marginTop="27sp"
+                        android:text="kcal"
                         android:textColor="@color/white"
-                        android:textSize = "15dp"
-                        android:layout_marginLeft = "70sp"
-                        android:layout_marginTop = "27sp"
-                        android:id = "@+id/caloriesMeasurement">
+                        android:textSize="15dp">
 
                     </TextView>
 
                 </RelativeLayout>
 
                 // Carbs
+
                 <RelativeLayout
                     android:layout_width="175dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight = "15sp"
-                    android:layout_marginLeft = "5sp">
+                    android:layout_marginLeft="5sp"
+                    android:layout_marginRight="15sp">
 
                     <ImageView
                         android:layout_width="180dp"
                         android:layout_height="50dp"
                         android:scaleType="fitXY"
-                        android:src = "@drawable/yellow_rectangle">
+                        android:src="@drawable/yellow_rectangle">
 
                     </ImageView>
 
@@ -338,34 +343,34 @@
                         android:src="@drawable/white_ellipse"></ImageView>
 
                     <TextView
+                        android:id="@+id/CarbText"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text = "300"
-                        android:id = "@+id/CarbText"
-                        android:textColor="@color/white"
-                        android:layout_marginLeft = "20sp"
-                        android:layout_marginTop = "15sp"></TextView>
+                        android:layout_marginLeft="20sp"
+                        android:layout_marginTop="15sp"
+                        android:text="300"
+                        android:textColor="@color/white"></TextView>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text = "Carbs"
+                        android:layout_marginLeft="70sp"
+                        android:layout_marginTop="5sp"
+                        android:text="Carbs"
                         android:textColor="@color/white"
-                        android:textSize = "20dp"
-                        android:layout_marginLeft = "70sp"
-                        android:layout_marginTop = "5sp">
+                        android:textSize="20dp">
 
                     </TextView>
 
                     <TextView
+                        android:id="@+id/carbMeasurement"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text = "Gram"
+                        android:layout_marginLeft="70sp"
+                        android:layout_marginTop="27sp"
+                        android:text="Gram"
                         android:textColor="@color/white"
-                        android:textSize = "15dp"
-                        android:layout_marginLeft = "70sp"
-                        android:layout_marginTop = "27sp"
-                        android:id = "@+id/carbMeasurement">
+                        android:textSize="15dp">
 
                     </TextView>
 
