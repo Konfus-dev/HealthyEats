@@ -1,4 +1,4 @@
-package com.healthyeats.controller;
+package com.healthyeats.view;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,18 +9,17 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.healthyeats.R;
-import com.healthyeats.view.CookbookViewModel;
+import com.example.healthyeats.R;
+import com.healthyeats.model.AccountViewModel;
 
-public class CookbookFragment extends Fragment {
-
-    private CookbookViewModel cookbookViewModel;
+public class AccountFragment extends Fragment {
+    private AccountViewModel accountViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        cookbookViewModel =
-                new ViewModelProvider(this).get(CookbookViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_cookbook, container, false);
+        accountViewModel =
+                new ViewModelProvider(this).get(AccountViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_account, container, false);
 
         return root;
     }

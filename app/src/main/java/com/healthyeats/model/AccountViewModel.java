@@ -1,4 +1,4 @@
-package com.healthyeats.view;
+package com.healthyeats.model;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
