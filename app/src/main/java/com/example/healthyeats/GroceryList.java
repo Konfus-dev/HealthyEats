@@ -1,6 +1,8 @@
 package com.example.healthyeats;
 import android.os.Bundle;
 import android.widget.LinearLayout;
+import android.widget.LinearLayout.LayoutParams;
+import android.widget.RelativeLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
@@ -11,6 +13,7 @@ import java.util.Collections;
 
 public class GroceryList extends AppCompatActivity {
     LinearLayout linearLayout;
+    LayoutParams layoutparams;
     private ArrayList<GroceryItem> groceryList;
 
     @Override
@@ -44,19 +47,44 @@ public class GroceryList extends AppCompatActivity {
 
             // Card on the left side
             if (i % 2 == 0) {
-                CardView left = new CardView();
-
+                CardView left = createCardView(0);
                 row.addView(left);
             // Card on the right side
             } else {
                 newRow = true;
-                CardView right = new CardView();
-
+                CardView right = createCardView(1);
                 row.addView(right);
             }
 
             addLineSeperator();
         }
+    }
+
+    private CardView createCardView(int lr) {
+        CardView myCard = new CardView(getApplicationContext());
+
+        // Equivalent of layout_gravity = center here
+        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.MATCH_PARENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+        params.addRule(RelativeLayout.CENTER_HORIZONTAL);
+        myCard.setLayoutParams(params);
+//        android:layout_width="0dp"
+//        android:layout_height="150dp"
+        myCard.setRadius(4);
+//        card_view:cardCornerRadius="4dp"
+//        android:layout_weight="1"
+//        myCard.wei
+        // Left Card
+        if (lr == 0) {
+//            myCard.mar
+//            android:layout_marginRight="15dp"
+//            android:layout_marginLeft="30dp"
+        // Right Card
+        } else if (lr == 1) {
+//            android:layout_marginLeft="15dp"
+//            android:layout_marginRight="30dp"
+        }
+
+        return myCard;
     }
 
     private void addLineSeperator() {
