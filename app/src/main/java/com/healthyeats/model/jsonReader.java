@@ -1,7 +1,5 @@
 package com.healthyeats.model;
 
-import com.healthyeats.controller.Recipe;
-
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
