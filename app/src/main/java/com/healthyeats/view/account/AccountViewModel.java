@@ -1,4 +1,4 @@
-package com.example.healthyeats.ui.account;
+package com.healthyeats.view.account;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;

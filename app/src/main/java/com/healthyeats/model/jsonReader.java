@@ -1,11 +1,11 @@
-package com.example.healthyeats;
+package com.healthyeats.model;
 
+import com.healthyeats.controller.Recipe;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -22,7 +22,7 @@ public class jsonReader
     {
         //JSON parser object to parse read file
         JSONParser jsonParser = new JSONParser();
-        try (FileReader reader= new FileReader("db-recipes.json"))
+        try (FileReader reader= new FileReader("../model/db-recipes.json"))
         {
             Object obj  = jsonParser.parse(reader);
             JSONObject recipeList =  (JSONObject) obj;
@@ -53,6 +53,11 @@ public class jsonReader
                recipeTemp.setServings(((Long)recipe.get("servings")).intValue());
                recipeTemp.setComments((String) recipe.get("comments"));
                recipeTemp.setCalories(((Long)recipe.get("calories")).intValue());
+
+               //Remove recipes that don't have calorie info
+               if (recipeTemp.getCalories() == 0) {
+                   continue;
+               }
                recipeTemp.setFat(((Long)recipe.get("fat")).intValue());
                recipeTemp.setSatFat(((Long)recipe.get("satfat")).intValue());
                recipeTemp.setCarbs(((Long)recipe.get("carbs")).intValue());

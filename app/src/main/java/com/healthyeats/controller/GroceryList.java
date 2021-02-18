@@ -1,4 +1,5 @@
-package com.example.healthyeats;
+package com.healthyeats.controller;
+
 import android.os.Bundle;
 import android.view.ContextThemeWrapper;
 import android.widget.ImageButton;
@@ -9,6 +10,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
+import com.example.healthyeats.R;
+//package com.healthyeats.controller;
 
 import java.util.ArrayList;
 import java.util.Collections;
