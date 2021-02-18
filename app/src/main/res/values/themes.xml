@@ -63,11 +63,25 @@
         <item name = "android:layout_marginLeft">10dp</item>
     </style>
 
-    // Background icon
+    // Background image view main
     <style name = "recipeBackgroundMain" parent = "Widget.AppCompat.ImageButton">
+        <item name = "android:layout_width">223dp</item>
+        <item name = "android:layout_height">299dp</item>
+        <item name = "android:adjustViewBounds">false</item>
+        <item name = "android:cropToPadding">false</item>
+        <item name = "android:padding">0dp</item>
+        <item name = "android:paddingLeft">0dp</item>
+        <item name = "android:paddingTop">0dp</item>
+        <item name = "android:paddingRight">0dp</item>
+        <item name = "android:scaleType">fitXY</item>
+        <item name = "android:src">@drawable/bluebackground_img</item>
+    </style>
+
+    // Heart icon
+    <style name = "recipeHeartIcon" parent = "Widget.AppCompat.ImageButton">
         <item name = "android:layout_width">46dp</item>
         <item name = "android:layout_height">40dp</item>
-        <iten name = "android:layout_marginLeft">170dp</iten>
+        <item name = "android:layout_marginLeft">170dp</item>
         <item name = "android:layout_marginTop">5dp</item>
         <item name = "android:background">#00FFFFFF</item>
         <item name = "android:scaleX">1.5</item>
@@ -75,15 +89,74 @@
         <item name = "android:src">@drawable/heartempty_icon</item>
     </style>
 
-    // Heart icon
-    <style name = "recipeHeartIcon" parent = "Widget.AppCompat.ImageButton">
-        <item name = "android:layout_width">46dp</item>
-        <item name = "android:layout_height">40dp</item>
-        <iten name = "android:layout_marginLeft">170dp</iten>
-        <item name = "android:layout_marginTop">5dp</item>
-        <item name = "android:background">#00FFFFFF</item>
-        <item name = "android:scaleX">1.5</item>
-        <item name = "android:scaleY">1.5</item>
-        <item name = "android:src">@drawable/heartempty_icon</item>
+    // Blue background in cookbook recipe card
+    <style name = "recipeBlueBackground" parent = "Widget.AppCompat.ImageButton">
+        <item name = "android:layout_width">223dp</item>
+        <item name = "android:layout_height">86dp</item>
+        <item name = "android:layout_marginTop">215dp</item>
+        <item name = "android:paddingLeft">0dp</item>
+        <item name = "android:paddingRight">0dp</item>
+        <item name = "android:paddingTop">0dp</item>
+        <item name = "android:paddingBottom">0dp</item>
+        <item name = "android:src">@android:drawable/screen_background_light</item>
+    </style>
+
+    // Price on cookbook recipe cards
+    <style name = "recipeCardPrice" parent = "TextAppearance.AppCompat">
+        <item name = "android:layout_width">wrap_content</item>
+        <item name = "android:layout_height">wrap_content</item>
+        <item name = "android:layout_marginLeft">190dp</item>
+        <item name = "android:layout_marginTop">220dp</item>
+        <item name = "android:layout_marginRight">5sp</item>
+        <item name = "android:text">$5</item>
+        <item name = "android:textSize">20dp</item>
+    </style>
+
+    // Dietary restriction on cookbook recipe card
+    <style name = "recipeCardDietary" parent = "TextAppearance.AppCompat">
+        <item name = "android:layout_width">wrap_content</item>
+        <item name = "android:layout_height">wrap_content</item>
+        <item name = "android:layout_marginLeft">145dp</item>
+        <item name = "android:layout_marginTop">260dp</item>
+        <item name = "android:text">Vegetarian</item>
+    </style>
+
+    // Easy Hard Medium difficulty on cookbook recipe card
+    <style name = "recipeCardDifficulty" parent = "Widget.AppCompat.ImageButton">
+        <item name = "android:layout_width">wrap_content</item>
+        <item name = "android:layout_height">wrap_content</item>
+        <item name = "android:layout_marginLeft">10dp</item>
+        <item name = "android:layout_marginTop">260dp</item>
+        <item name = "android:src">@drawable/difficultyeasy_icon</item>
+        <item name = "android:background">#FFFFFF</item>
+    </style>
+
+    // Name of recipe on card dietary for cookbook card
+    <style name = "recipeCardName" parent = "TextAppearance.AppCompat">
+        <item name = "android:layout_width">wrap_content</item>
+        <item name = "android:layout_height">wrap_content</item>
+        <item name = "android:layout_marginLeft">15sp</item>
+        <item name = "android:layout_marginTop">225dp</item>
+        <item name = "android:text">Lorem Ipsum</item>
+        <item name = "android:textSize">20dp</item>
+    </style>
+
+    // Fork food icon on cookbook recipe card
+    <style name = "recipeCardFork" parent = "Widget.AppCompat.ImageButton">
+        <item name = "android:layout_width">wrap_content</item>
+        <item name = "android:layout_height">wrap_content</item>
+        <item name = "android:layout_marginLeft">120dp</item>
+        <item name = "android:layout_marginTop">260dp</item>
+        <item name = "android:src">@drawable/forkgreen_icon</item>
+        <item name = "android:background">#FFFFFF</item>
+    </style>
+
+    // Name of recipe difficulty on card dietary for cookbook card
+    <style name = "recipeCardDifficultyText" parent = "TextAppearance.AppCompat">
+        <item name = "android:layout_width">wrap_content</item>
+        <item name = "android:layout_height">wrap_content</item>
+        <item name = "android:layout_marginLeft">35dp</item>
+        <item name = "android:layout_marginTop">260dp</item>
+        <item name = "android:text">Beginner</item>
     </style>
 </resources>

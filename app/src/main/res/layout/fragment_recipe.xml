@@ -16,37 +16,6 @@
             android:layout_height="wrap_content"
             android:id = "@+id/overallRecipe"
             android:orientation = "vertical">
-
-<!--            <RelativeLayout-->
-<!--                android:layout_width="175dp"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:layout_marginLeft = "15sp"-->
-<!--                android:layout_marginRight = "5sp">-->
-
-<!--                <ImageView-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="200dp"-->
-<!--                    android:background="#BCE0FD">-->
-
-<!--&gt;-->
-<!--                    <ImageButton-->
-<!--                        android:layout_width="100dp"-->
-<!--                        android:layout_height="100dp"-->
-<!--                        android:src="@drawable/exit_icon"-->
-<!--                        android:background="#BCE0FD">-->
-
-<!--                    </ImageButton>-->
-
-<!--                    <ImageButton-->
-<!--                        android:layout_width="100dp"-->
-<!--                        android:layout_height="100dp"-->
-<!--                        android:layout_marginLeft = "100sp"-->
-<!--                        android:src="@drawable/heartempty_icon"-->
-<!--                        android:background="#BCE0FD">-->
-
-<!--                    </ImageButton>-->
-<!--                </ImageView>-->
-<!--            </RelativeLayout>-->
             
             <RelativeLayout
                 android:layout_width="match_parent"

@@ -52,6 +52,7 @@
                 </ImageButton>
             </LinearLayout>
 
+            // Trending Title
             <TextView
                 android:id="@+id/TrendingHeader"
                 android:layout_width="wrap_content"
@@ -65,6 +66,7 @@
                 android:textSize="30sp"
                 android:textStyle="bold" />
 
+            // Trending Horizontal View
             <HorizontalScrollView
                 android:layout_width="wrap_content"
                 android:layout_height="298dp"
@@ -75,7 +77,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:id = "@+id/cookBookTrending">
 
                     <androidx.cardview.widget.CardView
                         android:layout_width="222dp"
@@ -84,78 +87,30 @@
                         android:layout_marginLeft="10dp">
 
                         <ImageButton
-                            android:layout_width="223dp"
-                            android:layout_height="299dp"
-                            android:adjustViewBounds="false"
-                            android:cropToPadding="false"
-                            android:padding="0dp"
-                            android:paddingLeft="0dp"
-                            android:paddingTop="0dp"
-                            android:paddingRight="0dp"
-                            android:scaleType="fitXY"
-                            android:src="@drawable/bluebackground_img" />
+                            style = "@style/recipeBackgroundMain" />
 
                         <ImageButton
-                            android:layout_width="46dp"
-                            android:layout_height="40dp"
-                            android:layout_marginLeft="170dp"
-                            android:layout_marginTop="5dp"
-                            android:background="#00FFFFFF"
-                            android:scaleX="1.5"
-                            android:scaleY="1.5"
-                            android:src="@drawable/heartempty_icon" />
+                            style = "@style/recipeHeartIcon" />
+
+                        <ImageView style="@style/recipeBlueBackground" />
+
+                        <TextView
+                            style = "@style/recipeCardPrice" />
+
+                        <TextView
+                            style = "@style/recipeCardDietary"/>
 
                         <ImageView
-                            android:layout_width="223dp"
-                            android:layout_height="86dp"
-                            android:layout_marginTop="215dp"
-                            android:src="@android:drawable/screen_background_light" />
+                            style = "@style/recipeCardDifficulty" />
 
                         <TextView
-                            android:id="@+id/TrendingPrice1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="190dp"
-                            android:layout_marginTop="220dp"
-                            android:layout_marginRight="5sp"
-                            android:text="$5"
-                            android:textSize="20dp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="145dp"
-                            android:layout_marginTop="260dp"
-                            android:text="Vegetarian" />
+                            style = "@style/recipeCardName" />
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="260dp"
-                            android:src="@drawable/difficultyeasy_icon" />
+                            style = "@style/recipeCardFork" />
 
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="15sp"
-                            android:layout_marginTop="225dp"
-                            android:text="Lorem Ipsum"
-                            android:textSize="20dp" />
-
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="120dp"
-                            android:layout_marginTop="260dp"
-                            android:src="@drawable/forkgreen_icon" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="35dp"
-                            android:layout_marginTop="260dp"
-                            android:text="Beginner" />
+                            style = "@style/recipeCardDifficultyText" />
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
@@ -165,83 +120,37 @@
                         android:layout_marginLeft="10dp">
 
                         <ImageButton
-                            android:layout_width="223dp"
-                            android:layout_height="299dp"
-                            android:adjustViewBounds="false"
-                            android:cropToPadding="false"
-                            android:padding="0dp"
-                            android:paddingLeft="0dp"
-                            android:paddingTop="0dp"
-                            android:paddingRight="0dp"
-                            android:scaleType="fitXY"
-                            android:src="@drawable/bluebackground_img" />
+                            style = "@style/recipeBackgroundMain" />
 
                         <ImageButton
-                            android:layout_width="46dp"
-                            android:layout_height="40dp"
-                            android:layout_marginLeft="170dp"
-                            android:layout_marginTop="5dp"
-                            android:background="#00FFFFFF"
-                            android:scaleX="1.5"
-                            android:scaleY="1.5"
-                            android:src="@drawable/heartempty_icon" />
+                            style = "@style/recipeHeartIcon" />
 
                         <ImageView
-                            android:layout_width="223dp"
-                            android:layout_height="86dp"
-                            android:layout_marginTop="215dp"
-                            android:src="@android:drawable/screen_background_light" />
+                            style = "@style/recipeBlueBackground" />
 
                         <TextView
-                            android:id="@+id/TrendingPrice1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="190dp"
-                            android:layout_marginTop="220dp"
-                            android:layout_marginRight="5sp"
-                            android:text="$5"
-                            android:textSize="20dp" />
+                            style = "@style/recipeCardPrice" />
 
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="145dp"
-                            android:layout_marginTop="260dp"
-                            android:text="Vegetarian" />
+                            style = "@style/recipeCardDietary"/>
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="260dp"
-                            android:src="@drawable/difficultyeasy_icon" />
+                            style = "@style/recipeCardDifficulty" />
 
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="15sp"
-                            android:layout_marginTop="225dp"
-                            android:text="Lorem Ipsum"
-                            android:textSize="20dp" />
+                            style = "@style/recipeCardName" />
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="120dp"
-                            android:layout_marginTop="260dp"
-                            android:src="@drawable/forkgreen_icon" />
+                            style = "@style/recipeCardFork" />
 
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="35dp"
-                            android:layout_marginTop="260dp"
-                            android:text="Beginner" />
+                            style = "@style/recipeCardDifficultyText" />
                     </androidx.cardview.widget.CardView>
 
                 </LinearLayout>
             </HorizontalScrollView>
 
+            // Our Favorites Title
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -249,11 +158,12 @@
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="30dp"
                 android:fontFamily="sans-serif"
-                android:text="Trending"
+                android:text="Our Favorites"
                 android:textColor="#707070"
                 android:textSize="30sp"
                 android:textStyle="bold" />
 
+            // Our Favorites Horizontal View
             <HorizontalScrollView
                 android:layout_width="wrap_content"
                 android:layout_height="298dp"
@@ -263,7 +173,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:id = "@+id/cookBookOurFavorites">
 
                     <androidx.cardview.widget.CardView
                         android:layout_width="222dp"
@@ -272,80 +183,62 @@
                         android:layout_marginLeft="10dp">
 
                         <ImageButton
-                            android:layout_width="223dp"
-                            android:layout_height="299dp"
-                            android:adjustViewBounds="false"
-                            android:cropToPadding="false"
-                            android:padding="0dp"
-                            android:paddingLeft="0dp"
-                            android:paddingTop="0dp"
-                            android:paddingRight="0dp"
-                            android:scaleType="fitXY"
-                            android:src="@drawable/bluebackground_img" />
+                            style = "@style/recipeBackgroundMain" />
 
                         <ImageButton
-                            android:layout_width="46dp"
-                            android:layout_height="40dp"
-                            android:layout_marginLeft="170dp"
-                            android:layout_marginTop="5dp"
-                            android:background="#00FFFFFF"
-                            android:scaleX="1.5"
-                            android:scaleY="1.5"
-                            android:src="@drawable/heartempty_icon" />
+                            style = "@style/recipeHeartIcon" />
 
                         <ImageView
-                            android:layout_width="223dp"
-                            android:layout_height="86dp"
-                            android:layout_marginTop="215dp"
-                            android:src="@android:drawable/screen_background_light" />
+                            style = "@style/recipeBlueBackground" />
 
                         <TextView
-                            android:id="@+id/TrendingPrice1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="190dp"
-                            android:layout_marginTop="220dp"
-                            android:layout_marginRight="5sp"
-                            android:text="$5"
-                            android:textSize="20dp" />
+                            style = "@style/recipeCardPrice" />
 
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="145dp"
-                            android:layout_marginTop="260dp"
-                            android:text="Vegetarian" />
+                            style = "@style/recipeCardDietary"/>
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="260dp"
-                            android:src="@drawable/difficultyeasy_icon" />
+                            style = "@style/recipeCardDifficulty" />
 
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="15sp"
-                            android:layout_marginTop="225dp"
-                            android:text="Lorem Ipsum"
-                            android:textSize="20dp" />
+                            style = "@style/recipeCardName" />
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="120dp"
-                            android:layout_marginTop="260dp"
-                            android:src="@drawable/forkgreen_icon" />
+                            style = "@style/recipeCardFork" />
 
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="35dp"
-                            android:layout_marginTop="260dp"
-                            android:text="Beginner" />
+                            style = "@style/recipeCardDifficultyText" />
                     </androidx.cardview.widget.CardView>
 
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            // You Should Try Title
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="sans-serif"
+                android:text="You Should Try"
+                android:textColor="#707070"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            // You Should Try Horizontal View
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="298dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:id = "@+id/cookBookYouShouldTry">
+
                     <androidx.cardview.widget.CardView
                         android:layout_width="222dp"
                         android:layout_height="298dp"
@@ -353,78 +246,94 @@
                         android:layout_marginLeft="10dp">
 
                         <ImageButton
-                            android:layout_width="223dp"
-                            android:layout_height="299dp"
-                            android:adjustViewBounds="false"
-                            android:cropToPadding="false"
-                            android:padding="0dp"
-                            android:paddingLeft="0dp"
-                            android:paddingTop="0dp"
-                            android:paddingRight="0dp"
-                            android:scaleType="fitXY"
-                            android:src="@drawable/bluebackground_img" />
+                            style = "@style/recipeBackgroundMain" />
 
                         <ImageButton
-                            android:layout_width="46dp"
-                            android:layout_height="40dp"
-                            android:layout_marginLeft="170dp"
-                            android:layout_marginTop="5dp"
-                            android:background="#00FFFFFF"
-                            android:scaleX="1.5"
-                            android:scaleY="1.5"
-                            android:src="@drawable/heartempty_icon" />
+                            style = "@style/recipeHeartIcon" />
 
                         <ImageView
-                            android:layout_width="223dp"
-                            android:layout_height="86dp"
-                            android:layout_marginTop="215dp"
-                            android:src="@android:drawable/screen_background_light" />
+                            style = "@style/recipeBlueBackground" />
 
                         <TextView
-                            android:id="@+id/TrendingPrice1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="190dp"
-                            android:layout_marginTop="220dp"
-                            android:layout_marginRight="5sp"
-                            android:text="$5"
-                            android:textSize="20dp" />
+                            style = "@style/recipeCardPrice" />
 
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="145dp"
-                            android:layout_marginTop="260dp"
-                            android:text="Vegetarian" />
+                            style = "@style/recipeCardDietary"/>
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginTop="260dp"
-                            android:src="@drawable/difficultyeasy_icon" />
+                            style = "@style/recipeCardDifficulty" />
 
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="15sp"
-                            android:layout_marginTop="225dp"
-                            android:text="Lorem Ipsum"
-                            android:textSize="20dp" />
+                            style = "@style/recipeCardName" />
 
                         <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="120dp"
-                            android:layout_marginTop="260dp"
-                            android:src="@drawable/forkgreen_icon" />
+                            style = "@style/recipeCardFork" />
 
                         <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="35dp"
-                            android:layout_marginTop="260dp"
-                            android:text="Beginner" />
+                            style = "@style/recipeCardDifficultyText" />
+                    </androidx.cardview.widget.CardView>
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            // Bang for Your Buck Title
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="sans-serif"
+                android:text="Bang for your Buck"
+                android:textColor="#707070"
+                android:textSize="30sp"
+                android:textStyle="bold" />
+
+            // Bang for Your Buck Horizontal View
+            <HorizontalScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="298dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:id = "@+id/cookBookBangForYourBuck">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="222dp"
+                        android:layout_height="298dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp">
+
+                        <ImageButton
+                            style = "@style/recipeBackgroundMain" />
+
+                        <ImageButton
+                            style = "@style/recipeHeartIcon" />
+
+                        <ImageView
+                            style = "@style/recipeBlueBackground" />
+
+                        <TextView
+                            style = "@style/recipeCardPrice" />
+
+                        <TextView
+                            style = "@style/recipeCardDietary"/>
+
+                        <ImageView
+                            style = "@style/recipeCardDifficulty" />
+
+                        <TextView
+                            style = "@style/recipeCardName" />
+
+                        <ImageView
+                            style = "@style/recipeCardFork" />
+
+                        <TextView
+                            style = "@style/recipeCardDifficultyText" />
                     </androidx.cardview.widget.CardView>
 
                 </LinearLayout>
