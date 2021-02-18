@@ -1,4 +1,6 @@
-package com.healthyeats.controller;
+package com.healthyeats.model;
+
+import com.healthyeats.controller.Recipe;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
