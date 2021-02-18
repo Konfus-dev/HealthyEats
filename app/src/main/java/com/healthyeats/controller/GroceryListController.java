@@ -9,15 +9,14 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
-import com.example.healthyeats.R;
+import com.healthyeats.R;
 import com.healthyeats.model.GroceryItem;
-//package com.healthyeats.controller;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
 
-public class GroceryList extends AppCompatActivity {
+public class GroceryListController extends AppCompatActivity {
     LinearLayout linearLayout;
     LayoutParams layoutparams;
     private ArrayList<GroceryItem> groceryList;
@@ -32,7 +31,7 @@ public class GroceryList extends AppCompatActivity {
     }
 
     //Constructor
-    public GroceryList() {}
+    public GroceryListController() {}
 
     // Dynamically add card views on to grocery page
     private void addGroceryItem() {
@@ -53,7 +52,7 @@ public class GroceryList extends AppCompatActivity {
 
             // Card on the left side
             if (i % 2 == 0) {
-                CardView left = new CardView(new ContextThemeWrapper(GroceryList.this, R.style.groceryListCardViewLeft), null, 0);
+                CardView left = new CardView(new ContextThemeWrapper(GroceryListController.this, R.style.groceryListCardViewLeft), null, 0);
                 row.addView(left);
                 LinearLayout inner = new LinearLayout(this);
                 inner.setLayoutParams(new LayoutParams(
@@ -65,7 +64,7 @@ public class GroceryList extends AppCompatActivity {
             // Card on the right side
             } else {
                 newRow = true;
-                CardView right = new CardView(new ContextThemeWrapper(GroceryList.this, R.style.groceryListCardViewRight), null, 0);;
+                CardView right = new CardView(new ContextThemeWrapper(GroceryListController.this, R.style.groceryListCardViewRight), null, 0);;
                 row.addView(right);
                 LinearLayout inner = new LinearLayout(this);
                 inner.setLayoutParams(new LayoutParams(
@@ -82,7 +81,7 @@ public class GroceryList extends AppCompatActivity {
 
     private void addGroceryContent(String name, double price, String image, LinearLayout parent) {
         // Creates grocery Image
-        ImageButton groceryImage = new ImageButton(new ContextThemeWrapper(GroceryList.this, R.style.groceryItemImage), null, 0);
+        ImageButton groceryImage = new ImageButton(new ContextThemeWrapper(GroceryListController.this, R.style.groceryItemImage), null, 0);
 
         // Sets name of grocery item
         TextView groceryName = new TextView(this);

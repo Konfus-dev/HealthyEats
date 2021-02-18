@@ -1,4 +1,4 @@
-package com.healthyeats.controller;
+package com.healthyeats.view;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -12,7 +12,7 @@ import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.healthyeats.R;
-import com.healthyeats.view.CookbookViewModel;
+import com.healthyeats.model.CookbookViewModel;
 
 import java.text.BreakIterator;
 

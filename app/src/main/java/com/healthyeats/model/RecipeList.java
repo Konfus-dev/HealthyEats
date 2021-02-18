@@ -1,8 +1,5 @@
 package com.healthyeats.model;
 
-import com.healthyeats.controller.Recipe;
-import com.healthyeats.model.jsonReader;
-
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Collections;
