@@ -1,6 +1,268 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/backgroundColor">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id = "@+id/overallRecipe"
+            android:orientation = "vertical">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="#BCE0FD">
+
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal">-->
+<!--                    <ImageButton-->
+<!--                        android:layout_width="100dp"-->
+<!--                        android:layout_height="100dp"-->
+<!--                        android:src="@drawable/exit_icon"-->
+<!--                        android:background="#BCE0FD">-->
+
+<!--                    </ImageButton>-->
+
+<!--                    <ImageButton-->
+<!--                        android:layout_width="100dp"-->
+<!--                        android:layout_height="100dp"-->
+<!--                        android:layout_marginLeft = "100sp"-->
+<!--                        android:src="@drawable/heartempty_icon"-->
+<!--                        android:background="#BCE0FD">-->
+
+<!--                    </ImageButton>-->
+<!--                </LinearLayout>-->
+            </ImageView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:orientation = "horizontal">
+
+                // Recipe Difficulty
+                <LinearLayout
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft = "15dp"
+                    android:layout_marginTop = "10dp"
+                    android:orientation = "vertical">
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/difficultyeasy_icon"
+                        android:id = "@+id/recipeDifficultyImage">
+
+                    </ImageView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity = "center"
+                        android:id = "@+id/recipeDifficultyText"
+                        android:text = "Easy">
+
+                    </TextView>
+
+                </LinearLayout>
+
+                // Servings
+                <LinearLayout
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft = "15dp"
+                    android:layout_marginTop = "10dp"
+                    android:orientation = "vertical">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft = "9sp">
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/circlegrey_icon">
+                        </ImageView>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity = "center"
+                            android:layout_marginLeft = "20dp"
+                            android:layout_marginTop = "15dp"
+                            android:id = "@+id/recipeServingSize"
+                            android:text = "2">
+                        </TextView>
+                    </RelativeLayout>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity = "center"
+                        android:text = "Serving">
+                    </TextView>
+
+                </LinearLayout>
+
+                // Cook Time
+                <LinearLayout
+                    android:layout_width="50dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft = "20dp"
+                    android:layout_marginTop = "10dp"
+                    android:orientation = "vertical">
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/clock_icon">
+
+                    </ImageView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity = "center"
+                        android:id = "@+id/recipeCookTime"
+                        android:text = "30 min">
+
+                    </TextView>
+
+                </LinearLayout>
+
+                // Restrictions
+                <LinearLayout
+                    android:layout_width="80dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft = "30dp"
+                    android:layout_marginTop = "10dp"
+                    android:orientation = "vertical">
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/forkgrey_icon"
+                        android:id = "@+id/recipeDietaryRestrictionImage">
+
+                    </ImageView>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity = "center"
+                        android:id = "@+id/recipeDietaryRestrictionText"
+                        android:text = "Vegetarian">
+
+                    </TextView>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            // Title and Price
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation = "horizontal">
+
+                <TextView
+                    android:layout_width="250dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft = "15sp"
+                    android:layout_marginTop = "15sp"
+                    android:textSize = "40sp"
+                    android:text = "Lorem \nIpsum"
+                    android:id = "@+id/recipeNameText">
+                </TextView>
+
+                <TextView
+                    android:layout_width="100dp"
+                    android:layout_height="120dp"
+                    android:layout_marginTop = "15sp"
+                    android:textSize = "70sp"
+                    android:text = "$8"
+                    android:id = "@+id/recipePriceText">
+
+                </TextView>
+            </LinearLayout>
+
+            // Description
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft = "20sp"
+                android:layout_marginRight = "20sp"
+                android:textSize = "15sp"
+                android:text = " simplest way to create a new line on TextView is android:text attribute. android:text attribute allow us to display text on android app. we can add a simple '\n' to TextView text where we want to start a new line. in this way we can create a multiline TextView ">
+            </TextView>
+
+            // Nutrition Information
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text = "Nutrition"
+                android:textSize = "35sp"
+                android:layout_marginLeft = "15sp"
+                android:id = "@+id/recipeDescriptionText">
+
+            </TextView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation = "horizontal">
+
+                <RelativeLayout
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft = "15sp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src = "@drawable/orange_rectangle">
+                    </ImageView>
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src = "@drawable/white_ellipse">
+                    </ImageView>
+
+                </RelativeLayout>
+
+
+                <RelativeLayout
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src = "@drawable/yellow_rectangle">
+
+                    </ImageView>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation = "horizontal">
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
