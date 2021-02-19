@@ -77,7 +77,15 @@ public class JsonReader
 
                }
                recipeTemp.setTags(tagsArray);
-               recipes.add(recipeTemp);   
+               int level = 1;
+               if(ingredientsArray.length > 5){
+                   level++;
+               }
+               if(tagsArray.length > 5){
+                   level ++;
+               }
+               recipeTemp.setDifficultyLevel(level);
+               recipes.add(recipeTemp);
             }
         return recipes;
     }
