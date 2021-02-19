@@ -78,10 +78,10 @@ public class JsonReader
                }
                recipeTemp.setTags(tagsArray);
                int level = 1;
-               if(ingredientsArray.length > 5){
+               if(ingredientsArray.length > 5) {
                    level++;
                }
-               if(tagsArray.length > 5){
+               if(recipeTemp.getInstructions().split("\r\n|\r|\n").length > 4){
                    level ++;
                }
                recipeTemp.setDifficultyLevel(level);
