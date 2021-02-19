@@ -17,6 +17,7 @@ import java.util.Collections;
 
 
 public class GroceryListController extends AppCompatActivity {
+
     LinearLayout linearLayout;
     LayoutParams layoutparams;
     private ArrayList<GroceryItem> groceryList;

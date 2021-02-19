@@ -1,4 +1,4 @@
-package com.healthyeats.view;
+package com.healthyeats.controller;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,17 +10,17 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.healthyeats.R;
-import com.healthyeats.model.GrocerylistViewModel;
+import com.healthyeats.model.HomeViewModel;
 
-public class GrocerylistFragment extends Fragment {
+public class HomeFragment extends Fragment {
 
-    private GrocerylistViewModel groceryListViewModel;
+    private HomeViewModel homeViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        groceryListViewModel =
-                new ViewModelProvider(this).get(GrocerylistViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_grocerylist, container, false);
+        homeViewModel =
+                new ViewModelProvider(this).get(HomeViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_home, container, false);
 
         return root;
     }

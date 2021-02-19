@@ -7,21 +7,21 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.healthyeats.view.HomeFragment"
+        android:name="com.healthyeats.controller.HomeFragment"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_cookbook"
-        android:name="com.healthyeats.view.CookbookFragment"
+        android:name="com.healthyeats.controller.CookbookFragment"
         tools:layout="@layout/fragment_cookbook" />
 
     <fragment
         android:id="@+id/navigation_grocerylist"
-        android:name="com.healthyeats.view.GrocerylistFragment"
+        android:name="com.healthyeats.controller.GrocerylistFragment"
         tools:layout="@layout/fragment_grocerylist" />
 
     <fragment
         android:id="@+id/navigation_account"
-        android:name="com.healthyeats.view.AccountFragment"
+        android:name="com.healthyeats.controller.AccountFragment"
         tools:layout="@layout/fragment_account" />
 </navigation>
