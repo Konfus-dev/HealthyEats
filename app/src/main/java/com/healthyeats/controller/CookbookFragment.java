@@ -177,13 +177,49 @@ public class CookbookFragment extends Fragment {
         return recipeName;
     }
 
+    // Creates the Fork Icon
+    public ImageButton fork() {
+        //Image Button Creation - Height | Width
+        ImageButton fork = new ImageButton(new ContextThemeWrapper(getActivity(), R.style.recipeCardFork), null, 0);
+        fork.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+
+        // Margin
+        ViewGroup.MarginLayoutParams layoutParams =
+                (ViewGroup.MarginLayoutParams) fork.getLayoutParams();
+        layoutParams.setMargins(toDP(120), toDP(260), 0, 0);
+        fork.requestLayout();
+
+        // Set Scale
+        fork.setScaleType(ImageView.ScaleType.FIT_XY);
+
+        return fork;
+    }
+
+    // Set the Difficulty of Recipe
+    public TextView setRecipeDifficulty(String level) {
+        //Text View Creation - Height | Width
+        TextView difficulty = new TextView(getActivity());
+        difficulty.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+
+        // Margin
+        ViewGroup.MarginLayoutParams layoutParams =
+                (ViewGroup.MarginLayoutParams) difficulty.getLayoutParams();
+        layoutParams.setMargins(toDP(35), toDP(260), 0, 0);
+        difficulty.requestLayout();
+
+        //Set Text
+        difficulty.setText(level);
+
+        return difficulty;
+    }
+
+
     public void createFullCard(String name, int price, String difficulty, LinearLayout parent) {
         CardView card = createCard();
         parent.addView(card);
 
         ImageButton background = new ImageButton(new ContextThemeWrapper(getActivity(), R.style.recipeBackgroundMain), null, 0);
 
-        ImageView forkImage = new ImageView(new ContextThemeWrapper(getActivity(), R.style.recipeCardFork), null, 0);
         TextView recipeDifficultyText = new TextView(getActivity());
         recipeDifficultyText.setTextAppearance(getActivity(), R.style.recipeCardDifficultyText);
 
@@ -194,20 +230,17 @@ public class CookbookFragment extends Fragment {
         card.addView(setDietary());
         card.addView(setDifficultyImg(difficulty));
         card.addView(setRecipeName(name));
-//        card.addView(forkImage);
-//        card.addView(recipeDifficultyText);
-
-        System.out.println("CARD COUNT " + card.getChildCount());
+        card.addView(fork());
+        card.addView(setRecipeDifficulty(difficulty));
     }
 
     // Create 5 card views for trending section in cookbook
     public void populateTrending(View root, ViewGroup container) {
         trending = root.findViewById(R.id.cookBookTrending);
-        System.out.println(trending);
 
         for (int i = 0; i < 5; i++) {
             createFullCard("Test", 230, "Intermediate", trending);
-//            System.out.println("YOLO " + i + "\n");
+
         }
     }
 
