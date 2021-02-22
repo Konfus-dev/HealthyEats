@@ -6,13 +6,13 @@ import com.healthyeats.controller.SearchAndFilter;
 
 import java.util.ArrayList;
 
-public static class RecipeLoader {
-
-    private ArrayList<Recipe> recipeList;
-    private JsonReader json;
-
-    public static void loadRecipeToRecipeView(int recipeId) {
-        SearchAndFilter recipeList = new SearchAndFilter();
-        recipeList.searchById();
-    }
-}
+//public static class RecipeLoader {
+//
+//    private ArrayList<Recipe> recipeList;
+//    private JsonReader json;
+//
+//    public static void loadRecipeToRecipeView(int recipeId) {
+//        SearchAndFilter recipeList = new SearchAndFilter();
+//        recipeList.searchById();
+//    }
+//}
