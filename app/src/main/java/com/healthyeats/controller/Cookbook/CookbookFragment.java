@@ -1,27 +1,23 @@
-package com.healthyeats.controller;
+package com.healthyeats.controller.Cookbook;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.healthyeats.R;
-import com.healthyeats.model.CookbookViewModel;
+import com.healthyeats.model.ViewModels.CookbookViewModel;
 
 public class CookbookFragment extends Fragment {
 

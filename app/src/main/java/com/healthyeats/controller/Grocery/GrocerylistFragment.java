@@ -1,18 +1,16 @@
-package com.healthyeats.controller;
+package com.healthyeats.controller.Grocery;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.healthyeats.R;
-import com.healthyeats.model.CookbookViewModel;
-import com.healthyeats.model.GrocerylistViewModel;
+import com.healthyeats.model.ViewModels.GrocerylistViewModel;
 
 public class GrocerylistFragment extends Fragment {
 
