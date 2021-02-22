@@ -42,13 +42,21 @@ public class CookbookFragment extends Fragment {
         return root;
     }
 
-    public void createFullCard(String name, double price, String difficulty, LinearLayout parent) {
-        CardView card = new CardView(new ContextThemeWrapper(getContext(), R.style.recipeCardView), null, 0);
+    public CardView createCard() {
+        CardView card = new CardView(new ContextThemeWrapper(getContext(), R.style.recipeCardView));
         card.setLayoutParams(new CardView.LayoutParams(
-                CardView.LayoutParams.WRAP_CONTENT, 90));
-        card.setMinimumHeight(90);
-        card.setBackgroundColor(Color.parseColor("red"));
+                625, CardView.LayoutParams.MATCH_PARENT));
+        ViewGroup.MarginLayoutParams layoutParams =
+                (ViewGroup.MarginLayoutParams) card.getLayoutParams();
+        layoutParams.setMargins(25, 0, 10, 10);
+        card.requestLayout();
+        return card;
+    }
+
+    public void createFullCard(String name, double price, String difficulty, LinearLayout parent) {
+        CardView card = createCard();
         parent.addView(card);
+
         System.out.println("CARD HEIGHT " + card.getHeight());
         System.out.println("COUNT " + parent.getChildCount());
 
@@ -66,7 +74,7 @@ public class CookbookFragment extends Fragment {
         TextView recipeDifficultyText = new TextView(getActivity());
         recipeDifficultyText.setTextAppearance(getActivity(), R.style.recipeCardDifficultyText);
 
-//        card.addView(background);
+        card.addView(background);
 //        card.addView(heart);
 //        card.addView(blueBackground);
 //        card.addView(recipePrice);

@@ -80,6 +80,7 @@
                     android:orientation="horizontal"
                     android:id = "@+id/cookBookTrending">
 
+
                 </LinearLayout>
             </HorizontalScrollView>
 
