@@ -6,6 +6,7 @@ import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -42,8 +43,14 @@ public class CookbookFragment extends Fragment {
     }
 
     public void createFullCard(String name, double price, String difficulty, LinearLayout parent) {
-        CardView card = new CardView(new ContextThemeWrapper(getActivity(), R.style.recipeCardView), null, 0);
+        CardView card = new CardView(new ContextThemeWrapper(getContext(), R.style.recipeCardView), null, 0);
+        card.setLayoutParams(new CardView.LayoutParams(
+                CardView.LayoutParams.WRAP_CONTENT, 90));
+        card.setMinimumHeight(90);
+        card.setBackgroundColor(Color.parseColor("red"));
         parent.addView(card);
+        System.out.println("CARD HEIGHT " + card.getHeight());
+        System.out.println("COUNT " + parent.getChildCount());
 
         ImageButton background = new ImageButton(new ContextThemeWrapper(getActivity(), R.style.recipeBackgroundMain), null, 0);
         ImageButton heart = new ImageButton(new ContextThemeWrapper(getActivity(), R.style.recipeHeartIcon), null, 0);
@@ -68,19 +75,14 @@ public class CookbookFragment extends Fragment {
 //        card.addView(recipeName);
 //        card.addView(forkImage);
 //        card.addView(recipeDifficultyText);
+
+        System.out.println("CARD COUNT " + card.getChildCount());
     }
 
     // Create 5 card views for trending section in cookbook
     public void populateTrending(View root, ViewGroup container) {
         trending = root.findViewById(R.id.cookBookTrending);
         System.out.println(trending);
-
-        CardView card = new CardView(getActivity());
-        CardView.LayoutParams layoutParams = (CardView.LayoutParams)
-                card.getLayoutParams();
-        layoutParams.height = 298;
-        layoutParams.width = 222;
-        trending.addView(card);
 
         for (int i = 0; i < 5; i++) {
             createFullCard("Test", 5.00, "Beginner", trending);
