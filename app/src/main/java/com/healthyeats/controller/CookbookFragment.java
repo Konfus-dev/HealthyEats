@@ -134,11 +134,47 @@ public class CookbookFragment extends Fragment {
         return dietary;
     }
 
-    public ImageButton setDifficultyImg(String difficulty) {
+    // Sets the difficulty image view on cookbook page
+    public ImageView setDifficultyImg(String difficulty) {
         //Image Button Creation - Height | Width
         ImageView difficultyImg = new ImageView(new ContextThemeWrapper(getActivity(), R.style.recipeCardDifficulty), null, 0);
+        difficultyImg.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
 
+        // Margin
+        ViewGroup.MarginLayoutParams layoutParams =
+                (ViewGroup.MarginLayoutParams) difficultyImg.getLayoutParams();
+        layoutParams.setMargins(toDP(10), toDP(260), 0, 0);
+        difficultyImg.requestLayout();
 
+        //Set difficulty
+        if (difficulty.equals("Beginner")) {
+            difficultyImg.setImageDrawable(getResources().getDrawable(R.drawable.difficultyeasy_icon));
+        } else if (difficulty.equals("Intermediate")) {
+            difficultyImg.setImageDrawable(getResources().getDrawable(R.drawable.difficultymed_icon));
+        } else if (difficulty.equals("Hard")) {
+            difficultyImg.setImageDrawable(getResources().getDrawable(R.drawable.difficultyhard_icon));
+        }
+
+        return difficultyImg;
+    }
+
+    // Set the Name of the Recipe
+    public TextView setRecipeName(String name) {
+        //Text View Creation - Height | Width
+        TextView recipeName = new TextView(getActivity());
+        recipeName.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+
+        // Margin
+        ViewGroup.MarginLayoutParams layoutParams =
+                (ViewGroup.MarginLayoutParams) recipeName.getLayoutParams();
+        layoutParams.setMargins(toDP(15), toDP(225), 0, 0);
+        recipeName.requestLayout();
+
+        //Set Text and Change Size
+        recipeName.setTextSize(toDP(5));
+        recipeName.setText(name);
+
+        return recipeName;
     }
 
     public void createFullCard(String name, int price, String difficulty, LinearLayout parent) {
@@ -147,8 +183,6 @@ public class CookbookFragment extends Fragment {
 
         ImageButton background = new ImageButton(new ContextThemeWrapper(getActivity(), R.style.recipeBackgroundMain), null, 0);
 
-        TextView recipeName = new TextView(getActivity());
-        recipeName.setTextAppearance(getActivity(), R.style.recipeCardName);
         ImageView forkImage = new ImageView(new ContextThemeWrapper(getActivity(), R.style.recipeCardFork), null, 0);
         TextView recipeDifficultyText = new TextView(getActivity());
         recipeDifficultyText.setTextAppearance(getActivity(), R.style.recipeCardDifficultyText);
@@ -158,8 +192,8 @@ public class CookbookFragment extends Fragment {
         card.addView(setWhiteFooter());
         card.addView(setRecipePrice(price));
         card.addView(setDietary());
-//        card.addView(difficultyImg);
-//        card.addView(recipeName);
+        card.addView(setDifficultyImg(difficulty));
+        card.addView(setRecipeName(name));
 //        card.addView(forkImage);
 //        card.addView(recipeDifficultyText);
 
@@ -172,7 +206,7 @@ public class CookbookFragment extends Fragment {
         System.out.println(trending);
 
         for (int i = 0; i < 5; i++) {
-            createFullCard("Test", 230, "Beginner", trending);
+            createFullCard("Test", 230, "Intermediate", trending);
 //            System.out.println("YOLO " + i + "\n");
         }
     }
