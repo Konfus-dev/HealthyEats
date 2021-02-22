@@ -1,22 +1,37 @@
-package com.healthyeats.model;
+package com.healthyeats.controller;
+
+import com.healthyeats.model.Database.JsonReader;
+import com.healthyeats.model.Recipe.Recipe;
 
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class RecipeList {
+public class SearchAndFilter {
+
     private ArrayList<Recipe> recipeList;
-    private jsonReader json;
+    private JsonReader json;
 
 
-    public RecipeList() {
+    public SearchAndFilter() {
         //Import from JSON class
-        json = new jsonReader();
+        json = new JsonReader();
         recipeList = json.recipieParser();
     }
 
+    //Search by recipe id (don't ask about how quickly...)
+    public Recipe searchById(int id) {
+        ArrayList<Recipe> searchResults = new ArrayList<Recipe>();
+        for (int i = 0; i < this.recipeList.size(); i++) {
+            if (Integer.parseInt(recipeList.get(i).getId()) == id) {
+                return recipeList.get(i);
+            }
+        }
+        return null;
+    }
+
     //Search by recipe name (don't ask about how quickly...)
-    public ArrayList<Recipe> searchByName(String userInput) {
+    public ArrayList<Recipe> getResultsByName(String userInput) {
         int count = 0;
         ArrayList<Recipe> searchResults = new ArrayList<Recipe>();
         for (int i = 0; i < this.recipeList.size(); i++) {
@@ -32,7 +47,7 @@ public class RecipeList {
     }
 
     //Search by tags
-    public ArrayList<Recipe> searchByTag(String userInput) {
+    public ArrayList<Recipe> getResultsByTag(String userInput) {
         int count = 0;
         ArrayList<Recipe> searchResults = new ArrayList<Recipe>();
         for (int i = 0; i < this.recipeList.size(); i++) {
@@ -66,9 +81,5 @@ public class RecipeList {
     private void sortCalHighLow() {
         Collections.sort(this.recipeList, Recipe.recipeHighLowCalComparator);
     }
-
-
-
-
 
 }

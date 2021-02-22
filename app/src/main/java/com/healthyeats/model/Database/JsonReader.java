@@ -1,4 +1,6 @@
-package com.healthyeats.model;
+package com.healthyeats.model.Database;
+
+import com.healthyeats.model.Recipe.Recipe;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -9,9 +11,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class jsonReader
+public class JsonReader
 {
-    public jsonReader(){
+    public JsonReader(){
     
     }
     
@@ -20,7 +22,7 @@ public class jsonReader
     {
         //JSON parser object to parse read file
         JSONParser jsonParser = new JSONParser();
-        try (FileReader reader= new FileReader("../model/db-recipes.json"))
+        try (FileReader reader= new FileReader("db-recipes.json"))
         {
             Object obj  = jsonParser.parse(reader);
             JSONObject recipeList =  (JSONObject) obj;

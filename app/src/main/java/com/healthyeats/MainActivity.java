@@ -9,7 +9,7 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.healthyeats.model.GroceryItem;
+import com.healthyeats.model.Grocery.GroceryItem;
 
 import java.util.List;
 
