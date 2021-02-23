@@ -1,5 +1,6 @@
 package com.healthyeats.model;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 
 public class Recipe implements Comparable<Recipe> {
@@ -20,7 +21,8 @@ public class Recipe implements Comparable<Recipe> {
     private int protein;
     private int difficultyLevel;
     private String instructions;
-    private String[] ingredients;
+    //private String[] ingredients;
+    private GroceryItem[] ingredients;
     private String[] tags;
 
     //Empty Constructor
@@ -171,11 +173,11 @@ public class Recipe implements Comparable<Recipe> {
         this.instructions = instructions;
     }
 
-    public String[] getIngredients() {
+    public GroceryItem[] getIngredients() {
         return ingredients;
     }
 
-    public void setIngredients(String[] ingredients) {
+    public void setIngredients(GroceryItem[] ingredients) {
         this.ingredients = ingredients;
     }
 
@@ -208,6 +210,13 @@ public class Recipe implements Comparable<Recipe> {
         }
     };
 
+    //Export ingredients to the grocery list
+    public void exportToGroceryList(ArrayList<GroceryItem> list) {
+        for (int i = 0; i < ingredients.length; i++) {
+            list.add(ingredients[i]);
+        }
+
+    }
     //Comparator to sort array by item name alphabetically from Z-A
     public static final Comparator<Recipe> recipeZAComparator = new Comparator<Recipe>() {
         @Override

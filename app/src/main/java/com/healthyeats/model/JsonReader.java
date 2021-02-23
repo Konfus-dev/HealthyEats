@@ -64,10 +64,11 @@ public class JsonReader
                recipeTemp.setProtein(((Long)recipe.get("protein")).intValue());
                recipeTemp.setInstructions((String) recipe.get("instructions"));
                JSONArray ingredients = (JSONArray) recipe.get("ingredients");
-               String[] ingredientsArray = new String[ingredients.size()];
+               GroceryItem[] ingredientsArray = new GroceryItem[ingredients.size()];
+               //String[] ingredientsArray = new String[ingredients.size()];
                for(int j = 0; j < ingredientsArray.length; j++){
-                   ingredientsArray[j] = (String)ingredients.get(j);
-
+                   //ingredientsArray[j] = (String)ingredients.get(j);
+                   ingredientsArray[j] = (GroceryItem)ingredients.get(j);
                }
                recipeTemp.setIngredients(ingredientsArray);
                JSONArray tags = (JSONArray) recipe.get("tags");
