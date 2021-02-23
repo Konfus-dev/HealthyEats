@@ -22,9 +22,7 @@ public class JsonReader
         //JSON parser object to parse read file
         JSONParser jsonParser = new JSONParser();
 
-        try (FileReader reader = new FileReader("com/healthyeats/model/json/db-recipes.json"))
-
-        {
+        try (FileReader reader = new FileReader("app/src/main/java/com/healthyeats/model/json/db-recipes.json")) {
             Object obj  = jsonParser.parse(reader);
             JSONObject recipeList =  (JSONObject) obj;
             ArrayList<Recipe> recipes =  parseRecipiesObject(recipeList);
