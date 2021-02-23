@@ -1,18 +1,14 @@
 package com.healthyeats.controller.Recipe;
 
-import com.healthyeats.model.Database.JsonReader;
-import com.healthyeats.model.Recipe.Recipe;
-import com.healthyeats.controller.SearchAndFilter;
+import com.healthyeats.controller.SearchAndFilter.SearchAndFilter;
+import com.healthyeats.model.recipe.Recipe;
 
-import java.util.ArrayList;
+public class RecipeLoader {
 
-//public static class RecipeLoader {
-//
-//    private ArrayList<Recipe> recipeList;
-//    private JsonReader json;
-//
-//    public static void loadRecipeToRecipeView(int recipeId) {
-//        SearchAndFilter recipeList = new SearchAndFilter();
-//        recipeList.searchById();
-//    }
-//}
+    public static void loadRecipeToRecipeView(int recipeId) {
+        SearchAndFilter search = new SearchAndFilter();
+        Recipe retrievedRecipe = search.searchById(recipeId);
+
+        //populate recipe view with retrieved recipe
+    }
+}

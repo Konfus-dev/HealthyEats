@@ -1,16 +1,16 @@
-package com.healthyeats.model.ViewModels;
+package com.healthyeats.model.viewModels;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class AccountViewModel extends ViewModel {
+public class GrocerylistViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public AccountViewModel() {
+    public GrocerylistViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is dashboard fragment");
+        mText.setValue("This is home fragment");
     }
 
     public LiveData<String> getText() {

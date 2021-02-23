@@ -17,9 +17,9 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.healthyeats.R;
-import com.healthyeats.controller.SearchAndFilter;
-import com.healthyeats.model.Recipe.Recipe;
-import com.healthyeats.model.ViewModels.CookbookViewModel;
+
+import com.healthyeats.controller.SearchAndFilter.SearchAndFilter;
+import com.healthyeats.model.viewModels.CookbookViewModel;
 
 import java.util.Random;
 
@@ -246,7 +246,7 @@ public class CookbookFragment extends Fragment {
         SearchAndFilter obj = new SearchAndFilter();
 
         for (int i = 0; i < 5; i++) {
-            Recipe rec = obj.searchById(generateRandomRecipe());
+            com.healthyeats.model.recipe.Recipe rec = obj.searchById(generateRandomRecipe());
             createFullCard(rec.getName(), 0, "Intermediate", trending);
 
         }

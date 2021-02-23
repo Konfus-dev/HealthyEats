@@ -1,7 +1,7 @@
-package com.healthyeats.controller;
+package com.healthyeats.controller.SearchAndFilter;
 
-import com.healthyeats.model.Database.JsonReader;
-import com.healthyeats.model.Recipe.Recipe;
+import com.healthyeats.model.json.JsonReader;
+import com.healthyeats.model.recipe.Recipe;
 
 import java.util.Arrays;
 import java.util.ArrayList;
@@ -16,7 +16,8 @@ public class SearchAndFilter {
     public SearchAndFilter() {
         //Import from JSON class
         json = new JsonReader();
-        recipeList = json.recipieParser();
+
+        recipeList = json.recipeParser();
         System.out.println("IS THSI RUNNING");
     }
 

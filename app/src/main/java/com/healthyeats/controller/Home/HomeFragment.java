@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.healthyeats.R;
-import com.healthyeats.model.ViewModels.HomeViewModel;
+import com.healthyeats.model.viewModels.HomeViewModel;
 
 public class HomeFragment extends Fragment {
 

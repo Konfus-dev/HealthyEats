@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.healthyeats.R;
-import com.healthyeats.model.ViewModels.GrocerylistViewModel;
+import com.healthyeats.model.viewModels.GrocerylistViewModel;
 
 public class GrocerylistFragment extends Fragment {
 
