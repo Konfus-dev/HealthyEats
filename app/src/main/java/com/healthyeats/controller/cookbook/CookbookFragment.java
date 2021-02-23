@@ -1,4 +1,4 @@
-package com.healthyeats.controller.Cookbook;
+package com.healthyeats.controller.cookbook;
 
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -17,7 +17,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.healthyeats.R;
-import com.healthyeats.model.ViewModels.CookbookViewModel;
+import com.healthyeats.model.viewModels.CookbookViewModel;
 
 public class CookbookFragment extends Fragment {
 

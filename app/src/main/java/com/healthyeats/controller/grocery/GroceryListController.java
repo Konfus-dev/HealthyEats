@@ -1,4 +1,4 @@
-package com.healthyeats.controller.Grocery;
+package com.healthyeats.controller.grocery;
 
 import android.os.Bundle;
 import android.view.ContextThemeWrapper;
@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import com.healthyeats.R;
-import com.healthyeats.model.Grocery.GroceryItem;
+import com.healthyeats.model.grocery.GroceryItem;
 
 import java.util.ArrayList;
 import java.util.Collections;

@@ -1,7 +1,7 @@
-package com.healthyeats.controller.Recipe;
+package com.healthyeats.controller.recipe;
 
-import com.healthyeats.controller.SearchAndFilter.SearchAndFilter;
-import com.healthyeats.model.Recipe.Recipe;
+import com.healthyeats.controller.searchAndFilter.SearchAndFilter;
+import com.healthyeats.model.recipe.Recipe;
 
 public class RecipeLoader {
 

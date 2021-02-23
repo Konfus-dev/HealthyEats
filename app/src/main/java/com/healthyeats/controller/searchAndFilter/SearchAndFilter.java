@@ -1,7 +1,7 @@
-package com.healthyeats.controller.SearchAndFilter;
+package com.healthyeats.controller.searchAndFilter;
 
-import com.healthyeats.model.Database.JsonReader;
-import com.healthyeats.model.Recipe.Recipe;
+import com.healthyeats.model.json.JsonReader;
+import com.healthyeats.model.recipe.Recipe;
 
 import java.util.Arrays;
 import java.util.ArrayList;
