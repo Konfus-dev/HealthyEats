@@ -16,7 +16,7 @@ public class SearchAndFilter {
     public SearchAndFilter() {
         //Import from JSON class
         json = new JsonReader();
-        recipeList = json.recipieParser();
+        recipeList = json.recipeParser();
     }
 
     //Search by recipe id (don't ask about how quickly...)

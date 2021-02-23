@@ -16,13 +16,12 @@ public class JsonReader
     public JsonReader(){
     
     }
-    
-    @SuppressWarnings("unchecked")
-    public ArrayList<Recipe> recipieParser()
+
+    public ArrayList<Recipe> recipeParser()
     {
         //JSON parser object to parse read file
         JSONParser jsonParser = new JSONParser();
-        try (FileReader reader = new FileReader("db-recipes.json"))
+        try (FileReader reader = new FileReader("com/healthyeats/model/json/db-recipes.json"))
         {
             Object obj  = jsonParser.parse(reader);
             JSONObject recipeList =  (JSONObject) obj;
