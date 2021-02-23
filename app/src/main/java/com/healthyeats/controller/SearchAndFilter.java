@@ -17,6 +17,12 @@ public class SearchAndFilter {
         //Import from JSON class
         json = new JsonReader();
         recipeList = json.recipieParser();
+        System.out.println("IS THSI RUNNING");
+    }
+
+    // Returns number of recipes
+    public int getNumRecipes() {
+        return recipeList.size();
     }
 
     //Search by recipe id (don't ask about how quickly...)
