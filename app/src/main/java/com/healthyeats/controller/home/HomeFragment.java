@@ -1,4 +1,4 @@
-package com.healthyeats.view;
+package com.healthyeats.controller.home;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.healthyeats.R;
-import com.healthyeats.model.HomeViewModel;
+import com.healthyeats.model.viewModels.HomeViewModel;
 
 public class HomeFragment extends Fragment {
 

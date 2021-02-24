@@ -79,13 +79,13 @@
 
     // Heart icon
     <style name = "recipeHeartIcon" parent = "Widget.AppCompat.ImageButton">
-        <item name = "android:layout_width">46dp</item>
-        <item name = "android:layout_height">40dp</item>
-        <item name = "android:layout_marginLeft">170dp</item>
-        <item name = "android:layout_marginTop">5dp</item>
+<!--        <item name = "android:layout_width">46dp</item>-->
+<!--        <item name = "android:layout_height">40dp</item>-->
+<!--        <item name = "android:layout_marginLeft">170dp</item>-->
+<!--        <item name = "android:layout_marginTop">5dp</item>-->
         <item name = "android:background">#00FFFFFF</item>
-        <item name = "android:scaleX">1.5</item>
-        <item name = "android:scaleY">1.5</item>
+<!--        <item name = "android:scaleX">1.5</item>-->
+<!--        <item name = "android:scaleY">1.5</item>-->
         <item name = "android:src">@drawable/heartempty_icon</item>
     </style>
 

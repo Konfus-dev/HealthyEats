@@ -1,4 +1,4 @@
-package com.healthyeats.model;
+package com.healthyeats.model.viewModels;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -10,7 +10,7 @@ public class CookbookViewModel extends ViewModel {
 
     public CookbookViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is cookbook fragment");
+        mText.setValue("This is dashboard fragment");
     }
 
     public LiveData<String> getText() {
