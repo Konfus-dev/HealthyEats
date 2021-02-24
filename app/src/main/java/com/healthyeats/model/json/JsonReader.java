@@ -1,11 +1,13 @@
 package com.healthyeats.model.json;
 
+import com.healthyeats.model.grocery.GroceryItem;
 import com.healthyeats.model.recipe.Recipe;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -67,10 +69,11 @@ public class JsonReader
                recipeTemp.setProtein(((Long)recipe.get("protein")).intValue());
                recipeTemp.setInstructions((String) recipe.get("instructions"));
                JSONArray ingredients = (JSONArray) recipe.get("ingredients");
-               String[] ingredientsArray = new String[ingredients.size()];
+               GroceryItem[] ingredientsArray = new GroceryItem[ingredients.size()];
+               //String[] ingredientsArray = new String[ingredients.size()];
                for(int j = 0; j < ingredientsArray.length; j++){
-                   ingredientsArray[j] = (String)ingredients.get(j);
-
+                   //ingredientsArray[j] = (String)ingredients.get(j);
+                   ingredientsArray[j] = (GroceryItem)ingredients.get(j);
                }
                recipeTemp.setIngredients(ingredientsArray);
                JSONArray tags = (JSONArray) recipe.get("tags");
@@ -80,7 +83,15 @@ public class JsonReader
 
                }
                recipeTemp.setTags(tagsArray);
-               recipes.add(recipeTemp);   
+               int level = 1;
+               if(ingredientsArray.length > 5) {
+                   level++;
+               }
+               if(recipeTemp.getInstructions().split("\r\n|\r|\n").length > 4){
+                   level ++;
+               }
+               recipeTemp.setDifficultyLevel(level);
+               recipes.add(recipeTemp);
             }
         return recipes;
     }

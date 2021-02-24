@@ -3,8 +3,8 @@ package com.healthyeats.controller.searchAndFilter;
 import com.healthyeats.model.json.JsonReader;
 import com.healthyeats.model.recipe.Recipe;
 
-import java.util.Arrays;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 
 public class SearchAndFilter {
@@ -16,9 +16,7 @@ public class SearchAndFilter {
     public SearchAndFilter() {
         //Import from JSON class
         json = new JsonReader();
-
         recipeList = json.recipeParser();
-        System.out.println("IS THSI RUNNING");
     }
 
     // Returns number of recipes
