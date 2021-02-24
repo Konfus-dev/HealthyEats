@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.healthyeats.controller.Home.HomeFragment"
+        android:name="com.healthyeats.controller.home.HomeFragment"
         tools:layout="@layout/fragment_home" />
 
     <fragment
@@ -17,11 +17,11 @@
 
     <fragment
         android:id="@+id/navigation_grocerylist"
-        android:name="com.healthyeats.controller.Grocery.GrocerylistFragment"
+        android:name="com.healthyeats.controller.grocery.GrocerylistFragment"
         tools:layout="@layout/fragment_grocerylist" />
 
     <fragment
         android:id="@+id/navigation_account"
-        android:name="com.healthyeats.controller.Account.AccountFragment"
+        android:name="com.healthyeats.controller.account.AccountFragment"
         tools:layout="@layout/fragment_account" />
 </navigation>

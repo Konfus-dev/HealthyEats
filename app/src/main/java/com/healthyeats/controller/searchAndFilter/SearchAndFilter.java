@@ -1,4 +1,4 @@
-package com.healthyeats.controller.SearchAndFilter;
+package com.healthyeats.controller.searchAndFilter;
 
 import com.healthyeats.model.json.JsonReader;
 import com.healthyeats.model.recipe.Recipe;
