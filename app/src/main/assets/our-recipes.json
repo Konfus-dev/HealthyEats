@@ -1,6 +1,6 @@
 [
   {
-    "id": 2,
+    "id": 1,
     "name": "Baked Shrimp Scampi",
     "source": "Ina Garten: Barefoot Contessa Back to Basics",
     "prepTime": 0,
@@ -109,6 +109,7 @@
     "id": 2,
     "name": "Strawberries Romanov (La Madeleine copycat)",
     "source": "http:\/\/cookeatshare.com\/recipes\/la-madeleine-s-strawberries-romanov-318025",
+    "difficultyLevel" : 2,
     "prepTime": 0,
     "waitTime": 0,
     "cookTime": 0,
