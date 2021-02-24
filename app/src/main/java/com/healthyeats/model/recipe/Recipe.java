@@ -1,5 +1,7 @@
 package com.healthyeats.model.recipe;
 
+import com.healthyeats.model.grocery.GroceryItem;
+
 import java.util.ArrayList;
 import java.util.Comparator;
 

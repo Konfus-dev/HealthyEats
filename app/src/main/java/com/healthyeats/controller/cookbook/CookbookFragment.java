@@ -1,4 +1,4 @@
-package com.healthyeats.controller.Cookbook;
+package com.healthyeats.controller.cookbook;
 
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -17,8 +17,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.healthyeats.R;
-
-import com.healthyeats.controller.SearchAndFilter.SearchAndFilter;
+import com.healthyeats.controller.searchAndFilter.SearchAndFilter;
 import com.healthyeats.model.viewModels.CookbookViewModel;
 
 import java.util.Random;
