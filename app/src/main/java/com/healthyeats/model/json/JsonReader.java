@@ -36,7 +36,7 @@ public class JsonReader
         Gson gson = new Gson();
         Type listRecipeType = new TypeToken<List<Recipe>>() { }.getType();
         List<Recipe> recipes = gson.fromJson(jsonFileString, listRecipeType);
-        System.out.println("------------------------" + recipes.get(0).toString() + "------------------------");
+        //System.out.println("------------------------" + recipes.get(0).toString() + "------------------------");
         return recipes;
     }
 }
