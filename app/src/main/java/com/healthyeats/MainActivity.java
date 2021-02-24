@@ -1,6 +1,5 @@
 package com.healthyeats;
 
-import android.content.res.AssetManager;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,8 +12,6 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.healthyeats.model.grocery.GroceryItem;
 import com.healthyeats.model.json.JsonReader;
 import com.healthyeats.model.recipe.Recipe;
-
-import java.io.InputStream;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
