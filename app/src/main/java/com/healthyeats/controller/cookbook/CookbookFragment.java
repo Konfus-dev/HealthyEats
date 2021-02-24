@@ -18,7 +18,6 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.healthyeats.MainActivity;
 import com.healthyeats.R;
-import com.healthyeats.controller.searchAndFilter.SearchAndFilter;
 import com.healthyeats.model.recipe.Recipe;
 import com.healthyeats.model.viewModels.CookbookViewModel;
 
@@ -239,7 +238,7 @@ public class CookbookFragment extends Fragment {
 
     public Recipe generateRandomRecipe() {
         Random rand = new Random();
-        return MainActivity.getRecipeList().get(rand.nextInt(MainActivity.getRecipeList().size()));
+        return MainActivity.getLoadedRecipes().get(rand.nextInt(MainActivity.getLoadedRecipes().size()));
     }
 
     // Create 5 card views for trending section in cookbook
