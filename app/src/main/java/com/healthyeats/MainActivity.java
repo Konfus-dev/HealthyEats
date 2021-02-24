@@ -11,11 +11,17 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.healthyeats.model.grocery.GroceryItem;
+import com.healthyeats.model.json.JsonReader;
+import com.healthyeats.model.recipe.Recipe;
 
 import java.io.InputStream;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
+
+    private static List<Recipe> recipeList;
+    private static List<GroceryItem> groceryList;
+    private JsonReader json;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,10 +38,17 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navView, navController);
 
 
+        //Import from JSON class
+        json = new JsonReader();
+        recipeList = json.recipeParser(getApplicationContext());
+
     }
 
-    private List<GroceryItem> groceryList;
-//    Creating hard coded data on grocery list (Just to test)
+    public static List<Recipe> getRecipeList() {
+        return recipeList;
+    }
+
+    //Creating hard coded data on grocery list (Just to test)
     private void prepareGroceryList() {
         GroceryItem item = new GroceryItem("Cheese", "cheese.jpg", 5, 4.99);
         groceryList.add(item);

@@ -1,4 +1,4 @@
-package com.healthyeats.controller.Account;
+package com.healthyeats.controller.account;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;

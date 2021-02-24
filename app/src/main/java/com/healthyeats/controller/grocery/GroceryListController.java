@@ -1,4 +1,4 @@
-package com.healthyeats.controller.Grocery;
+package com.healthyeats.controller.grocery;
 
 import android.os.Bundle;
 import android.view.ContextThemeWrapper;

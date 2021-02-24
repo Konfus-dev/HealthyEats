@@ -10,7 +10,7 @@ public class GroceryItem implements Comparable<GroceryItem>{
     private boolean checkOff;
     private boolean display;
 
-//    Grocery Item Constructor
+    //Grocery Item Constructor
     public GroceryItem(String name, String image, int quantity, double price) {
         this.name = name;
         this.image = image;
@@ -20,12 +20,7 @@ public class GroceryItem implements Comparable<GroceryItem>{
         this.display = true;
     }
 
-
-//  Empty Constructor
-    public GroceryItem() {}
-
-
-//    Getters
+    //Getters
     public String getName() {
         return name;
     }
@@ -50,7 +45,7 @@ public class GroceryItem implements Comparable<GroceryItem>{
         return display;
     }
 
-//    Setters
+    //Setters
     public void setName(String name) {
         this.name = name;
     }

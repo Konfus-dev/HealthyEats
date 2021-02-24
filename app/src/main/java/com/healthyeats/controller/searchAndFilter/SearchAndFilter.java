@@ -1,33 +1,20 @@
-package com.healthyeats.controller.SearchAndFilter;
+package com.healthyeats.controller.searchAndFilter;
 
-import com.healthyeats.model.json.JsonReader;
+import com.healthyeats.MainActivity;
 import com.healthyeats.model.recipe.Recipe;
 
-import java.util.Arrays;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
+import java.util.List;
 
 public class SearchAndFilter {
 
-    private ArrayList<Recipe> recipeList;
-    private JsonReader json;
-
-
-    public SearchAndFilter() {
-        //Import from JSON class
-        recipeList = json.recipeParser();
-        System.out.println("IS THSI RUNNING");
-    }
-
-    // Returns number of recipes
-    public int getNumRecipes() {
-        return recipeList.size();
-    }
-
     //Search by recipe id (don't ask about how quickly...)
     public Recipe searchById(int id) {
-        ArrayList<Recipe> searchResults = new ArrayList<Recipe>();
-        for (int i = 0; i < this.recipeList.size(); i++) {
+        List<Recipe> recipeList = MainActivity.getRecipeList();
+        List<Recipe> searchResults = new ArrayList<Recipe>();
+        for (int i = 0; i < recipeList.size(); i++) {
             if (Integer.parseInt(recipeList.get(i).getId()) == id) {
                 return recipeList.get(i);
             }
@@ -36,10 +23,11 @@ public class SearchAndFilter {
     }
 
     //Search by recipe name (don't ask about how quickly...)
-    public ArrayList<Recipe> getResultsByName(String userInput) {
+    public List<Recipe> getResultsByName(String userInput) {
         int count = 0;
-        ArrayList<Recipe> searchResults = new ArrayList<Recipe>();
-        for (int i = 0; i < this.recipeList.size(); i++) {
+        List<Recipe> recipeList = MainActivity.getRecipeList();
+        List<Recipe> searchResults = new ArrayList<Recipe>();
+        for (int i = 0; i < recipeList.size(); i++) {
             if (recipeList.get(i).getName().contains(userInput)) {
                 searchResults.add(recipeList.get(i));
                 count++;
@@ -52,10 +40,11 @@ public class SearchAndFilter {
     }
 
     //Search by tags
-    public ArrayList<Recipe> getResultsByTag(String userInput) {
+    public List<Recipe> getResultsByTag(String userInput) {
         int count = 0;
-        ArrayList<Recipe> searchResults = new ArrayList<Recipe>();
-        for (int i = 0; i < this.recipeList.size(); i++) {
+        List<Recipe> recipeList = MainActivity.getRecipeList();
+        List<Recipe> searchResults = new ArrayList<Recipe>();
+        for (int i = 0; i < recipeList.size(); i++) {
             if (Arrays.asList(recipeList.get(i).getTags()).contains(userInput)) {
                 searchResults.add(recipeList.get(i));
                 count++;
@@ -69,22 +58,22 @@ public class SearchAndFilter {
 
     //Sort by A-Z
     private void sortAZ() {
-        Collections.sort(this.recipeList, Recipe.recipeAZComparator);
+        Collections.sort(MainActivity.getRecipeList(), Recipe.recipeAZComparator);
     }
 
     //Sort by Z-A
     private void sortZA() {
-        Collections.sort(this.recipeList, Recipe.recipeZAComparator);
+        Collections.sort(MainActivity.getRecipeList(), Recipe.recipeZAComparator);
     }
 
     //Sort by calories low-high
     private void sortCalLowHigh() {
-        Collections.sort(this.recipeList, Recipe.recipeLowHighCalComparator);
+        Collections.sort(MainActivity.getRecipeList(), Recipe.recipeLowHighCalComparator);
     }
 
     //Sort by calories high-low
     private void sortCalHighLow() {
-        Collections.sort(this.recipeList, Recipe.recipeHighLowCalComparator);
+        Collections.sort(MainActivity.getRecipeList(), Recipe.recipeHighLowCalComparator);
     }
 
 }

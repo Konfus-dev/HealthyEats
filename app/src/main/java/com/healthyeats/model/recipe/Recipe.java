@@ -1,5 +1,8 @@
 package com.healthyeats.model.recipe;
 
+import com.healthyeats.model.grocery.GroceryItem;
+
+import java.util.ArrayList;
 import java.util.Comparator;
 
 public class Recipe implements Comparable<Recipe> {
@@ -18,13 +21,10 @@ public class Recipe implements Comparable<Recipe> {
     private int fiber;
     private int sugar;
     private int protein;
+    private int difficultyLevel;
     private String instructions;
     private String[] ingredients;
     private String[] tags;
-
-    //Empty Constructor
-    public Recipe() {
-    }
 
     //Getters and setters organized by variable
     public String getId() {
@@ -33,6 +33,21 @@ public class Recipe implements Comparable<Recipe> {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    /**
+     * get difficulty level gives user difficulty level of recipe.
+     * 1 - Beginner
+     * 2 - Intermediate
+     * 3 - Hard
+     * @return
+     */
+    public int getDifficultyLevel(){
+        return difficultyLevel;
+    }
+
+    public void setDifficultyLevel(int difficultyLevel){
+        this.difficultyLevel = difficultyLevel;
     }
 
     public String getName() {
@@ -192,6 +207,13 @@ public class Recipe implements Comparable<Recipe> {
         }
     };
 
+    //Export ingredients to the grocery list
+/*    public void exportToGroceryList(ArrayList<GroceryItem> list) {
+        for (int i = 0; i < ingredients.length; i++) {
+            list.add(ingredients[i]);
+        }
+    }*/
+
     //Comparator to sort array by item name alphabetically from Z-A
     public static final Comparator<Recipe> recipeZAComparator = new Comparator<Recipe>() {
         @Override
@@ -240,5 +262,30 @@ public class Recipe implements Comparable<Recipe> {
             }
         }
     };
+
+    public String toString() {
+        String recipe =
+         id + "\n" +
+         name + "\n" +
+         source + "\n" +
+         prepTime + "\n" +
+         waitTime + "\n" +
+         cookTime + "\n" +
+         servings + "\n" +
+         comments + "\n" +
+         calories + "\n" +
+         fat + "\n" +
+         satFat + "\n" +
+         carbs + "\n" +
+         fiber + "\n" +
+         sugar + "\n" +
+         protein + "\n" +
+         difficultyLevel + "\n" +
+         instructions + "\n" +
+         ingredients + "\n" +
+         tags;
+
+        return recipe;
+    }
 
 }

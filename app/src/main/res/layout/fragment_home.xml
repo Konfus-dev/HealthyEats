@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
 
     android:background="@color/backgroundColor"
-    tools:context="com.healthyeats.controller.Home.HomeFragment">
+    tools:context="com.healthyeats.controller.home.HomeFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -70,8 +70,7 @@
                 android:fontFamily="sans-serif"
                 android:text="This Weeks Meals"
                 android:textColor="#707070"
-                android:textSize="30sp"
-                android:textStyle="bold" />
+                android:textSize="30sp"/>
 
             <HorizontalScrollView
                 android:id="@+id/ThisWeeksMealsScrollView"
@@ -448,8 +447,7 @@
                 android:fontFamily="sans-serif"
                 android:text="Your Favorites"
                 android:textColor="#707070"
-                android:textSize="30sp"
-                android:textStyle="bold" />
+                android:textSize="30sp" />
 
             <HorizontalScrollView
                 android:id="@+id/FavoritesScrollView"
@@ -826,8 +824,7 @@
                 android:fontFamily="sans-serif"
                 android:text="Budget"
                 android:textColor="#707070"
-                android:textSize="30sp"
-                android:textStyle="bold" />
+                android:textSize="30sp"/>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/BudgetCardView"
@@ -952,8 +949,7 @@
                 android:fontFamily="sans-serif"
                 android:text="Healthy Tips"
                 android:textColor="#707070"
-                android:textSize="30sp"
-                android:textStyle="bold" />
+                android:textSize="30sp" />
 
             <HorizontalScrollView
                 android:id="@+id/HealthyTipsScrollView"
