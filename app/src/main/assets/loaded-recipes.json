@@ -3,6 +3,7 @@
     "id": 1,
     "name": "Baked Shrimp Scampi",
     "source": "Ina Garten: Barefoot Contessa Back to Basics",
+    "difficultyLevel" : 2,
     "prepTime": 0,
     "waitTime": 0,
     "cookTime": 0,
@@ -15,7 +16,6 @@
     "fiber": 4,
     "sugar": 6,
     "protein": 200,
-    "difficultyLevel" : 2,
     "instructions": "Preheat the oven to 425 degrees F.\r\n\r\nDefrost shrimp by putting in cold water, drain. Place the shrimp in serving dish (9x13 or 2 quart casserole) and toss gently with the olive oil, wine, 1 teaspoons salt, and 1 teaspoon pepper. Allow to sit at room temperature while you make the butter and garlic mixture.\r\n\r\nIn a small bowl, mash the softened butter with the garlic, shallots, parsley, rosemary, red pepper flakes, lemon zest, lemon juice, egg yolk, panko, 1\/2 teaspoon salt, and 1\/4 teaspoon of pepper until combined.\r\n\r\nSpread the butter mixture evenly over the shrimp. Bake for 10 to 12 minutes until hot and bubbly. If you like the top browned, place under a broiler for 1-3 minutes (keep an eye on it). Serve with lemon wedges and French bread.\r\n\r\nNote: if using fresh shrimp, arrange for presentation. Starting from the outer edge of a 14-inch oval gratin dish, arrange the shrimp in a single layer cut side down with the tails curling up and towards the center of the dish. Pour the remaining marinade over the shrimp. ",
     "ingredients": [
       {

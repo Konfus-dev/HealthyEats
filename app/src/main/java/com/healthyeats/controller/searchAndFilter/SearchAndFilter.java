@@ -12,7 +12,7 @@ public class SearchAndFilter {
 
     //Search by recipe id (don't ask about how quickly...)
     public Recipe searchById(int id) {
-        List<Recipe> recipeList = MainActivity.getRecipeList();
+        List<Recipe> recipeList = MainActivity.getLoadedRecipes();
         List<Recipe> searchResults = new ArrayList<Recipe>();
         for (int i = 0; i < recipeList.size(); i++) {
             if (recipeList.get(i).getId() == id) {
@@ -25,7 +25,7 @@ public class SearchAndFilter {
     //Search by recipe name (don't ask about how quickly...)
     public List<Recipe> getResultsByName(String userInput) {
         int count = 0;
-        List<Recipe> recipeList = MainActivity.getRecipeList();
+        List<Recipe> recipeList = MainActivity.getLoadedRecipes();
         List<Recipe> searchResults = new ArrayList<Recipe>();
         for (int i = 0; i < recipeList.size(); i++) {
             if (recipeList.get(i).getName().contains(userInput)) {
@@ -42,7 +42,7 @@ public class SearchAndFilter {
     //Search by tags
     public List<Recipe> getResultsByTag(String userInput) {
         int count = 0;
-        List<Recipe> recipeList = MainActivity.getRecipeList();
+        List<Recipe> recipeList = MainActivity.getLoadedRecipes();
         List<Recipe> searchResults = new ArrayList<Recipe>();
         for (int i = 0; i < recipeList.size(); i++) {
             if (Arrays.asList(recipeList.get(i).getTags()).contains(userInput)) {
@@ -58,22 +58,22 @@ public class SearchAndFilter {
 
     //Sort by A-Z
     private void sortAZ() {
-        Collections.sort(MainActivity.getRecipeList(), Recipe.recipeAZComparator);
+        Collections.sort(MainActivity.getLoadedRecipes(), Recipe.recipeAZComparator);
     }
 
     //Sort by Z-A
     private void sortZA() {
-        Collections.sort(MainActivity.getRecipeList(), Recipe.recipeZAComparator);
+        Collections.sort(MainActivity.getLoadedRecipes(), Recipe.recipeZAComparator);
     }
 
     //Sort by calories low-high
     private void sortCalLowHigh() {
-        Collections.sort(MainActivity.getRecipeList(), Recipe.recipeLowHighCalComparator);
+        Collections.sort(MainActivity.getLoadedRecipes(), Recipe.recipeLowHighCalComparator);
     }
 
     //Sort by calories high-low
     private void sortCalHighLow() {
-        Collections.sort(MainActivity.getRecipeList(), Recipe.recipeHighLowCalComparator);
+        Collections.sort(MainActivity.getLoadedRecipes(), Recipe.recipeHighLowCalComparator);
     }
 
 }
