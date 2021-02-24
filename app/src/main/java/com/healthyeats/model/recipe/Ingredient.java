@@ -1,5 +1,7 @@
 package com.healthyeats.model.recipe;
 
+import com.healthyeats.model.grocery.GroceryItem;
+
 public class Ingredient {
 
     private String name;
@@ -14,6 +16,14 @@ public class Ingredient {
 
     public String getAmount() { return amount; }
     public void setAmount(String amount) { this.amount = amount; }
+
+    public GroceryItem toGroceryItem() {
+        GroceryItem item = new GroceryItem();
+        item.setName(name);
+        //ToDo: Finish conversion between ingredients to groceryItems.
+
+        return item;
+    }
 
     public String toString() {
         String ingredientString =
