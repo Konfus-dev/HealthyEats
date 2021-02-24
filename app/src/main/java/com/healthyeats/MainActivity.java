@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
     }
     //Todo: make update affect jsonFile
     public static void updateLoadedRecipes(List<Recipe> update) { loadedRecipes = update; }
-    
+
     public static List<Recipe> getFavoriteRecipes() { return favoriteRecipes; }
     //Todo: make update affect jsonFile
     public static void updateFavoriteRecipes(List<Recipe> update) { favoriteRecipes = update; }
