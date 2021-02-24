@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 
 public class Recipe implements Comparable<Recipe> {
-    private String id;
+    private int id;
     private String name;
     private String source;
     private int prepTime;
@@ -27,11 +27,11 @@ public class Recipe implements Comparable<Recipe> {
     private String[] tags;
 
     //Getters and setters organized by variable
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
