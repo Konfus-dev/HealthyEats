@@ -3,6 +3,7 @@ package com.healthyeats.model.recipe;
 import java.util.Comparator;
 
 public class Recipe implements Comparable<Recipe> {
+
     private int id;
     private String name;
     private String source;
@@ -236,28 +237,32 @@ public class Recipe implements Comparable<Recipe> {
     };
 
     public String toString() {
-        String recipe =
-         id + "\n" +
-         name + "\n" +
-         source + "\n" +
-         prepTime + "\n" +
-         waitTime + "\n" +
-         cookTime + "\n" +
-         servings + "\n" +
-         comments + "\n" +
-         calories + "\n" +
-         fat + "\n" +
-         satFat + "\n" +
-         carbs + "\n" +
-         fiber + "\n" +
-         sugar + "\n" +
-         protein + "\n" +
-         difficultyLevel + "\n" +
-         instructions + "\n" +
-         ingredients + "\n" +
-         tags;
+        String recipeString =
+             "------------------------------\n" +
+             id + "\n" +
+             name + "\n" +
+             source + "\n" +
+             prepTime + "\n" +
+             waitTime + "\n" +
+             cookTime + "\n" +
+             servings + "\n" +
+             comments + "\n" +
+             calories + "\n" +
+             fat + "\n" +
+             satFat + "\n" +
+             carbs + "\n" +
+             fiber + "\n" +
+             sugar + "\n" +
+             protein + "\n" +
+             difficultyLevel + "\n" +
+             instructions + "\n";
 
-        return recipe;
+        for (Ingredient i : ingredients)
+            recipeString += i.toString() + "\n";
+
+        recipeString += tags + "------------------------------\n";
+
+        return recipeString;
     }
 
 }
