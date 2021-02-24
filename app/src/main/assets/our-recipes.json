@@ -1,100 +1,100 @@
-{
-  "recipe1": {
-    "id": "1",
+[
+  {
+    "id": 1,
     "name": "Baked Shrimp Scampi",
-    "imglocation": null,
     "source": "Ina Garten: Barefoot Contessa Back to Basics",
-    "preptime": 0,
-    "waittime": 0,
-    "cooktime": 0,
+    "prepTime": 0,
+    "waitTime": 0,
+    "cookTime": 0,
     "servings": 6,
     "comments": "Modified by reducing butter and salt.  Substituted frozen shrimp instead of fresh 12-15 count (butterflied, tails on).",
     "calories": 2565,
     "fat": 159,
-    "satfat": 67,
+    "satFat": 67,
     "carbs": 76,
     "fiber": 4,
     "sugar": 6,
     "protein": 200,
+    "difficultyLevel" : 2,
     "instructions": "Preheat the oven to 425 degrees F.\r\n\r\nDefrost shrimp by putting in cold water, drain. Place the shrimp in serving dish (9x13 or 2 quart casserole) and toss gently with the olive oil, wine, 1 teaspoons salt, and 1 teaspoon pepper. Allow to sit at room temperature while you make the butter and garlic mixture.\r\n\r\nIn a small bowl, mash the softened butter with the garlic, shallots, parsley, rosemary, red pepper flakes, lemon zest, lemon juice, egg yolk, panko, 1\/2 teaspoon salt, and 1\/4 teaspoon of pepper until combined.\r\n\r\nSpread the butter mixture evenly over the shrimp. Bake for 10 to 12 minutes until hot and bubbly. If you like the top browned, place under a broiler for 1-3 minutes (keep an eye on it). Serve with lemon wedges and French bread.\r\n\r\nNote: if using fresh shrimp, arrange for presentation. Starting from the outer edge of a 14-inch oval gratin dish, arrange the shrimp in a single layer cut side down with the tails curling up and towards the center of the dish. Pour the remaining marinade over the shrimp. ",
     "ingredients": [
       {
-        "size": "2/3",
+        "amount": "2/3",
         "measurement": "cups",
         "name": "panko"
       },
       {
-        "size": "1/4",
+        "amount": "1/4",
         "measurement": "teaspoons",
         "name": "red pepper flakes"
       },
       {
-        "size": "1/2",
+        "amount": "1/2",
         "measurement": "",
         "name": "Lemon"
       },
       {
-        "size": "1",
+        "amount": "1",
         "measurement": "large",
         "name": "egg yolk"
       },
       {
-        "size": "1",
+        "amount": "1",
         "measurement": "teaspoon",
         "name": "rosemary"
       },
       {
-        "size": "3",
+        "amount": "3",
         "measurement": "tablespoon",
         "name": "parsley"
       },
       {
-        "size": "4",
+        "amount": "4",
         "measurement": "clove",
         "name": "garlic"
       },
       {
-        "size": "1/4",
+        "amount": "1/4",
         "measurement": "cups",
         "name": "shallots"
       },
       {
-        "size": "8",
+        "amount": "8",
         "measurement": "tablespoon",
         "name": "unsalted butter"
       },
       {
-        "size": "8",
+        "amount": "8",
         "measurement": "tablespoon",
         "name": "unsalted butter"
       },
       {
-        "size": "2",
+        "amount": "2",
         "measurement": "tablespoon",
         "name": "dry white wine"
       },
       {
-        "size": null,
+        "amount": null,
         "measurement": null,
         "name": "black pepper"
       },
       {
-        "size": null,
+        "amount": null,
         "measurement": null,
         "name": "kosher salt"
       },
       {
-        "size": "",
+        "amount": "",
         "measurement": "",
         "name": "kosher salt"
       },
       {
-        "size": "3",
+        "amount": "3",
         "measurement": "tablespoon",
         "name": "olive oil"
       },
       {
-        "size": "2",
+        "amount": "2",
         "measurement": "pound",
         "name": "frozen shrimp"
       }
@@ -105,18 +105,19 @@
       "main"
     ]
   },
-  "recipe2": {
-    "id": "2",
+  {
+    "id": 2,
     "name": "Strawberries Romanov (La Madeleine copycat)",
     "source": "http:\/\/cookeatshare.com\/recipes\/la-madeleine-s-strawberries-romanov-318025",
-    "preptime": 0,
-    "waittime": 0,
-    "cooktime": 0,
+    "difficultyLevel" : 2,
+    "prepTime": 0,
+    "waitTime": 0,
+    "cookTime": 0,
     "servings": 4,
     "comments": "",
     "calories": 0,
     "fat": 0,
-    "satfat": 0,
+    "satFat": 0,
     "carbs": 0,
     "fiber": 0,
     "sugar": 0,
@@ -124,22 +125,22 @@
     "instructions": "Wash strawberries and cut the tops off. Let strawberries drain.  Mix together heavy whipping cream, powdered sugar, and the brandy. Beat with a mixer till this becomes thick.  Place strawberries into glasses and spoon over the sauce.\r\n",
     "ingredients": [
       {
-        "size": "2",
+        "amount": "2",
         "measurement": "tablespoon",
         "name": "powdered sugar"
       },
       {
-        "size": "1/2",
+        "amount": "1/2",
         "measurement": "pint",
         "name": "whipping cream"
       },
       {
-        "size": "1",
+        "amount": "1",
         "measurement": "pound",
         "name": "strawberries"
       },
       {
-        "size": "4",
+        "amount": "4",
         "measurement": "tablespoon",
         "name": "brandy"
       }
@@ -152,4 +153,4 @@
       "untried"
     ]
   }
-}
+]

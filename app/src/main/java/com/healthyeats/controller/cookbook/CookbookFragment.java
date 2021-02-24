@@ -39,6 +39,9 @@ public class CookbookFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_cookbook, container, false);
 
         populateTrending(root, container);
+        populateFavs(root, container);
+        populateYouShouldTry(root, container);
+        populateBangForBuck(root, container);
 
         return root;
     }
@@ -242,7 +245,6 @@ public class CookbookFragment extends Fragment {
     // Create 5 card views for trending section in cookbook
     public void populateTrending(View root, ViewGroup container) {
         trending = root.findViewById(R.id.cookBookTrending);
-        SearchAndFilter obj = new SearchAndFilter();
 
         for (int i = 0; i < 5; i++) {
             com.healthyeats.model.recipe.Recipe rec = generateRandomRecipe();
@@ -251,18 +253,33 @@ public class CookbookFragment extends Fragment {
     }
 
     // Create 5 card views for our favorites section in cookbook
-    public void populateFavs() {
-        ourFavs = getView().findViewById(R.id.cookBookOurFavorites);
+    public void populateFavs(View root, ViewGroup container) {
+        ourFavs = root.findViewById(R.id.cookBookOurFavorites);
+
+        for (int i = 0; i < 5; i++) {
+            com.healthyeats.model.recipe.Recipe rec = generateRandomRecipe();
+            createFullCard(rec.getName(), 0, "Intermediate", ourFavs);
+        }
         
     }
 
     // Create 5 card views for you should try section in cookbook
-    public void populateYouShouldTry() {
-        youShouldTry = getView().findViewById(R.id.cookBookYouShouldTry);
+    public void populateYouShouldTry(View root, ViewGroup container) {
+        youShouldTry = root.findViewById(R.id.cookBookYouShouldTry);
+
+        for (int i = 0; i < 5; i++) {
+            com.healthyeats.model.recipe.Recipe rec = generateRandomRecipe();
+            createFullCard(rec.getName(), 0, "Hard", youShouldTry);
+        }
     }
     
     // Create 5 card views for bang for buck section in cookbook
-    public void populateBangForBuck() {
-        bangForBuck = getView().findViewById(R.id.cookBookBangForYourBuck);
+    public void populateBangForBuck(View root, ViewGroup container) {
+        bangForBuck = root.findViewById(R.id.cookBookBangForYourBuck);
+
+        for (int i = 0; i < 5; i++) {
+            com.healthyeats.model.recipe.Recipe rec = generateRandomRecipe();
+            createFullCard(rec.getName(), 0, "Intermediate", bangForBuck);
+        }
     }
 }

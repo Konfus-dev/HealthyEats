@@ -18,7 +18,7 @@ public class JsonReader
     private String loadJSONFromAsset(Context context) {
         String json = null;
         try {
-            InputStream is = context.getAssets().open("temp-recipes.json");
+            InputStream is = context.getAssets().open("our-recipes.json");
             int size = is.available();
             byte[] buffer = new byte[size];
             is.read(buffer);
@@ -36,7 +36,7 @@ public class JsonReader
         Gson gson = new Gson();
         Type listRecipeType = new TypeToken<List<Recipe>>() { }.getType();
         List<Recipe> recipes = gson.fromJson(jsonFileString, listRecipeType);
-        System.out.println("------------------------" + recipes.get(0).toString() + "------------------------");
+        //System.out.println("------------------------" + recipes.get(0).toString() + "------------------------");
         return recipes;
     }
 }
