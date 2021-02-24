@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         //Import from JSON class
         json = new JsonReader();
         recipeList = json.recipeParser(getApplicationContext());
+
     }
 
     public static List<Recipe> getRecipeList() {

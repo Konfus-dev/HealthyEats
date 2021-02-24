@@ -12,7 +12,7 @@
 
     <fragment
         android:id="@+id/navigation_cookbook"
-        android:name="com.healthyeats.controller.Cookbook.CookbookFragment"
+        android:name="com.healthyeats.controller.cookbook.CookbookFragment"
         tools:layout="@layout/fragment_cookbook" />
 
     <fragment

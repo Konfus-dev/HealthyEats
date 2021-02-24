@@ -10,11 +10,6 @@ import java.util.List;
 
 public class SearchAndFilter {
 
-    // Returns number of recipes
-    public int getNumRecipes() {
-        return MainActivity.getRecipeList().size();
-    }
-
     //Search by recipe id (don't ask about how quickly...)
     public Recipe searchById(int id) {
         List<Recipe> recipeList = MainActivity.getRecipeList();

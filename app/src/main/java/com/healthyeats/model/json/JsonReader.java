@@ -13,14 +13,10 @@ import java.util.List;
 
 public class JsonReader
 {
-    public JsonReader(){
-
-    }
-
     private String loadJSONFromAsset(Context context) {
         String json = null;
         try {
-            InputStream is = context.getAssets().open("db-recipes.json");
+            InputStream is = context.getAssets().open("temp-recipes.json");
             int size = is.available();
             byte[] buffer = new byte[size];
             is.read(buffer);
@@ -37,8 +33,9 @@ public class JsonReader
     {
         String jsonFileString = loadJSONFromAsset(context);
         Gson gson = new Gson();
-        Type listUserType = new TypeToken<List<Recipe>>() { }.getType();
-        List<Recipe> recipes = gson.fromJson(jsonFileString, listUserType);
+        Type listRecipeType = new TypeToken<List<Recipe>>() { }.getType();
+        List<Recipe> recipes = gson.fromJson(jsonFileString, listRecipeType);
+        System.out.println("------------------------" + recipes.get(0).toString() + "------------------------");
         return recipes;
     }
 }

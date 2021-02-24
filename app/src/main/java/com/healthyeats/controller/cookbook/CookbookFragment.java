@@ -16,8 +16,10 @@ import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.healthyeats.MainActivity;
 import com.healthyeats.R;
 import com.healthyeats.controller.searchAndFilter.SearchAndFilter;
+import com.healthyeats.model.recipe.Recipe;
 import com.healthyeats.model.viewModels.CookbookViewModel;
 
 import java.util.Random;
@@ -46,7 +48,7 @@ public class CookbookFragment extends Fragment {
         return (int) (metrics.density * dp + 0.5f);
     }
 
-    // Create CardView template for all Cards on Cookbook page
+    // Create CardView template for all Cards on cookbook page
     public CardView createCard() {
         // Card View Creation - Height | Width
         CardView card = new CardView(new ContextThemeWrapper(getContext(), R.style.recipeCardView));
@@ -232,11 +234,9 @@ public class CookbookFragment extends Fragment {
         card.addView(setRecipeDifficulty(difficulty));
     }
 
-    public int generateRandomRecipe() {
+    public Recipe generateRandomRecipe() {
         Random rand = new Random();
-        SearchAndFilter obj = new SearchAndFilter();
-
-        return rand.nextInt(obj.getNumRecipes());
+        return MainActivity.getRecipeList().get(rand.nextInt(MainActivity.getRecipeList().size()));
     }
 
     // Create 5 card views for trending section in cookbook
@@ -245,9 +245,8 @@ public class CookbookFragment extends Fragment {
         SearchAndFilter obj = new SearchAndFilter();
 
         for (int i = 0; i < 5; i++) {
-            com.healthyeats.model.recipe.Recipe rec = obj.searchById(generateRandomRecipe());
+            com.healthyeats.model.recipe.Recipe rec = generateRandomRecipe();
             createFullCard(rec.getName(), 0, "Intermediate", trending);
-
         }
     }
 
