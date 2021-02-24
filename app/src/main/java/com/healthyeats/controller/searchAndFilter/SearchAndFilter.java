@@ -15,8 +15,6 @@ public class SearchAndFilter {
 
     public SearchAndFilter() {
         //Import from JSON class
-        json = new JsonReader();
-
         recipeList = json.recipeParser();
         System.out.println("IS THSI RUNNING");
     }

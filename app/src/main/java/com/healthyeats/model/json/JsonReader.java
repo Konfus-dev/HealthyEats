@@ -1,5 +1,8 @@
 package com.healthyeats.model.json;
 
+import android.content.Context;
+import android.content.res.AssetFileDescriptor;
+
 import com.healthyeats.model.recipe.Recipe;
 
 import org.json.simple.JSONArray;
@@ -13,9 +16,6 @@ import java.util.ArrayList;
 
 public class JsonReader
 {
-    public JsonReader(){
-    
-    }
 
     public ArrayList<Recipe> recipeParser()
     {
@@ -23,8 +23,7 @@ public class JsonReader
         JSONParser jsonParser = new JSONParser();
         System.out.println("Working Directory = " + System.getProperty("user.dir"));
 
-//        try (FileReader reader = new FileReader("com/healthyeats/model/json/db-recipes.json")) {
-        try (FileReader reader = new FileReader("src/main/com/healthyeats/model/json/db-recipes.json")) {
+        try (FileReader reader = new FileReader("src/main/assets/db-recipes.json")) {
             Object obj  = jsonParser.parse(reader);
             JSONObject recipeList =  (JSONObject) obj;
             ArrayList<Recipe> recipes =  parseRecipiesObject(recipeList);
