@@ -1,12 +1,9 @@
 package com.healthyeats.model.recipe;
 
-import com.healthyeats.model.grocery.GroceryItem;
-
-import java.util.ArrayList;
 import java.util.Comparator;
 
 public class Recipe implements Comparable<Recipe> {
-    private String id;
+    private int id;
     private String name;
     private String source;
     private int prepTime;
@@ -23,29 +20,20 @@ public class Recipe implements Comparable<Recipe> {
     private int protein;
     private int difficultyLevel;
     private String instructions;
-    private String[] ingredients;
+    private Ingredient[] ingredients;
     private String[] tags;
 
     //Getters and setters organized by variable
-    public String getId() {
+    public int getId() {
         return id;
     }
-
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    /**
-     * get difficulty level gives user difficulty level of recipe.
-     * 1 - Beginner
-     * 2 - Intermediate
-     * 3 - Hard
-     * @return
-     */
     public int getDifficultyLevel(){
         return difficultyLevel;
     }
-
     public void setDifficultyLevel(int difficultyLevel){
         this.difficultyLevel = difficultyLevel;
     }
@@ -53,7 +41,6 @@ public class Recipe implements Comparable<Recipe> {
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
@@ -61,7 +48,6 @@ public class Recipe implements Comparable<Recipe> {
     public String getSource() {
         return source;
     }
-
     public void setSource(String source) {
         this.source = source;
     }
@@ -69,7 +55,6 @@ public class Recipe implements Comparable<Recipe> {
     public int getPrepTime() {
         return prepTime;
     }
-
     public void setPrepTime(int prepTime) {
         this.prepTime = prepTime;
     }
@@ -77,7 +62,6 @@ public class Recipe implements Comparable<Recipe> {
     public int getWaitTime() {
         return waitTime;
     }
-
     public void setWaitTime(int waitTime) {
         this.waitTime = waitTime;
     }
@@ -85,7 +69,6 @@ public class Recipe implements Comparable<Recipe> {
     public int getCookTime() {
         return cookTime;
     }
-
     public void setCookTime(int cookTime) {
         this.cookTime = cookTime;
     }
@@ -93,7 +76,6 @@ public class Recipe implements Comparable<Recipe> {
     public int getServings() {
         return servings;
     }
-
     public void setServings(int servings) {
         this.servings = servings;
     }
@@ -101,7 +83,6 @@ public class Recipe implements Comparable<Recipe> {
     public String getComments() {
         return comments;
     }
-
     public void setComments(String comments) {
         this.comments = comments;
     }
@@ -109,7 +90,6 @@ public class Recipe implements Comparable<Recipe> {
     public int getCalories() {
         return calories;
     }
-
     public void setCalories(int calories) {
         this.calories = calories;
     }
@@ -117,7 +97,6 @@ public class Recipe implements Comparable<Recipe> {
     public int getFat() {
         return fat;
     }
-
     public void setFat(int fat) {
         this.fat = fat;
     }
@@ -125,7 +104,6 @@ public class Recipe implements Comparable<Recipe> {
     public int getSatFat() {
         return satFat;
     }
-
     public void setSatFat(int satFat) {
         this.satFat = satFat;
     }
@@ -133,7 +111,6 @@ public class Recipe implements Comparable<Recipe> {
     public int getCarbs() {
         return carbs;
     }
-
     public void setCarbs(int carbs) {
         this.carbs = carbs;
     }
@@ -141,7 +118,6 @@ public class Recipe implements Comparable<Recipe> {
     public int getFiber() {
         return fiber;
     }
-
     public void setFiber(int fiber) {
         this.fiber = fiber;
     }
@@ -149,7 +125,6 @@ public class Recipe implements Comparable<Recipe> {
     public int getSugar() {
         return sugar;
     }
-
     public void setSugar(int sugar) {
         this.sugar = sugar;
     }
@@ -157,7 +132,6 @@ public class Recipe implements Comparable<Recipe> {
     public int getProtein() {
         return protein;
     }
-
     public void setProtein(int protein) {
         this.protein = protein;
     }
@@ -165,23 +139,20 @@ public class Recipe implements Comparable<Recipe> {
     public String getInstructions() {
         return instructions;
     }
-
     public void setInstructions(String instructions) {
         this.instructions = instructions;
     }
 
-    public String[] getIngredients() {
+    public Ingredient[] getIngredients() {
         return ingredients;
     }
-
-    public void setIngredients(String[] ingredients) {
+    public void setIngredients(Ingredient[] ingredients) {
         this.ingredients = ingredients;
     }
 
     public String[] getTags() {
         return tags;
     }
-
     public void setTags(String[] tags) {
         this.tags = tags;
     }
@@ -191,6 +162,7 @@ public class Recipe implements Comparable<Recipe> {
     public int compareTo(Recipe g){
         return this.name.compareTo(g.name);
     }
+
     //Comparator to sort array by item name alphabetically from A-Z
     public static final Comparator<Recipe> recipeAZComparator = new Comparator<Recipe>() {
         @Override

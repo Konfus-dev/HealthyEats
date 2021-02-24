@@ -70,7 +70,8 @@
                 android:fontFamily="sans-serif"
                 android:text="This Weeks Meals"
                 android:textColor="#707070"
-                android:textSize="30sp"/>
+                android:textSize="30sp"
+                android:textStyle="bold"/>
 
             <HorizontalScrollView
                 android:id="@+id/ThisWeeksMealsScrollView"
@@ -447,7 +448,8 @@
                 android:fontFamily="sans-serif"
                 android:text="Your Favorites"
                 android:textColor="#707070"
-                android:textSize="30sp" />
+                android:textSize="30sp"
+                android:textStyle="bold"/>
 
             <HorizontalScrollView
                 android:id="@+id/FavoritesScrollView"
@@ -824,7 +826,8 @@
                 android:fontFamily="sans-serif"
                 android:text="Budget"
                 android:textColor="#707070"
-                android:textSize="30sp"/>
+                android:textSize="30sp"
+                android:textStyle="bold"/>
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/BudgetCardView"
@@ -949,7 +952,8 @@
                 android:fontFamily="sans-serif"
                 android:text="Healthy Tips"
                 android:textColor="#707070"
-                android:textSize="30sp" />
+                android:textSize="30sp"
+                android:textStyle="bold"/>
 
             <HorizontalScrollView
                 android:id="@+id/HealthyTipsScrollView"
