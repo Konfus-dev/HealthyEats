@@ -15,7 +15,7 @@ public class SearchAndFilter {
         List<Recipe> recipeList = MainActivity.getRecipeList();
         List<Recipe> searchResults = new ArrayList<Recipe>();
         for (int i = 0; i < recipeList.size(); i++) {
-            if (Integer.parseInt(recipeList.get(i).getId()) == id) {
+            if (recipeList.get(i).getId() == id) {
                 return recipeList.get(i);
             }
         }
