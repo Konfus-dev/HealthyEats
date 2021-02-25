@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -39,7 +40,7 @@ public class RecipeFragment extends Fragment {
         return f;
     }
 
-    public static void replaceRecipeData(String difficulty, int servings, int cookTime, String name, View root) {
+    public void replaceRecipeData(String difficulty, int servings, int cookTime, String name, View root) {
         TextView diff = (TextView) root.findViewById(R.id.recipeDifficultyText);
         diff.setText(difficulty);
 
@@ -62,7 +63,7 @@ public class RecipeFragment extends Fragment {
         recipeName.setText(name);
     }
 
-    public static void replaceRecipeNutrition(int calories, int carbs, int protein, View root) {
+    public void replaceRecipeNutrition(int calories, int carbs, int protein, int sugar, View root) {
         TextView cal = (TextView) root.findViewById(R.id.caloriesText);
         cal.setText(Integer.toString(calories));
 
@@ -71,17 +72,27 @@ public class RecipeFragment extends Fragment {
 
         TextView prot = (TextView) root.findViewById(R.id.proteinText);
         prot.setText(Integer.toString(protein));
+
+        TextView sug = (TextView) root.findViewById(R.id.sugarText);
+        sug.setText(Integer.toString(sugar));
     }
 
-    public static void populateInstructions(View root) {
+    public void populateInstructions(String[] inst, View root) {
+        LinearLayout instructions = root.findViewById(R.id.instructionList);
+        for (int i = 0; i < inst.length; i++) {
+            TextView recipeName = new TextView(getActivity());
+            recipeName.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+
+            recipeName.setText("Step " + (i + 1) + " " + inst[i]);
+            instructions.addView(recipeName);
+        }
+    }
+
+    public void populateIngredients(View root) {
 
     }
 
-    public static void populateIngredients(View root) {
-        
-    }
-
-    public static void getRecipeData(int recipeId, View root) {
+    public void getRecipeData(int recipeId, View root) {
         SearchAndFilter search = new SearchAndFilter();
         Recipe retrievedRecipe = search.searchById(recipeId);
 
@@ -92,8 +103,11 @@ public class RecipeFragment extends Fragment {
         int calories = retrievedRecipe.getCalories();
         int carbs = retrievedRecipe.getCarbs();
         int protein = retrievedRecipe.getProtein();
+        int sugar = retrievedRecipe.getSugar();
+        String[] instructions = retrievedRecipe.getInstructions();
 
         replaceRecipeData(difficulty, servings, cookTime, name, root);
-        replaceRecipeNutrition(calories, carbs, protein, root);
+        replaceRecipeNutrition(calories, carbs, protein, sugar, root);
+        populateInstructions(instructions, root);
     }
 }
