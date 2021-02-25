@@ -21,7 +21,7 @@ public class Recipe implements Comparable<Recipe> {
     private int fiber;
     private int sugar;
     private int protein;
-    private int difficultyLevel;
+    private String difficultyLevel;
     private String instructions;
     private String[] ingredients;
     private String[] tags;
@@ -42,11 +42,11 @@ public class Recipe implements Comparable<Recipe> {
      * 3 - Hard
      * @return
      */
-    public int getDifficultyLevel(){
+    public String getDifficultyLevel(){
         return difficultyLevel;
     }
 
-    public void setDifficultyLevel(int difficultyLevel){
+    public void setDifficultyLevel(String difficultyLevel){
         this.difficultyLevel = difficultyLevel;
     }
 
