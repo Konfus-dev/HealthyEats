@@ -41,7 +41,7 @@
       },
       {
         "amount": "1/2",
-        "measurement": "",
+        "measurement": null,
         "name": "Lemon"
       },
       {
@@ -95,8 +95,8 @@
         "name": "kosher salt"
       },
       {
-        "amount": "",
-        "measurement": "",
+        "amount": null,
+        "measurement": null,
         "name": "kosher salt"
       },
       {
