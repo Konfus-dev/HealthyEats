@@ -410,7 +410,7 @@
 
                 </RelativeLayout>
 
-                // Calcium
+                // Sugar
                 <RelativeLayout
                     android:layout_width="175dp"
                     android:layout_height="wrap_content"
@@ -438,7 +438,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text = "300"
-                        android:id = "@+id/CalciumText"
+                        android:id = "@+id/sugarText"
                         android:textColor="@color/white"
                         android:layout_marginLeft = "20sp"
                         android:layout_marginTop = "15sp"></TextView>
@@ -446,7 +446,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text = "Calcium"
+                        android:text = "Sugar"
                         android:textColor="@color/white"
                         android:textSize = "20dp"
                         android:layout_marginLeft = "70sp"
@@ -462,7 +462,7 @@
                         android:textSize = "15dp"
                         android:layout_marginLeft = "70sp"
                         android:layout_marginTop = "27sp"
-                        android:id = "@+id/calciumMeasurement">
+                        android:id = "@+id/sugarMeasurement">
 
                     </TextView>
 
@@ -526,13 +526,6 @@
                 android:id = "@+id/instructionList"
                 android:orientation = "vertical"
                 android:layout_marginLeft="15sp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text = "askjflsakdjflsdfj adfjslkdfj asdf adsf asdf asfd">
-
-                </TextView>
 
             </LinearLayout>
 
