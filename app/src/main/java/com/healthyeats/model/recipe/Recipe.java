@@ -20,7 +20,7 @@ public class Recipe implements Comparable<Recipe> {
     private int sugar;
     private int protein;
     private String comments;
-    private String instructions;
+    private String[] instructions;
     private Ingredient[] ingredients;
     private String[] tags;
 
@@ -137,10 +137,10 @@ public class Recipe implements Comparable<Recipe> {
         this.protein = protein;
     }
 
-    public String getInstructions() {
+    public String[] getInstructions() {
         return instructions;
     }
-    public void setInstructions(String instructions) {
+    public void setInstructions(String[] instructions) {
         this.instructions = instructions;
     }
 
