@@ -45,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 
-
         //Import from JSON class
         json = new JsonReader();
         loadedRecipes = json.recipeParser(getApplicationContext());
