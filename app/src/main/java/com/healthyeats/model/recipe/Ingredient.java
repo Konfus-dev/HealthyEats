@@ -7,6 +7,7 @@ public class Ingredient {
     private String name;
     private String measurement;
     private String amount;
+    private boolean userHasIngredient;
 
     public String getName() { return name; }
     public void setName(String name) { this.name = name; }
@@ -16,6 +17,9 @@ public class Ingredient {
 
     public String getAmount() { return amount; }
     public void setAmount(String amount) { this.amount = amount; }
+
+    public boolean CheckIfUserHasIngredient() { return userHasIngredient; }
+    public void SetUserHasIngredient(boolean yesNo) { this.userHasIngredient = yesNo; }
 
     public GroceryItem toGroceryItem() {
         GroceryItem item = new GroceryItem();

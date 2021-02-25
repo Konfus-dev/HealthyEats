@@ -232,11 +232,11 @@ public class CookbookFragment extends Fragment {
         background.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                System.out.println("WAS PUSHED " + id);
-                RecipeFragment obj = new RecipeFragment();
-                obj.loadRecipeToRecipeView(1);
+                RecipeFragment obj = RecipeFragment.newInstance(id);
                 FragmentTransaction fr = getFragmentManager().beginTransaction();
-                fr.replace(R.id.nav_host_fragment, new AccountFragment());
+                fr.replace(R.id.nav_host_fragment, obj);
+                fr.addToBackStack(null);
+                fr.commit();
             }
         });
 

@@ -1,17 +1,20 @@
 package com.healthyeats.model.recipe;
 
+import com.healthyeats.model.grocery.GroceryItem;
+
 import java.util.Comparator;
+import java.util.List;
 
 public class Recipe implements Comparable<Recipe> {
 
     private int id;
     private String name;
     private String source;
+    private String difficultyLevel;
     private int prepTime;
     private int waitTime;
     private int cookTime;
     private int servings;
-    private String comments;
     private int calories;
     private int fat;
     private int satFat;
@@ -19,8 +22,8 @@ public class Recipe implements Comparable<Recipe> {
     private int fiber;
     private int sugar;
     private int protein;
-    private String difficultyLevel;
-    private String instructions;
+    private String comments;
+    private String[] instructions;
     private Ingredient[] ingredients;
     private String[] tags;
 
@@ -32,26 +35,18 @@ public class Recipe implements Comparable<Recipe> {
         this.id = id;
     }
 
-    /**
-     * get difficulty level gives user difficulty level of recipe.
-     * 1 - Beginner
-     * 2 - Intermediate
-     * 3 - Hard
-     * @return
-     */
-    public String getDifficultyLevel() {
-        return difficultyLevel;
-    }
-
-    public void setDifficultyLevel(String difficulty) {
-        this.difficultyLevel = difficulty;
-    }
-
     public String getName() {
         return name;
     }
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDifficultyLevel() {
+        return difficultyLevel;
+    }
+    public void setDifficultyLevel(String difficulty) {
+        this.difficultyLevel = difficulty;
     }
 
     public String getSource() {
@@ -145,10 +140,10 @@ public class Recipe implements Comparable<Recipe> {
         this.protein = protein;
     }
 
-    public String getInstructions() {
+    public String[] getInstructions() {
         return instructions;
     }
-    public void setInstructions(String instructions) {
+    public void setInstructions(String[] instructions) {
         this.instructions = instructions;
     }
 
@@ -188,12 +183,15 @@ public class Recipe implements Comparable<Recipe> {
         }
     };
 
-    //Export ingredients to the grocery list
-/*    public void exportToGroceryList(ArrayList<GroceryItem> list) {
+    //ToDo:
+    // Patch up exporting ingredients to the grocery list, make sure there are not duplicates,
+    // if there are more than a certain amount increment else ignore and keep one
+    // ex: no need to have 2x 1 cup of flower, just have flower
+    public void exportToGroceryList(List<GroceryItem> list) {
         for (int i = 0; i < ingredients.length; i++) {
-            list.add(ingredients[i]);
+            list.add(ingredients[i].toGroceryItem());
         }
-    }*/
+    }
 
     //Comparator to sort array by item name alphabetically from Z-A
     public static final Comparator<Recipe> recipeZAComparator = new Comparator<Recipe>() {
@@ -227,7 +225,6 @@ public class Recipe implements Comparable<Recipe> {
         }
     };
 
-
     //Sort by calories high to low
     public static final Comparator<Recipe> recipeHighLowCalComparator = new Comparator<Recipe>() {
         @Override
@@ -244,6 +241,7 @@ public class Recipe implements Comparable<Recipe> {
         }
     };
 
+    //For testing turns Recipe to string for printing
     public String toString() {
         String recipeString =
              "------------------------------\n" +

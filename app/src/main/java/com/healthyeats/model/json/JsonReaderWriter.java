@@ -1,18 +1,18 @@
 package com.healthyeats.model.json;
 
+import com.healthyeats.model.recipe.Recipe;
+
 import android.content.Context;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-
-import com.healthyeats.model.recipe.Recipe;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Type;
 import java.util.List;
 
-public class JsonReader
+public class JsonReaderWriter
 {
 
     private String loadJSONFromAsset(Context context) {
@@ -36,7 +36,6 @@ public class JsonReader
         Gson gson = new Gson();
         Type listRecipeType = new TypeToken<List<Recipe>>() { }.getType();
         List<Recipe> recipes = gson.fromJson(jsonFileString, listRecipeType);
-        //System.out.println("------------------------" + recipes.get(0).toString() + "------------------------");
         return recipes;
     }
 }
