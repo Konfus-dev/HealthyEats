@@ -15,8 +15,8 @@ Simone Sawyer
 ## Installation
 1. Download Android Studio from link
 https://developer.android.com/studio
-2. Open the zipped file
-3. Using Android Studio, open the files in the zip
+2. Open the zipped file and extract files
+3. Using Android Studio, open the files extracted from the zip
 4. Create an emulator that is API level 24 or above, follow along with this tutorial
 https://developer.android.com/studio/run/managing-avds
 5. In Android Studios click the green arrow button to run the application
