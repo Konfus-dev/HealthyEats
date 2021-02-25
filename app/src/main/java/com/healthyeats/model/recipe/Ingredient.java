@@ -24,7 +24,19 @@ public class Ingredient {
     public GroceryItem toGroceryItem() {
         GroceryItem item = new GroceryItem();
         item.setName(name);
-        //ToDo: Finish conversion between ingredients to groceryItems.
+        item.setQuantity(Integer.parseInt(amount));
+
+        //Placeholder price
+        item.setPrice(.30);
+        item.setDisplay(true);
+        if (userHasIngredient)
+        {
+            item.setCheckOff(true);
+        }
+        else
+        {
+            item.setCheckOff(false);
+        }
 
         return item;
     }
