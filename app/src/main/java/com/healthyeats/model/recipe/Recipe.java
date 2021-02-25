@@ -7,11 +7,11 @@ public class Recipe implements Comparable<Recipe> {
     private int id;
     private String name;
     private String source;
+    private String difficultyLevel;
     private int prepTime;
     private int waitTime;
     private int cookTime;
     private int servings;
-    private String comments;
     private int calories;
     private int fat;
     private int satFat;
@@ -19,7 +19,7 @@ public class Recipe implements Comparable<Recipe> {
     private int fiber;
     private int sugar;
     private int protein;
-    private String difficultyLevel;
+    private String comments;
     private String instructions;
     private Ingredient[] ingredients;
     private String[] tags;
@@ -32,26 +32,18 @@ public class Recipe implements Comparable<Recipe> {
         this.id = id;
     }
 
-    /**
-     * get difficulty level gives user difficulty level of recipe.
-     * 1 - Beginner
-     * 2 - Intermediate
-     * 3 - Hard
-     * @return
-     */
-    public String getDifficultyLevel() {
-        return difficultyLevel;
-    }
-
-    public void setDifficultyLevel(String difficulty) {
-        this.difficultyLevel = difficulty;
-    }
-
     public String getName() {
         return name;
     }
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDifficultyLevel() {
+        return difficultyLevel;
+    }
+    public void setDifficultyLevel(String difficulty) {
+        this.difficultyLevel = difficulty;
     }
 
     public String getSource() {
@@ -188,7 +180,9 @@ public class Recipe implements Comparable<Recipe> {
         }
     };
 
-    //Export ingredients to the grocery list
+    //ToDo: Patch up exporting ingredients to the grocery list, make sure there are not duplicates,
+    // if there are more than a certain amount increment else ignore and keep one ex: no need to have 2x 1 cup of flower, just have flower
+    // , and use ingredient to groceryItem method!
 /*    public void exportToGroceryList(ArrayList<GroceryItem> list) {
         for (int i = 0; i < ingredients.length; i++) {
             list.add(ingredients[i]);
