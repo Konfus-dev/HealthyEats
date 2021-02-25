@@ -10,7 +10,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.healthyeats.model.grocery.GroceryItem;
-import com.healthyeats.model.json.JsonReader;
+import com.healthyeats.model.json.JsonReaderWriter;
 import com.healthyeats.model.recipe.Recipe;
 import java.util.List;
 
@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private static List<Recipe> loadedRecipes;
     private static List<Recipe> favoriteRecipes;
     private static List<GroceryItem> groceryList;
-    private JsonReader json;
+    private JsonReaderWriter json;
 
     public static List<Recipe> getLoadedRecipes() {
         return loadedRecipes;
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navView, navController);
 
         //Import from JSON class
-        json = new JsonReader();
+        json = new JsonReaderWriter();
         loadedRecipes = json.recipeParser(getApplicationContext());
 
         //testing
