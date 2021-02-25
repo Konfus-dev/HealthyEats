@@ -1,6 +1,5 @@
 package com.healthyeats;
 
-import android.content.res.AssetManager;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,15 +12,24 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.healthyeats.model.grocery.GroceryItem;
 import com.healthyeats.model.json.JsonReader;
 import com.healthyeats.model.recipe.Recipe;
-
-import java.io.InputStream;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static List<Recipe> recipeList;
+    private static List<Recipe> loadedRecipes;
+    private static List<Recipe> favoriteRecipes;
     private static List<GroceryItem> groceryList;
     private JsonReader json;
+
+    public static List<Recipe> getLoadedRecipes() {
+        return loadedRecipes;
+    }
+    //Todo: make update affect jsonFile
+    public static void updateLoadedRecipes(List<Recipe> update) { loadedRecipes = update; }
+
+    public static List<Recipe> getFavoriteRecipes() { return favoriteRecipes; }
+    //Todo: make update affect jsonFile
+    public static void updateFavoriteRecipes(List<Recipe> update) { favoriteRecipes = update; }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,12 +48,10 @@ public class MainActivity extends AppCompatActivity {
 
         //Import from JSON class
         json = new JsonReader();
-        recipeList = json.recipeParser(getApplicationContext());
+        loadedRecipes = json.recipeParser(getApplicationContext());
 
-    }
-
-    public static List<Recipe> getRecipeList() {
-        return recipeList;
+        //testing
+        //System.out.println(recipeList.get(0).toString());
     }
 
     //Creating hard coded data on grocery list (Just to test)
