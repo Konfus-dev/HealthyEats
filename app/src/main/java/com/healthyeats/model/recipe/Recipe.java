@@ -183,7 +183,7 @@ public class Recipe implements Comparable<Recipe> {
         }
     };
 
-    //ToDo: 
+    //ToDo:
     // Patch up exporting ingredients to the grocery list, make sure there are not duplicates,
     // if there are more than a certain amount increment else ignore and keep one
     // ex: no need to have 2x 1 cup of flower, just have flower
@@ -225,7 +225,6 @@ public class Recipe implements Comparable<Recipe> {
         }
     };
 
-
     //Sort by calories high to low
     public static final Comparator<Recipe> recipeHighLowCalComparator = new Comparator<Recipe>() {
         @Override
@@ -242,6 +241,7 @@ public class Recipe implements Comparable<Recipe> {
         }
     };
 
+    //For testing turns Recipe to string for printing
     public String toString() {
         String recipeString =
              "------------------------------\n" +
