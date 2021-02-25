@@ -183,9 +183,10 @@ public class Recipe implements Comparable<Recipe> {
         }
     };
 
-    //ToDo: Patch up exporting ingredients to the grocery list, make sure there are not duplicates,
-    // if there are more than a certain amount increment else ignore and keep one ex: no need to have 2x 1 cup of flower, just have flower
-    // , and use ingredient to groceryItem method!
+    //ToDo: 
+    // Patch up exporting ingredients to the grocery list, make sure there are not duplicates,
+    // if there are more than a certain amount increment else ignore and keep one
+    // ex: no need to have 2x 1 cup of flower, just have flower
     public void exportToGroceryList(List<GroceryItem> list) {
         for (int i = 0; i < ingredients.length; i++) {
             list.add(ingredients[i].toGroceryItem());
