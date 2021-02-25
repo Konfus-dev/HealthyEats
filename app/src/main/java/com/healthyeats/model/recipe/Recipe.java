@@ -1,6 +1,9 @@
 package com.healthyeats.model.recipe;
 
+import com.healthyeats.model.grocery.GroceryItem;
+
 import java.util.Comparator;
+import java.util.List;
 
 public class Recipe implements Comparable<Recipe> {
 
@@ -183,11 +186,11 @@ public class Recipe implements Comparable<Recipe> {
     //ToDo: Patch up exporting ingredients to the grocery list, make sure there are not duplicates,
     // if there are more than a certain amount increment else ignore and keep one ex: no need to have 2x 1 cup of flower, just have flower
     // , and use ingredient to groceryItem method!
-/*    public void exportToGroceryList(ArrayList<GroceryItem> list) {
+    public void exportToGroceryList(List<GroceryItem> list) {
         for (int i = 0; i < ingredients.length; i++) {
-            list.add(ingredients[i]);
+            list.add(ingredients[i].toGroceryItem());
         }
-    }*/
+    }
 
     //Comparator to sort array by item name alphabetically from Z-A
     public static final Comparator<Recipe> recipeZAComparator = new Comparator<Recipe>() {
