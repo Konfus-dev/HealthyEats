@@ -17,7 +17,19 @@ public class RecipeFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+        Bundle args = getArguments();
+        int id = args.getInt("id", -1);
+        System.out.println("TEST " + id);
         return inflater.inflate(R.layout.fragment_recipe, container, false);
+    }
+
+    public static RecipeFragment newInstance(int id) {
+        RecipeFragment f = new RecipeFragment();
+        // Supply id input as an argument.
+        Bundle args = new Bundle();
+        args.putInt("id", id);
+        f.setArguments(args);
+        return f;
     }
 
     public static void loadRecipeToRecipeView(int recipeId) {
