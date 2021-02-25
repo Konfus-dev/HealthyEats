@@ -484,31 +484,6 @@
                 android:id = "@+id/ingredientList"
                 android:orientation = "vertical">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation = "horizontal"
-                    android:layout_marginLeft = "15sp">
-                    <ImageButton
-                        android:layout_width="35dp"
-                        android:layout_height="35dp"
-                        android:scaleType="fitXY"
-                        android:background = "@color/backgroundColor"
-                        android:src = "@drawable/addbluebackground_icon">
-
-                    </ImageButton>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text = "Ingredient Name"
-                        android:layout_gravity="bottom"
-                        android:textSize="20sp"
-                        android:layout_marginBottom = "2sp"
-                        android:layout_marginLeft = "3sp">
-
-                    </TextView>
-                </LinearLayout>
 
             </LinearLayout>
 
