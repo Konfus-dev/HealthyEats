@@ -19,7 +19,7 @@ public class Recipe implements Comparable<Recipe> {
     private int fiber;
     private int sugar;
     private int protein;
-    private int difficultyLevel;
+    private String difficultyLevel;
     private String instructions;
     private Ingredient[] ingredients;
     private String[] tags;
@@ -32,11 +32,19 @@ public class Recipe implements Comparable<Recipe> {
         this.id = id;
     }
 
-    public int getDifficultyLevel(){
+    /**
+     * get difficulty level gives user difficulty level of recipe.
+     * 1 - Beginner
+     * 2 - Intermediate
+     * 3 - Hard
+     * @return
+     */
+    public String getDifficultyLevel() {
         return difficultyLevel;
     }
-    public void setDifficultyLevel(int difficultyLevel){
-        this.difficultyLevel = difficultyLevel;
+
+    public void setDifficultyLevel(String difficulty) {
+        this.difficultyLevel = difficulty;
     }
 
     public String getName() {

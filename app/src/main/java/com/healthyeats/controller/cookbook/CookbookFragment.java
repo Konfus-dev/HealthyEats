@@ -1,5 +1,6 @@
 package com.healthyeats.controller.cookbook;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.ContextThemeWrapper;
@@ -14,10 +15,16 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.healthyeats.MainActivity;
 import com.healthyeats.R;
+
+import com.healthyeats.controller.account.AccountFragment;
+import com.healthyeats.controller.recipe.RecipeFragment;
+import com.healthyeats.controller.searchAndFilter.SearchAndFilter;
+
 import com.healthyeats.model.recipe.Recipe;
 import com.healthyeats.model.viewModels.CookbookViewModel;
 
@@ -37,10 +44,10 @@ public class CookbookFragment extends Fragment {
                 new ViewModelProvider(this).get(CookbookViewModel.class);
         View root = inflater.inflate(R.layout.fragment_cookbook, container, false);
 
-        populateTrending(root, container);
-        populateFavs(root, container);
-        populateYouShouldTry(root, container);
-        populateBangForBuck(root, container);
+        populateTrending(root);
+        populateFavs(root);
+        populateYouShouldTry(root);
+        populateBangForBuck(root);
 
         return root;
     }
@@ -215,12 +222,23 @@ public class CookbookFragment extends Fragment {
         return difficulty;
     }
 
-
-    public void createFullCard(String name, int price, String difficulty, LinearLayout parent) {
+    // Creates the Card for each recipe and calls other helpers to allocate the object
+    public void createFullCard(String name, int price, String difficulty, LinearLayout parent, int id) {
         CardView card = createCard();
         parent.addView(card);
 
         ImageButton background = new ImageButton(new ContextThemeWrapper(getActivity(), R.style.recipeBackgroundMain), null, 0);
+
+        background.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                System.out.println("WAS PUSHED " + id);
+                RecipeFragment obj = new RecipeFragment();
+                obj.loadRecipeToRecipeView(1);
+                FragmentTransaction fr = getFragmentManager().beginTransaction();
+                fr.replace(R.id.nav_host_fragment, new AccountFragment());
+            }
+        });
 
         TextView recipeDifficultyText = new TextView(getActivity());
         recipeDifficultyText.setTextAppearance(getActivity(), R.style.recipeCardDifficultyText);
@@ -236,49 +254,49 @@ public class CookbookFragment extends Fragment {
         card.addView(setRecipeDifficulty(difficulty));
     }
 
+    // Grabs random recipe in database
     public Recipe generateRandomRecipe() {
         Random rand = new Random();
         return MainActivity.getLoadedRecipes().get(rand.nextInt(MainActivity.getLoadedRecipes().size()));
     }
 
     // Create 5 card views for trending section in cookbook
-    public void populateTrending(View root, ViewGroup container) {
+    public void populateTrending(View root) {
         trending = root.findViewById(R.id.cookBookTrending);
 
         for (int i = 0; i < 5; i++) {
             com.healthyeats.model.recipe.Recipe rec = generateRandomRecipe();
-            createFullCard(rec.getName(), 0, "Intermediate", trending);
+            createFullCard(rec.getName(), 0, rec.getDifficultyLevel(), trending, rec.getId());
         }
     }
 
     // Create 5 card views for our favorites section in cookbook
-    public void populateFavs(View root, ViewGroup container) {
+    public void populateFavs(View root) {
         ourFavs = root.findViewById(R.id.cookBookOurFavorites);
 
         for (int i = 0; i < 5; i++) {
             com.healthyeats.model.recipe.Recipe rec = generateRandomRecipe();
-            createFullCard(rec.getName(), 0, "Intermediate", ourFavs);
+            createFullCard(rec.getName(), 0, rec.getDifficultyLevel(), ourFavs, rec.getId());
         }
-        
     }
 
     // Create 5 card views for you should try section in cookbook
-    public void populateYouShouldTry(View root, ViewGroup container) {
+    public void populateYouShouldTry(View root) {
         youShouldTry = root.findViewById(R.id.cookBookYouShouldTry);
 
         for (int i = 0; i < 5; i++) {
             com.healthyeats.model.recipe.Recipe rec = generateRandomRecipe();
-            createFullCard(rec.getName(), 0, "Hard", youShouldTry);
+            createFullCard(rec.getName(), 0, rec.getDifficultyLevel(), youShouldTry, rec.getId());
         }
     }
     
     // Create 5 card views for bang for buck section in cookbook
-    public void populateBangForBuck(View root, ViewGroup container) {
+    public void populateBangForBuck(View root) {
         bangForBuck = root.findViewById(R.id.cookBookBangForYourBuck);
 
         for (int i = 0; i < 5; i++) {
             com.healthyeats.model.recipe.Recipe rec = generateRandomRecipe();
-            createFullCard(rec.getName(), 0, "Intermediate", bangForBuck);
+            createFullCard(rec.getName(), 0, rec.getDifficultyLevel(), bangForBuck, rec.getId());
         }
     }
 }
