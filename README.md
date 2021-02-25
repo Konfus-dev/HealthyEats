@@ -13,7 +13,6 @@ Jax Rounds
 Simone Sawyer
 
 ## Installation
-Dependencies
 1. Download Android Studio from link
 https://developer.android.com/studio
 2. Open the zipped file
