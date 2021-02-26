@@ -10,7 +10,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.healthyeats.model.grocery.GroceryItem;
-import com.healthyeats.model.json.JsonReader;
+import com.healthyeats.model.json.JsonReaderWriter;
 import com.healthyeats.model.json.UserJson;
 import com.healthyeats.model.recipe.Ingredient;
 import com.healthyeats.model.recipe.Recipe;
