@@ -24,6 +24,32 @@ public class Recipe implements Comparable<Recipe> {
     private Ingredient[] ingredients;
     private String[] tags;
 
+    //Constructor for testing purposes
+    public Recipe(){
+
+    }
+    public Recipe(int id, String name, String source, int prepTime, int waitTime, int cookTime, int servings, String comments, int calories, int fat, int satFat, int carbs, int fiber, int sugar, int protein, int difficultyLevel, String instructions, Ingredient[] ingredients, String[] tags) {
+        this.id = id;
+        this.name = name;
+        this.source = source;
+        this.prepTime = prepTime;
+        this.waitTime = waitTime;
+        this.cookTime = cookTime;
+        this.servings = servings;
+        this.comments = comments;
+        this.calories = calories;
+        this.fat = fat;
+        this.satFat = satFat;
+        this.carbs = carbs;
+        this.fiber = fiber;
+        this.sugar = sugar;
+        this.protein = protein;
+        this.difficultyLevel = difficultyLevel;
+        this.instructions = instructions;
+        this.ingredients = ingredients;
+        this.tags = tags;
+    }
+
     //Getters and setters organized by variable
     public int getId() {
         return id;
