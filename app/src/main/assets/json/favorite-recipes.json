@@ -1,0 +1,107 @@
+[
+  {
+    "id": 1,
+    "name": "Baked Shrimp Scampi",
+    "source": "Ina Garten: Barefoot Contessa Back to Basics",
+    "difficultyLevel" : 2,
+    "prepTime": 0,
+    "waitTime": 0,
+    "cookTime": 0,
+    "servings": 6,
+    "comments": "Modified by reducing butter and salt.  Substituted frozen shrimp instead of fresh 12-15 count (butterflied, tails on).",
+    "calories": 2565,
+    "fat": 159,
+    "satFat": 67,
+    "carbs": 76,
+    "fiber": 4,
+    "sugar": 6,
+    "protein": 200,
+    "instructions": "Preheat the oven to 425 degrees F.\r\n\r\nDefrost shrimp by putting in cold water, drain. Place the shrimp in serving dish (9x13 or 2 quart casserole) and toss gently with the olive oil, wine, 1 teaspoons salt, and 1 teaspoon pepper. Allow to sit at room temperature while you make the butter and garlic mixture.\r\n\r\nIn a small bowl, mash the softened butter with the garlic, shallots, parsley, rosemary, red pepper flakes, lemon zest, lemon juice, egg yolk, panko, 1\/2 teaspoon salt, and 1\/4 teaspoon of pepper until combined.\r\n\r\nSpread the butter mixture evenly over the shrimp. Bake for 10 to 12 minutes until hot and bubbly. If you like the top browned, place under a broiler for 1-3 minutes (keep an eye on it). Serve with lemon wedges and French bread.\r\n\r\nNote: if using fresh shrimp, arrange for presentation. Starting from the outer edge of a 14-inch oval gratin dish, arrange the shrimp in a single layer cut side down with the tails curling up and towards the center of the dish. Pour the remaining marinade over the shrimp. ",
+    "ingredients": [
+      {
+        "amount": "2/3",
+        "measurement": "cups",
+        "name": "panko"
+      },
+      {
+        "amount": "1/4",
+        "measurement": "teaspoons",
+        "name": "red pepper flakes"
+      },
+      {
+        "amount": "1/2",
+        "measurement": "",
+        "name": "Lemon"
+      },
+      {
+        "amount": "1",
+        "measurement": "large",
+        "name": "egg yolk"
+      },
+      {
+        "amount": "1",
+        "measurement": "teaspoon",
+        "name": "rosemary"
+      },
+      {
+        "amount": "3",
+        "measurement": "tablespoon",
+        "name": "parsley"
+      },
+      {
+        "amount": "4",
+        "measurement": "clove",
+        "name": "garlic"
+      },
+      {
+        "amount": "1/4",
+        "measurement": "cups",
+        "name": "shallots"
+      },
+      {
+        "amount": "8",
+        "measurement": "tablespoon",
+        "name": "unsalted butter"
+      },
+      {
+        "amount": "8",
+        "measurement": "tablespoon",
+        "name": "unsalted butter"
+      },
+      {
+        "amount": "2",
+        "measurement": "tablespoon",
+        "name": "dry white wine"
+      },
+      {
+        "amount": null,
+        "measurement": null,
+        "name": "black pepper"
+      },
+      {
+        "amount": null,
+        "measurement": null,
+        "name": "kosher salt"
+      },
+      {
+        "amount": "",
+        "measurement": "",
+        "name": "kosher salt"
+      },
+      {
+        "amount": "3",
+        "measurement": "tablespoon",
+        "name": "olive oil"
+      },
+      {
+        "amount": "2",
+        "measurement": "pound",
+        "name": "frozen shrimp"
+      }
+    ],
+    "tags": [
+      "seafood",
+      "shrimp",
+      "main"
+    ]
+  }]

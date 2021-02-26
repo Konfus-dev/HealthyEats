@@ -14,7 +14,11 @@ import java.util.List;
 
 public class JsonReaderWriter
 {
-
+    /**
+     * loadJSONFromAsses loads the recipe JSON file from the asset folder
+     * @param context context of the method
+     * @return the jsonString from assets
+     */
     private String loadJSONFromAsset(Context context) {
         String json = null;
         try {
@@ -31,6 +35,11 @@ public class JsonReaderWriter
         return json;
     }
 
+    /**
+     * recipeParse parses the content of the recipe file
+     * @param context the context of the method
+     * @return a List of recipe's
+     */
     public List<Recipe> recipeParser(Context context) {
         String jsonFileString = loadJSONFromAsset(context);
         Gson gson = new Gson();

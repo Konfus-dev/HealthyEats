@@ -10,8 +10,11 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.healthyeats.model.grocery.GroceryItem;
-import com.healthyeats.model.json.JsonReaderWriter;
+import com.healthyeats.model.json.JsonReader;
+import com.healthyeats.model.json.UserJson;
+import com.healthyeats.model.recipe.Ingredient;
 import com.healthyeats.model.recipe.Recipe;
+
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -48,8 +51,18 @@ public class MainActivity extends AppCompatActivity {
         //Import from JSON class
         json = new JsonReaderWriter();
         loadedRecipes = json.recipeParser(getApplicationContext());
-
-        //testing
+        UserJson userJson = new UserJson(getApplicationContext());
+        Ingredient ingredient =new Ingredient();
+        ingredient.setAmount("5");
+        ingredient.setMeasurement("cups");
+        ingredient.setName("apple");
+        Recipe recipe = new Recipe(1, "temp", "nowhere", 5, 10,
+        4, 1, "NA",3, 2, 1,5,
+        2, 1, 3, 1,"just try",
+                new Ingredient[] {ingredient}, new String[]{"apple"});
+        userJson.writeToFile( recipe, getApplicationContext());
+        userJson.deleteFromFile(recipe,getApplicationContext());
+            //testing
         //System.out.println(recipeList.get(0).toString());
     }
 
