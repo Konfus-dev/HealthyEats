@@ -56,7 +56,7 @@ public class Recipe implements Comparable<Recipe> {
      * @param ingredients the ingredients in the recipe
      * @param tags tags for the recipe
      */
-    public Recipe(int id, String name, String source, int prepTime, int waitTime, int cookTime, int servings, String comments, int calories, int fat, int satFat, int carbs, int fiber, int sugar, int protein, int difficultyLevel, String instructions, Ingredient[] ingredients, String[] tags) {
+    public Recipe(int id, String name, String source, int prepTime, int waitTime, int cookTime, int servings, String comments, int calories, int fat, int satFat, int carbs, int fiber, int sugar, int protein, String difficultyLevel, String[] instructions, Ingredient[] ingredients, String[] tags) {
         this.id = id;
         this.name = name;
         this.source = source;

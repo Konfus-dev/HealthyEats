@@ -56,9 +56,10 @@ public class MainActivity extends AppCompatActivity {
         ingredient.setAmount("5");
         ingredient.setMeasurement("cups");
         ingredient.setName("apple");
+        String[] instructions = new String[]{"just try"};
         Recipe recipe = new Recipe(1, "temp", "nowhere", 5, 10,
         4, 1, "NA",3, 2, 1,5,
-        2, 1, 3, 1,"just try",
+        2, 1, 3, "Hard", instructions,
                 new Ingredient[] {ingredient}, new String[]{"apple"});
         userJson.writeToFile( recipe, getApplicationContext());
         userJson.deleteFromFile(recipe,getApplicationContext());
