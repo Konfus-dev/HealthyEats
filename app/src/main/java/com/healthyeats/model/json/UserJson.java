@@ -23,6 +23,10 @@ import java.util.List;
 
 public class UserJson {
 
+    /**
+     *  constructor for UserJson
+     * @param context the context from the method
+     */
     public UserJson(Context context){
         try {
             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(context.openFileOutput("recipes.json", Context.MODE_PRIVATE));
