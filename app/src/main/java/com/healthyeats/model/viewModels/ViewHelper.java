@@ -18,6 +18,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.healthyeats.R;
 import com.healthyeats.controller.recipe.RecipeFragment;
+import com.healthyeats.model.json.UserJson;
 
 public class ViewHelper {
 
@@ -43,7 +44,7 @@ public class ViewHelper {
     }
 
     // Creates the Heart Icon
-    public ImageButton heart(Activity activity, Context context) {
+    public ImageButton heart(Activity activity, Context context, int id) {
         //Image Button Creation - Height | Width
         ImageButton heart = new ImageButton(new ContextThemeWrapper(activity, R.style.recipeHeartIcon), null, 0);
         heart.setLayoutParams(new LinearLayout.LayoutParams(toDP(46, context), toDP(40, context)));
@@ -60,7 +61,9 @@ public class ViewHelper {
         heart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                UserJson json = new UserJson(context);
+                json.writeToFileRecipe(id, context, "recipesFav.json");
+                System.out.println("\nCLICK\n");
             }
         });
 
@@ -220,7 +223,7 @@ public class ViewHelper {
         recipeDifficultyText.setTextAppearance(activity, R.style.recipeCardDifficultyText);
 
         card.addView(background);
-        card.addView(heart(activity, context));
+        card.addView(heart(activity, context, id));
         card.addView(setWhiteFooter(activity, context));
         card.addView(setRecipePrice(price, activity, context));
         card.addView(setDietary(activity, context));

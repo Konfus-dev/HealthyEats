@@ -85,9 +85,10 @@ public class HomeFragment extends Fragment {
         List<Recipe> favRecipe = getRecipe(getContext(), "recipesFav.json", userJson);
 
         if (favRecipe != null) {
+            System.out.println("HERE????");
             HorizontalScrollView horiz = createHorizontalScroll();
             LinearLayout lin = createLinearLayout();
-
+            System.out.println("IS THIS RUNNING?");
             thisWeeksMeals.addView(horiz);
             horiz.addView(lin);
 
@@ -112,6 +113,8 @@ public class HomeFragment extends Fragment {
             for(int i = 0; i < favRecipe.size(); i++){
                 obj.createFullCard(favRecipe.get(i).getName(), 0, favRecipe.get(i).getDifficultyLevel(), lin, favRecipe.get(i).getId(), getActivity(), getContext(), getResources(), getFragmentManager());
             }
+        } else {
+            System.out.println("THIS IS NULL");
         }
     }
 }

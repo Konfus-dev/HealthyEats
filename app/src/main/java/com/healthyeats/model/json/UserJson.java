@@ -6,6 +6,7 @@ import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.healthyeats.controller.searchAndFilter.SearchAndFilter;
 import com.healthyeats.model.recipe.Ingredient;
 import com.healthyeats.model.recipe.Recipe;
 
@@ -42,10 +43,11 @@ public class UserJson {
      *  deleteFromFile will delete a recipe from the file
      * @param recipe the recipe you want to delete
      * @param context the context of a method
+     * @param filename the name of the file
      */
-    public void deleteFromFile(Recipe recipe, Context context) {
+    public void deleteFromFileRecipe(Recipe recipe, Context context, String filename) {
         Gson gson = new Gson();
-        String ret = streamReader(context, "recipesFav.json");
+        String ret = streamReader(context, filename);
         Type listRecipeType = new TypeToken<List<Recipe>>() {}.getType();
         List<Recipe> recipes = gson.fromJson(ret, listRecipeType);
         for(int i = 0; i < recipes.size(); i++){
@@ -53,24 +55,36 @@ public class UserJson {
                 recipes.remove(i);
             }
         }
-        streamWriter(recipes, context, "recipes.jsonFav", gson);
+        streamWriter(recipes, context, filename, gson);
     }
 
     /**
      * writeToFile recipe that you want to write to file
-     * @param recipe the recipe to write
+     * @param recipeID the recipe id to write
      * @param context the method context
+     * @param filename the name of the file
      */
-    public void writeToFile(Recipe recipe, Context context) {
+    public void writeToFileRecipe(int recipeID, Context context, String filename) {
         Gson gson = new Gson();
-        String ret = streamReader(context, "recipesFav.json");
+        SearchAndFilter sF = new SearchAndFilter();
+        String ret = streamReader(context, filename);
         Type listRecipeType = new TypeToken<List<Recipe>>() {}.getType();
         List<Recipe> recipes = gson.fromJson(ret, listRecipeType);
         if(recipes == null){
+            System.out.println("HELLO??");
             recipes = new ArrayList<Recipe>();
         }
-        recipes.add(recipe);
-        streamWriter(recipes, context, "recipesFav.json", gson);
+        recipes.add(sF.searchById(recipeID));
+        streamWriter(recipes, context, filename, gson);
+
+
+        System.out.println(recipes.size());
+        String test = streamReader(context, filename);
+        Type list = new TypeToken<List<Recipe>>() {}.getType();
+        List<Recipe> recip = gson.fromJson(test, list);
+        for(int i = 0; i < recip.size(); i++){
+            System.out.println("yo");
+        }
     }
 
     /**
