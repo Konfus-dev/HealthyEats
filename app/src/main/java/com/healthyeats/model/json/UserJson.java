@@ -29,7 +29,7 @@ public class UserJson {
      */
     public UserJson(Context context){
         try {
-            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(context.openFileOutput("recipes.json", Context.MODE_PRIVATE));
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(context.openFileOutput("recipesFav.json", Context.MODE_PRIVATE));
             outputStreamWriter.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -45,7 +45,7 @@ public class UserJson {
      */
     public void deleteFromFile(Recipe recipe, Context context) {
         Gson gson = new Gson();
-        String ret = streamReader(context, "recipes.json");
+        String ret = streamReader(context, "recipesFav.json");
         Type listRecipeType = new TypeToken<List<Recipe>>() {}.getType();
         List<Recipe> recipes = gson.fromJson(ret, listRecipeType);
         for(int i = 0; i < recipes.size(); i++){
@@ -53,7 +53,7 @@ public class UserJson {
                 recipes.remove(i);
             }
         }
-        streamWriter(recipes, context, "recipes.json", gson);
+        streamWriter(recipes, context, "recipes.jsonFav", gson);
     }
 
     /**
@@ -63,14 +63,14 @@ public class UserJson {
      */
     public void writeToFile(Recipe recipe, Context context) {
         Gson gson = new Gson();
-        String ret = streamReader(context, "recipes.json");
+        String ret = streamReader(context, "recipesFav.json");
         Type listRecipeType = new TypeToken<List<Recipe>>() {}.getType();
         List<Recipe> recipes = gson.fromJson(ret, listRecipeType);
         if(recipes == null){
             recipes = new ArrayList<Recipe>();
         }
         recipes.add(recipe);
-        streamWriter(recipes, context, "recipes.json", gson);
+        streamWriter(recipes, context, "recipesFav.json", gson);
     }
 
     /**
@@ -133,7 +133,7 @@ public class UserJson {
      * @param fileName the file to read
      * @return returns a string of data
      */
-    private String streamReader(Context context, String fileName){
+    public String streamReader(Context context, String fileName){
         String ret = "";
         try {
             InputStream inputStream = context.openFileInput(fileName);

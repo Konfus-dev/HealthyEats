@@ -57,6 +57,13 @@ public class ViewHelper {
         // Set Scale
         heart.setScaleType(ImageView.ScaleType.FIT_XY);
 
+        heart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
+
         return heart;
     }
 

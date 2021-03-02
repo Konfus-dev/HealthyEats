@@ -76,23 +76,14 @@
                 android:textStyle="bold"/>
 
             // This Weeks Meals Horizontal View
-
-            <HorizontalScrollView
-                android:layout_width="wrap_content"
-                android:layout_height="298dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:scrollbars="none">
-
-                <LinearLayout
-                    android:id="@+id/homeThisWeeksMeals"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
+            <LinearLayout
+                android:id="@+id/homeThisWeeksMeals"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
 
-                </LinearLayout>
-            </HorizontalScrollView>
+            </LinearLayout>
 
             // Your Favorites Title
 
@@ -111,29 +102,14 @@
 
             // Your Favorites Horizontal View
 
-            <HorizontalScrollView
-                android:layout_width="wrap_content"
-                android:layout_height="298dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:scrollbars="none">
-
-<!--                <TextView-->
-<!--                    android:layout_width="100dp"-->
-<!--                    android:layout_height="100dp"-->
-<!--                    android:text = "No favorite recipes">-->
-
-<!--                </TextView>-->
-
-                <LinearLayout
-                    android:id="@+id/homeYourFavorites"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="horizontal">
+            <LinearLayout
+                android:id="@+id/homeYourFavorites"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
 
 
-                </LinearLayout>
-            </HorizontalScrollView>
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/BudgetHeader"
