@@ -1,6 +1,5 @@
 package com.healthyeats.model.json;
 
-
 import android.content.Context;
 import android.util.Log;
 
@@ -19,8 +18,6 @@ import java.io.OutputStreamWriter;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
-
-
 
 public class UserJson {
 
@@ -105,7 +102,6 @@ public class UserJson {
         streamWriter(ingredients, context, "recipes.json", gson);
     }
 
-
     /**
      * writeToFile recipe that you want to write to file
      * @param ingredient the ingredient to write
@@ -122,7 +118,6 @@ public class UserJson {
         ingredients.add(ingredient);
         streamWriter(ingredient, context, "recipes.json", gson);
     }
-
 
     /**
      * streamWriter will write the object to a json. Given a file name
@@ -147,7 +142,7 @@ public class UserJson {
      * @param fileName the file to read
      * @return returns a string of data
      */
-    public String streamReader(Context context, String fileName){
+    public String streamReader(Context context, String fileName) {
         String ret = "";
         try {
             InputStream inputStream = context.openFileInput(fileName);
