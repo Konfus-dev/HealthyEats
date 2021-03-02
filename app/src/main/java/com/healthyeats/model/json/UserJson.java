@@ -29,6 +29,8 @@ public class UserJson {
         try {
             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(context.openFileOutput("recipesFav.json", Context.MODE_PRIVATE));
             outputStreamWriter.close();
+            OutputStreamWriter outputStreamWriter2 = new OutputStreamWriter(context.openFileOutput("ingredient.json", Context.MODE_PRIVATE));
+            outputStreamWriter2.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -99,7 +101,7 @@ public class UserJson {
                 ingredients.remove(i);
             }
         }
-        streamWriter(ingredients, context, "recipes.json", gson);
+        streamWriter(ingredients, context, "ingredient.json", gson);
     }
 
     /**
@@ -116,9 +118,35 @@ public class UserJson {
             ingredients = new ArrayList<Ingredient>();
         }
         ingredients.add(ingredient);
-        streamWriter(ingredient, context, "recipes.json", gson);
+        streamWriter(ingredient, context, "ingredient.json", gson);
     }
 
+    /**
+     * returns the ingredient saved in the users files
+     * @param context of the methods
+     * @return a list of the ingredients
+     */
+    public List<Ingredient> getIngredientsList(Context context){
+        Gson gson = new Gson();
+        String ret = streamReader(context, "ingredient.json");
+        Type listRecipeType = new TypeToken<List<Ingredient>>() {}.getType();
+        List<Ingredient> ingredients = gson.fromJson(ret, listRecipeType);
+        return ingredients;
+    }
+
+    /**
+     * returns the Recipe saved in the users files
+     * @param context of the methods
+     * @return a list of the Recipes
+     */
+    public List<Recipe> getRecipesList(Context context){
+        Gson gson = new Gson();
+        String ret = streamReader(context, "recipes.json");
+        Type listRecipeType = new TypeToken<List<Recipe>>() {}.getType();
+        List<Recipe> recipes = gson.fromJson(ret, listRecipeType);
+        return recipes;
+    }
+    
     /**
      * streamWriter will write the object to a json. Given a file name
      * @param object object a user wants to store in a Json
