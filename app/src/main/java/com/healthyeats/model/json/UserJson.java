@@ -27,9 +27,9 @@ public class UserJson {
      */
     public UserJson(Context context){
         try {
-            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(context.openFileOutput("recipesFav.json", Context.MODE_PRIVATE));
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(context.openFileOutput("recipesFav.json", Context.MODE_APPEND| Context.MODE_PRIVATE));
             outputStreamWriter.close();
-            OutputStreamWriter outputStreamWriter2 = new OutputStreamWriter(context.openFileOutput("ingredient.json", Context.MODE_PRIVATE));
+            OutputStreamWriter outputStreamWriter2 = new OutputStreamWriter(context.openFileOutput("ingredient.json", Context.MODE_APPEND| Context.MODE_PRIVATE));
             outputStreamWriter2.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
