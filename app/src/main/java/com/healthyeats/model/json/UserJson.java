@@ -73,6 +73,11 @@ public class UserJson {
             System.out.println("HELLO??");
             recipes = new ArrayList<Recipe>();
         }
+        for(int i = 0; i < recipes.size(); i++) {
+            if(recipes.get(i).getId() == recipeID) {
+                return;
+            }
+        }
         recipes.add(sF.searchById(recipeID));
         streamWriter(recipes, context, filename, gson);
 
@@ -204,4 +209,5 @@ public class UserJson {
         }
     }
     }
-}
+
+
