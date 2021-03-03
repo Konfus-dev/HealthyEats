@@ -192,4 +192,16 @@ public class UserJson {
         }
         return ret;
     }
+    //For testing only
+    public void deleteEverythingFromFile(Context context, String fileName){
+        try {
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(context.openFileOutput(fileName, Context.MODE_PRIVATE));
+            outputStreamWriter.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    }
 }
