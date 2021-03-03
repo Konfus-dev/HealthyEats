@@ -146,7 +146,7 @@ public class UserJson {
         List<Recipe> recipes = gson.fromJson(ret, listRecipeType);
         return recipes;
     }
-    
+
     /**
      * streamWriter will write the object to a json. Given a file name
      * @param object object a user wants to store in a Json
