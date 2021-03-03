@@ -89,6 +89,10 @@ public class ViewHelper {
         // Set Scale
         heart.setScaleType(ImageView.ScaleType.FIT_XY);
 
+        if (isInFile("recipesFav.json", context, id)) {
+            heart.setImageDrawable(context.getResources().getDrawable(R.drawable.heartfull_icon));
+        }
+
         heart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
