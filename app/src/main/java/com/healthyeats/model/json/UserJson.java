@@ -27,9 +27,9 @@ public class UserJson {
      */
     public UserJson(Context context){
         try {
-            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(context.openFileOutput("recipesFav.json", Context.MODE_PRIVATE));
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(context.openFileOutput("recipesFav.json", Context.MODE_APPEND| Context.MODE_PRIVATE));
             outputStreamWriter.close();
-            OutputStreamWriter outputStreamWriter2 = new OutputStreamWriter(context.openFileOutput("ingredient.json", Context.MODE_PRIVATE));
+            OutputStreamWriter outputStreamWriter2 = new OutputStreamWriter(context.openFileOutput("ingredient.json", Context.MODE_APPEND| Context.MODE_PRIVATE));
             outputStreamWriter2.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
@@ -40,17 +40,17 @@ public class UserJson {
 
     /**
      *  deleteFromFile will delete a recipe from the file
-     * @param recipe the recipe you want to delete
+     * @param recipeID ID of the recipe you want to delete
      * @param context the context of a method
      * @param filename the name of the file
      */
-    public void deleteFromFileRecipe(Recipe recipe, Context context, String filename) {
+    public void deleteFromFileRecipe(int recipeID, Context context, String filename) {
         Gson gson = new Gson();
         String ret = streamReader(context, filename);
         Type listRecipeType = new TypeToken<List<Recipe>>() {}.getType();
         List<Recipe> recipes = gson.fromJson(ret, listRecipeType);
         for(int i = 0; i < recipes.size(); i++){
-            if( recipes.get(i).getName().equals(recipe.getName())){
+            if( recipes.get(i).getId() == recipeID ){
                 recipes.remove(i);
             }
         }
@@ -73,6 +73,11 @@ public class UserJson {
             System.out.println("HELLO??");
             recipes = new ArrayList<Recipe>();
         }
+        for(int i = 0; i < recipes.size(); i++) {
+            if(recipes.get(i).getId() == recipeID) {
+                return;
+            }
+        }
         recipes.add(sF.searchById(recipeID));
         streamWriter(recipes, context, filename, gson);
 
@@ -91,7 +96,7 @@ public class UserJson {
      * @param ingredient the ingredient you want to delete
      * @param context the context of a method
      */
-    public void deleteFromFile(Ingredient ingredient, Context context) {
+    public void deleteFromFileIngredients(Ingredient ingredient, Context context) {
         Gson gson = new Gson();
         String ret = streamReader(context, "ingredient.json");
         Type listRecipeType = new TypeToken<List<Ingredient>>() {}.getType();
@@ -105,17 +110,24 @@ public class UserJson {
     }
 
     /**
-     * writeToFile recipe that you want to write to file
+     * writeToFile recipe that you want to write to file, Note: can be
+     * easily edited to instead of not adding duplicated ingredients,
+     * it could add the items quantities together. :)
      * @param ingredient the ingredient to write
      * @param context the method context
      */
-    public void writeToFile(Ingredient ingredient, Context context) {
+    public void writeToFileIngredient(Ingredient ingredient, Context context) {
         Gson gson = new Gson();
         String ret = streamReader(context, "ingredient.json");
         Type listRecipeType = new TypeToken<List<Ingredient>>() {}.getType();
         List<Ingredient> ingredients = gson.fromJson(ret, listRecipeType);
         if(ingredients == null){
             ingredients = new ArrayList<Ingredient>();
+        }
+        for(int i = 0; i < ingredients.size(); i++) {
+            if(ingredients.get(i).getName().equals(ingredient.getName())) {
+                return;
+            }
         }
         ingredients.add(ingredient);
         streamWriter(ingredient, context, "ingredient.json", gson);
@@ -141,7 +153,7 @@ public class UserJson {
      */
     public List<Recipe> getRecipesList(Context context){
         Gson gson = new Gson();
-        String ret = streamReader(context, "recipes.json");
+        String ret = streamReader(context, "recipesFav.json");
         Type listRecipeType = new TypeToken<List<Recipe>>() {}.getType();
         List<Recipe> recipes = gson.fromJson(ret, listRecipeType);
         return recipes;
@@ -192,4 +204,17 @@ public class UserJson {
         }
         return ret;
     }
-}
+    //For testing only
+    public void deleteEverythingFromFile(Context context, String fileName){
+        try {
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(context.openFileOutput(fileName, Context.MODE_PRIVATE));
+            outputStreamWriter.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    }
+
+
