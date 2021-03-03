@@ -118,7 +118,11 @@ public class UserJson {
             ingredients = new ArrayList<Ingredient>();
         }
         for(int i = 0; i < ingredients.size(); i++) {
-            if(ingredients.get(i).getName().equals(ingredient.getName())) {
+            if(ingredients.get(i).getName().equals(ingredient.getName()) && (ingredient.getMeasurement().equals(null) ||ingredient.getMeasurement().equals("pound")) ) {
+                ingredients.get(i).addToAmount(ingredient.getAmount());
+                streamWriter(ingredient, context, "ingredient.json", gson);
+                return;
+            }else if(ingredients.get(i).getName().equals(ingredient.getName())){
                 return;
             }
         }
