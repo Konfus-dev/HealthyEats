@@ -49,6 +49,7 @@ public class UserJson {
         String ret = streamReader(context, filename);
         Type listRecipeType = new TypeToken<List<Recipe>>() {}.getType();
         List<Recipe> recipes = gson.fromJson(ret, listRecipeType);
+
         for(int i = 0; i < recipes.size(); i++){
             if( recipes.get(i).getId() == recipeID ){
                 recipes.remove(i);
@@ -69,10 +70,11 @@ public class UserJson {
         String ret = streamReader(context, filename);
         Type listRecipeType = new TypeToken<List<Recipe>>() {}.getType();
         List<Recipe> recipes = gson.fromJson(ret, listRecipeType);
+
         if(recipes == null){
-            System.out.println("HELLO??");
             recipes = new ArrayList<Recipe>();
         }
+
         for(int i = 0; i < recipes.size(); i++) {
             if(recipes.get(i).getId() == recipeID) {
                 return;
@@ -80,15 +82,6 @@ public class UserJson {
         }
         recipes.add(sF.searchById(recipeID));
         streamWriter(recipes, context, filename, gson);
-
-
-        System.out.println(recipes.size());
-        String test = streamReader(context, filename);
-        Type list = new TypeToken<List<Recipe>>() {}.getType();
-        List<Recipe> recip = gson.fromJson(test, list);
-        for(int i = 0; i < recip.size(); i++){
-            System.out.println("yo");
-        }
     }
 
     /**

@@ -16,11 +16,27 @@ import androidx.cardview.widget.CardView;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.healthyeats.R;
 import com.healthyeats.controller.recipe.RecipeFragment;
 import com.healthyeats.model.json.UserJson;
+import com.healthyeats.model.recipe.Recipe;
+
+import java.lang.reflect.Type;
+import java.util.List;
 
 public class ViewHelper {
+
+    // Get recipes from file (this will be to populate favorite recipes
+    // and liked recipes
+    public List<Recipe> getRecipe(Context context, String file, UserJson js) {
+        Gson gson = new Gson();
+        String ret = js.streamReader(context, file);
+        Type listRecipeType = new TypeToken<List<Recipe>>() {}.getType();
+        List<Recipe> recipes = gson.fromJson(ret, listRecipeType);
+        return recipes;
+    }
 
     public int toDP(float dp, Context context) {
         DisplayMetrics metrics = context.getResources().getDisplayMetrics();
@@ -43,6 +59,21 @@ public class ViewHelper {
         return card;
     }
 
+    //Check if a recipe is in a specific json file given the file name
+    public boolean isInFile(String filename, Context context, int id) {
+        boolean isIn = false;
+        UserJson userJson = new UserJson(context);
+        List<Recipe> recipes = getRecipe(context, filename, userJson);
+
+        for (int i = 0; i < recipes.size(); i++) {
+            if (recipes.get(i).getId() == id) {
+                isIn = true;
+                break;
+            }
+        }
+        return isIn;
+    }
+
     // Creates the Heart Icon
     public ImageButton heart(Activity activity, Context context, int id) {
         //Image Button Creation - Height | Width
@@ -61,9 +92,15 @@ public class ViewHelper {
         heart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                UserJson json = new UserJson(context);
-                json.writeToFileRecipe(id, context, "recipesFav.json");
-                System.out.println("\nCLICK\n");
+                UserJson userJson = new UserJson(context);
+                boolean isIn = isInFile("recipesFav.json", context, id);
+
+                if (isIn) {
+                    userJson.deleteFromFileRecipe(id, context, "recipesFav.json");
+                } else {
+                    userJson.writeToFileRecipe(id, context, "recipesFav.json");
+                }
+
             }
         });
 

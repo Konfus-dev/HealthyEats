@@ -69,20 +69,12 @@ public class HomeFragment extends Fragment {
         return lin;
     }
 
-    // Get recipes from file (this will be to populate favorite recipes
-    // and liked recipes
-    public List<Recipe> getRecipe(Context context, String file, UserJson js) {
-        Gson gson = new Gson();
-        String ret = js.streamReader(context, file);
-        Type listRecipeType = new TypeToken<List<Recipe>>() {}.getType();
-        List<Recipe> recipes = gson.fromJson(ret, listRecipeType);
-        return recipes;
-    }
-
     public void populateThisWeeksMeals(View root, ViewHelper obj) {
         thisWeeksMeals = root.findViewById(R.id.homeThisWeeksMeals);
         UserJson userJson = new UserJson(getContext());
-        List<Recipe> favRecipe = getRecipe(getContext(), "recipesFav.json", userJson);
+        ViewHelper rec = new ViewHelper();
+
+        List<Recipe> favRecipe = rec.getRecipe(getContext(), "recipesFav.json", userJson);
 
         if (favRecipe != null) {
             System.out.println("HERE????");
@@ -101,7 +93,9 @@ public class HomeFragment extends Fragment {
     public void populateYourFavorites(View root, ViewHelper obj) {
         yourFavorites = root.findViewById(R.id.homeYourFavorites);
         UserJson userJson = new UserJson(getContext());
-        List<Recipe> favRecipe = getRecipe(getContext(), "recipesFav.json", userJson);
+        ViewHelper rec = new ViewHelper();
+
+        List<Recipe> favRecipe = rec.getRecipe(getContext(), "recipesFav.json", userJson);
 
         if (favRecipe != null) {
             HorizontalScrollView horiz = createHorizontalScroll();
