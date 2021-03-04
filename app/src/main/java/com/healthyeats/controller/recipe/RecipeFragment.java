@@ -125,20 +125,20 @@ public class RecipeFragment extends Fragment {
         ingredButton.setBackgroundColor(Color.parseColor("#F1F9FF"));
         ingredButton.setImageDrawable(root.getResources().getDrawable(R.drawable.addbluebackground_icon));
 
-        if (obj.isInFile("recipesFav.json", getContext(), ing)) {
-            ingredButton.setImageDrawable(getContext().getResources().getDrawable(R.drawable.heartfull_icon));
+        if (obj.ingredInFile(getContext(), ing)) {
+            ingredButton.setImageDrawable(getContext().getResources().getDrawable(R.drawable.checkgreenbackground_icon));
         }
 
         ingredButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 UserJson userJson = new UserJson(getContext());
-                boolean isIn = obj.isInFile("recipesFav.json", getContext(), ing);
+                boolean isIn = obj.ingredInFile(getContext(), ing);
 
                 if (isIn) {
-                    userJson.deleteFromFileRecipe(ing, getContext(), "recipesFav.json");
+                    userJson.deleteFromFileIngredients(ing, getContext());
                 } else {
-                    userJson.writeToFileRecipe(ing, getContext(), "recipesFav.json");
+                    userJson.writeToFileIngredient(ing, getContext());
                 }
 
             }

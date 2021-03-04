@@ -21,6 +21,7 @@ import com.google.gson.reflect.TypeToken;
 import com.healthyeats.R;
 import com.healthyeats.controller.recipe.RecipeFragment;
 import com.healthyeats.model.json.UserJson;
+import com.healthyeats.model.recipe.Ingredient;
 import com.healthyeats.model.recipe.Recipe;
 
 import java.lang.reflect.Type;
@@ -36,6 +37,15 @@ public class ViewHelper {
         Type listRecipeType = new TypeToken<List<Recipe>>() {}.getType();
         List<Recipe> recipes = gson.fromJson(ret, listRecipeType);
         return recipes;
+    }
+
+    // Get ingredients from file (this will be to populate grocery list
+    public List<Ingredient> getIngredient(Context context, UserJson js) {
+        Gson gson = new Gson();
+        String ret = js.streamReader(context, "ingredient.json");
+        Type listRecipeType = new TypeToken<List<Ingredient>>() {}.getType();
+        List<Ingredient> ingredients = gson.fromJson(ret, listRecipeType);
+        return ingredients;
     }
 
     public int toDP(float dp, Context context) {
@@ -67,6 +77,21 @@ public class ViewHelper {
 
         for (int i = 0; i < recipes.size(); i++) {
             if (recipes.get(i).getId() == id) {
+                isIn = true;
+                break;
+            }
+        }
+        return isIn;
+    }
+
+    //Check if a recipe is in a specific json file given the file name
+    public boolean ingredInFile(Context context, Ingredient ingred) {
+        boolean isIn = false;
+        UserJson userJson = new UserJson(context);
+        List<Ingredient> ingredientList = getIngredient(context, userJson);
+
+        for (int i = 0; i < ingredientList.size(); i++) {
+            if (ingredientList.get(i).getName() == ingred.getName()) {
                 isIn = true;
                 break;
             }
