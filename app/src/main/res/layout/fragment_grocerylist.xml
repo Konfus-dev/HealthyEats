@@ -89,75 +89,135 @@
                 android:id="@+id/groceryListStart"
                 tools:context=".GroceryList">
 
-<!--                <LinearLayout-->
-<!--                    android:layout_width="match_parent"-->
-<!--                    android:layout_height="wrap_content">-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-<!--                    <androidx.cardview.widget.CardView-->
-<!--                        style = "@style/groceryListCardViewLeft">-->
-<!--                        <LinearLayout-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="match_parent"-->
-<!--                            android:orientation="vertical">-->
+                    <LinearLayout
+                        android:layout_width="150dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
 
-<!--                            <ImageButton-->
-<!--                                android:src="@drawable/checkgreenbackground_icon"-->
-<!--                                style = "@style/groceryItemImage">-->
+                        <ImageButton
+                            android:src="@drawable/checkgreenbackground_icon"
+                            style = "@style/groceryItemImage">
 
-<!--                            </ImageButton>-->
+                        </ImageButton>
 
-<!--                            <TextView-->
-<!--                                android:layout_width="match_parent"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:text="Lorem"-->
-<!--                                style = "@style/groceryItemName">-->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Lorem"
+                            style = "@style/groceryItemName">
 
-<!--                            </TextView>-->
+                        </TextView>
 
-<!--                            <TextView-->
-<!--                                android:layout_width="match_parent"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:text="5$"-->
-<!--                                style = "@style/groceryItemPrice">-->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="5$"
+                            style = "@style/groceryItemPrice">
 
-<!--                            </TextView>-->
-<!--                        </LinearLayout>-->
+                        </TextView>
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="150dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
 
-<!--                    </androidx.cardview.widget.CardView>-->
+                        <ImageButton
+                            android:src="@drawable/checkgreenbackground_icon"
+                            style = "@style/groceryItemImage">
 
-<!--                    <androidx.cardview.widget.CardView-->
-<!--                        style = "@style/groceryListCardViewRight">-->
+                        </ImageButton>
 
-<!--                        <LinearLayout-->
-<!--                            android:layout_width="match_parent"-->
-<!--                            android:layout_height="match_parent"-->
-<!--                            android:orientation="vertical">-->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Lorem"
+                            style = "@style/groceryItemName">
 
-<!--                            <ImageButton-->
-<!--                                android:src="@drawable/checkgreenbackground_icon"-->
-<!--                                style = "@style/groceryItemImage">-->
+                        </TextView>
 
-<!--                            </ImageButton>-->
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="5$"
+                            style = "@style/groceryItemPrice">
 
-<!--                            <TextView-->
-<!--                                android:layout_width="match_parent"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:text="Lorem"-->
-<!--                                style = "@style/groceryItemName">-->
+                        </TextView>
+                    </LinearLayout>
 
-<!--                            </TextView>-->
+                </LinearLayout>
 
-<!--                            <TextView-->
-<!--                                android:layout_width="match_parent"-->
-<!--                                android:layout_height="wrap_content"-->
-<!--                                android:text="5$"-->
-<!--                                style = "@style/groceryItemPrice">-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-<!--                            </TextView>-->
-<!--                        </LinearLayout>-->
-<!--                    </androidx.cardview.widget.CardView>-->
+                        <LinearLayout
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="30dp"
+                            android:layout_marginTop="10dp"
+                            android:orientation="vertical">
 
-<!--                </LinearLayout>-->
+                            <ImageButton
+                                android:src="@drawable/checkgreenbackground_icon"
+                                style = "@style/groceryItemImage">
+
+                            </ImageButton>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Lorem"
+                                style = "@style/groceryItemName">
+
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="5$"
+                                style = "@style/groceryItemPrice">
+
+                            </TextView>
+                        </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="150dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="10dp"
+                        android:orientation="vertical">
+
+                        <ImageButton
+                            android:src="@drawable/checkgreenbackground_icon"
+                            style = "@style/groceryItemImage">
+
+                        </ImageButton>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Lorem"
+                            style = "@style/groceryItemName">
+
+                        </TextView>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="5$"
+                            style = "@style/groceryItemPrice">
+
+                        </TextView>
+                    </LinearLayout>
+
+                </LinearLayout>
 
             </LinearLayout>
             <!-- End of Grocery List -->

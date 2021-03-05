@@ -17,6 +17,7 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class UserJson {
@@ -112,21 +113,23 @@ public class UserJson {
     public void writeToFileIngredient(Ingredient ingredient, Context context) {
         Gson gson = new Gson();
         String ret = streamReader(context, "ingredient.json");
-        Type listRecipeType = new TypeToken<List<Ingredient>>() {}.getType();
-        List<Ingredient> ingredients = gson.fromJson(ret, listRecipeType);
+        List<Ingredient> ingredients = Arrays.asList(gson.fromJson(ret, Ingredient.class));
+
         if(ingredients == null){
             ingredients = new ArrayList<Ingredient>();
         }
         for(int i = 0; i < ingredients.size(); i++) {
             if(ingredients.get(i).getName().equals(ingredient.getName()) && (ingredient.getMeasurement().equals(null) ||ingredient.getMeasurement().equals("pound")) ) {
                 ingredients.get(i).addToAmount(ingredient.getAmount());
+                System.out.println("TEST");
                 streamWriter(ingredient, context, "ingredient.json", gson);
                 return;
             }else if(ingredients.get(i).getName().equals(ingredient.getName())){
                 return;
             }
         }
-        ingredients.add(ingredient);
+        System.out.println("THIS LINE??");
+//        ingredients.add(ingredient);
         streamWriter(ingredient, context, "ingredient.json", gson);
     }
 

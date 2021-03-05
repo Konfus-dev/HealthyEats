@@ -25,6 +25,7 @@ import com.healthyeats.model.recipe.Ingredient;
 import com.healthyeats.model.recipe.Recipe;
 
 import java.lang.reflect.Type;
+import java.util.Arrays;
 import java.util.List;
 
 public class ViewHelper {
@@ -43,8 +44,7 @@ public class ViewHelper {
     public List<Ingredient> getIngredient(Context context, UserJson js) {
         Gson gson = new Gson();
         String ret = js.streamReader(context, "ingredient.json");
-        Type listRecipeType = new TypeToken<List<Ingredient>>() {}.getType();
-        List<Ingredient> ingredients = gson.fromJson(ret, listRecipeType);
+        List<Ingredient> ingredients = Arrays.asList(gson.fromJson(ret, Ingredient.class));
         return ingredients;
     }
 
@@ -90,12 +90,15 @@ public class ViewHelper {
         UserJson userJson = new UserJson(context);
         List<Ingredient> ingredientList = getIngredient(context, userJson);
 
-        for (int i = 0; i < ingredientList.size(); i++) {
-            if (ingredientList.get(i).getName() == ingred.getName()) {
-                isIn = true;
-                break;
+        if (ingredientList != null) {
+            for (int i = 0; i < ingredientList.size(); i++) {
+                if (ingredientList.get(i).getName().equals(ingred.getName())) {
+                    isIn = true;
+                    break;
+                }
             }
         }
+
         return isIn;
     }
 
