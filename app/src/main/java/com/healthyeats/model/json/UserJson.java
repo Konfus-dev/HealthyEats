@@ -215,6 +215,4 @@ public class UserJson {
             e.printStackTrace();
         }
     }
-    }
-
-
+}
