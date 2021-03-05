@@ -35,7 +35,7 @@ public class GrocerylistFragment extends Fragment {
                 new ViewModelProvider(this).get(GrocerylistViewModel.class);
         View root = inflater.inflate(R.layout.fragment_grocerylist, container, false);
 
-        populateGroceryList(root);
+//        populateGroceryList(root);
 
         return root;
     }

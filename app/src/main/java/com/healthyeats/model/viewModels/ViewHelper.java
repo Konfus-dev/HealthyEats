@@ -44,7 +44,9 @@ public class ViewHelper {
     public List<Ingredient> getIngredient(Context context, UserJson js) {
         Gson gson = new Gson();
         String ret = js.streamReader(context, "ingredient.json");
-        List<Ingredient> ingredients = Arrays.asList(gson.fromJson(ret, Ingredient.class));
+        Type listIngredientType = new TypeToken<List<Ingredient>>() {}.getType();
+        List<Ingredient> ingredients = gson.fromJson(ret, listIngredientType);
+
         return ingredients;
     }
 
@@ -75,12 +77,15 @@ public class ViewHelper {
         UserJson userJson = new UserJson(context);
         List<Recipe> recipes = getRecipe(context, filename, userJson);
 
-        for (int i = 0; i < recipes.size(); i++) {
-            if (recipes.get(i).getId() == id) {
-                isIn = true;
-                break;
+        if (recipes != null) {
+            for (int i = 0; i < recipes.size(); i++) {
+                if (recipes.get(i).getId() == id) {
+                    isIn = true;
+                    break;
+                }
             }
         }
+
         return isIn;
     }
 
@@ -116,7 +121,7 @@ public class ViewHelper {
 
         // Set Scale
         heart.setScaleType(ImageView.ScaleType.FIT_XY);
-
+        UserJson userJson = new UserJson(context);
         if (isInFile("recipesFav.json", context, id)) {
             heart.setImageDrawable(context.getResources().getDrawable(R.drawable.heartfull_icon));
         }
