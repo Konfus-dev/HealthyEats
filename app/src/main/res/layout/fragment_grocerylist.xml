@@ -98,7 +98,8 @@
 <!--                        android:layout_height="match_parent"-->
 <!--                        android:layout_marginLeft="30dp"-->
 <!--                        android:layout_marginTop="10dp"-->
-<!--                        android:orientation="vertical">-->
+<!--                        android:orientation="vertical"-->
+<!--                        android:background="@color/white">-->
 
 <!--                        <ImageButton-->
 <!--                            android:src="@drawable/checkgreenbackground_icon"-->
