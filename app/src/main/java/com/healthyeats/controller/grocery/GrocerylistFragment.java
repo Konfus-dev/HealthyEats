@@ -35,7 +35,7 @@ public class GrocerylistFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_grocerylist, container, false);
 
         populateGroceryList(root);
-        
+
         return root;
     }
 
@@ -47,7 +47,8 @@ public class GrocerylistFragment extends Fragment {
     }
 
     public TextView createGroceryItemName(String itemName) {
-        TextView name = new TextView(new ContextThemeWrapper(getActivity(), R.style.groceryItemName), null, 0);
+        TextView name = new TextView(getContext());
+        name.setTextAppearance(getActivity(), R.style.groceryItemName);
         name.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         name.setText(itemName);
 
@@ -55,7 +56,8 @@ public class GrocerylistFragment extends Fragment {
     }
 
     public TextView createGroceryItemQuantity(String quantity) {
-        TextView quan = new TextView(new ContextThemeWrapper(getActivity(), R.style.groceryItemName), null, 0);
+        TextView quan = new TextView(getContext());
+        quan.setTextAppearance(getActivity(), R.style.groceryItemPrice);
         quan.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         quan.setText(quantity);
 
