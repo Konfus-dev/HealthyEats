@@ -40,10 +40,18 @@ public class GrocerylistFragment extends Fragment {
         return root;
     }
 
-    public ImageButton createImageButton(View root, ViewHelper rec) {
+    public ImageButton createImageButton(View root, ViewHelper rec, Ingredient ing) {
         ImageButton but = new ImageButton(new ContextThemeWrapper(getActivity(), R.style.groceryItemImage), null, 0);
         but.setImageDrawable(root.getResources().getDrawable(R.drawable.checkgreenbackground_icon));
         but.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, rec.toDP(90, getContext())));
+
+        but.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                UserJson userJson = new UserJson(getContext());
+                userJson.deleteFromFileIngredients(ing, getContext());
+            }
+        });
 
         return but;
     }
@@ -97,7 +105,7 @@ public class GrocerylistFragment extends Fragment {
         inner.setBackgroundColor(getResources().getColor(R.color.white));
 
         parent.addView(inner);
-        inner.addView(createImageButton(root, rec));
+        inner.addView(createImageButton(root, rec, ingred));
         inner.addView(createGroceryItemName(ingred.getName(), rec));
         inner.addView(createGroceryItemQuantity(ingred.getAmount(), rec));
     }
