@@ -89,135 +89,70 @@
                 android:id="@+id/groceryListStart"
                 tools:context=".GroceryList">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content">-->
 
-                    <LinearLayout
-                        android:layout_width="150dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="30dp"
-                        android:layout_marginTop="10dp"
-                        android:orientation="vertical">
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="150dp"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_marginLeft="30dp"-->
+<!--                        android:layout_marginTop="10dp"-->
+<!--                        android:orientation="vertical">-->
 
-                        <ImageButton
-                            android:src="@drawable/checkgreenbackground_icon"
-                            style = "@style/groceryItemImage">
+<!--                        <ImageButton-->
+<!--                            android:src="@drawable/checkgreenbackground_icon"-->
+<!--                            style = "@style/groceryItemImage">-->
 
-                        </ImageButton>
+<!--                        </ImageButton>-->
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Lorem"
-                            style = "@style/groceryItemName">
+<!--                        <TextView-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="Lorem"-->
+<!--                            style = "@style/groceryItemName">-->
 
-                        </TextView>
+<!--                        </TextView>-->
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="5$"
-                            style = "@style/groceryItemPrice">
+<!--                        <TextView-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="5$"-->
+<!--                            style = "@style/groceryItemPrice">-->
 
-                        </TextView>
-                    </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="150dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="30dp"
-                        android:layout_marginTop="10dp"
-                        android:orientation="vertical">
+<!--                        </TextView>-->
+<!--                    </LinearLayout>-->
+<!--                    <LinearLayout-->
+<!--                        android:layout_width="150dp"-->
+<!--                        android:layout_height="match_parent"-->
+<!--                        android:layout_marginLeft="30dp"-->
+<!--                        android:layout_marginTop="10dp"-->
+<!--                        android:orientation="vertical">-->
 
-                        <ImageButton
-                            android:src="@drawable/checkgreenbackground_icon"
-                            style = "@style/groceryItemImage">
+<!--                        <ImageButton-->
+<!--                            android:src="@drawable/checkgreenbackground_icon"-->
+<!--                            style = "@style/groceryItemImage">-->
 
-                        </ImageButton>
+<!--                        </ImageButton>-->
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Lorem"
-                            style = "@style/groceryItemName">
+<!--                        <TextView-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="Lorem"-->
+<!--                            style = "@style/groceryItemName">-->
 
-                        </TextView>
+<!--                        </TextView>-->
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="5$"
-                            style = "@style/groceryItemPrice">
+<!--                        <TextView-->
+<!--                            android:layout_width="match_parent"-->
+<!--                            android:layout_height="wrap_content"-->
+<!--                            android:text="5$"-->
+<!--                            style = "@style/groceryItemPrice">-->
 
-                        </TextView>
-                    </LinearLayout>
+<!--                        </TextView>-->
+<!--                    </LinearLayout>-->
 
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-                        <LinearLayout
-                            android:layout_width="150dp"
-                            android:layout_height="match_parent"
-                            android:layout_marginLeft="30dp"
-                            android:layout_marginTop="10dp"
-                            android:orientation="vertical">
-
-                            <ImageButton
-                                android:src="@drawable/checkgreenbackground_icon"
-                                style = "@style/groceryItemImage">
-
-                            </ImageButton>
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="Lorem"
-                                style = "@style/groceryItemName">
-
-                            </TextView>
-
-                            <TextView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:text="5$"
-                                style = "@style/groceryItemPrice">
-
-                            </TextView>
-                        </LinearLayout>
-                    <LinearLayout
-                        android:layout_width="150dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="30dp"
-                        android:layout_marginTop="10dp"
-                        android:orientation="vertical">
-
-                        <ImageButton
-                            android:src="@drawable/checkgreenbackground_icon"
-                            style = "@style/groceryItemImage">
-
-                        </ImageButton>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Lorem"
-                            style = "@style/groceryItemName">
-
-                        </TextView>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="5$"
-                            style = "@style/groceryItemPrice">
-
-                        </TextView>
-                    </LinearLayout>
-
-                </LinearLayout>
+<!--                </LinearLayout>-->
 
             </LinearLayout>
             <!-- End of Grocery List -->

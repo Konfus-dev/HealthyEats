@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -33,7 +34,8 @@ public class GrocerylistFragment extends Fragment {
                 new ViewModelProvider(this).get(GrocerylistViewModel.class);
         View root = inflater.inflate(R.layout.fragment_grocerylist, container, false);
 
-
+        populateGroceryList(root);
+        
         return root;
     }
 
@@ -44,7 +46,23 @@ public class GrocerylistFragment extends Fragment {
         return but;
     }
 
-    public void createInnerLayoutCard(LinearLayout parent, ViewHelper rec, View root) {
+    public TextView createGroceryItemName(String itemName) {
+        TextView name = new TextView(new ContextThemeWrapper(getActivity(), R.style.groceryItemName), null, 0);
+        name.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        name.setText(itemName);
+
+        return name;
+    }
+
+    public TextView createGroceryItemQuantity(String quantity) {
+        TextView quan = new TextView(new ContextThemeWrapper(getActivity(), R.style.groceryItemName), null, 0);
+        quan.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
+        quan.setText(quantity);
+
+        return quan;
+    }
+
+    public void createInnerLayoutCard(LinearLayout parent, ViewHelper rec, View root, Ingredient ingred) {
         LinearLayout inner = new LinearLayout(getContext());
         inner.setLayoutParams(new LinearLayout.LayoutParams(rec.toDP(150, getContext()), ViewGroup.LayoutParams.MATCH_PARENT));
 
@@ -56,6 +74,8 @@ public class GrocerylistFragment extends Fragment {
 
         parent.addView(inner);
         inner.addView(createImageButton(root));
+        inner.addView(createGroceryItemName(ingred.getName()));
+        inner.addView(createGroceryItemQuantity(ingred.getAmount()));
     }
 
     public void populateGroceryList(View root) {
@@ -72,7 +92,7 @@ public class GrocerylistFragment extends Fragment {
                 groceryList.addView(temp);
             }
 
-            createInnerLayoutCard(temp, rec, root);
+            createInnerLayoutCard(temp, rec, root, yourIngredients.get(i));
         }
     }
 
