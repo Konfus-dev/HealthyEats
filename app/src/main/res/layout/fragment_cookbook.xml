@@ -10,7 +10,9 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints">
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="106dp"
+        tools:layout_editor_absoluteY="0dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -53,6 +55,7 @@
             </LinearLayout>
 
             // Trending Title
+
             <TextView
                 android:id="@+id/TrendingHeader"
                 android:layout_width="wrap_content"
@@ -67,6 +70,7 @@
                 android:textStyle="bold" />
 
             // Trending Horizontal View
+
             <HorizontalScrollView
                 android:layout_width="wrap_content"
                 android:layout_height="298dp"
@@ -75,16 +79,17 @@
                 android:scrollbars="none">
 
                 <LinearLayout
+                    android:id="@+id/cookBookTrending"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:id = "@+id/cookBookTrending">
+                    android:orientation="horizontal">
 
 
                 </LinearLayout>
             </HorizontalScrollView>
 
             // Our Favorites Title
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -98,6 +103,7 @@
                 android:textStyle="bold" />
 
             // Our Favorites Horizontal View
+
             <HorizontalScrollView
                 android:layout_width="wrap_content"
                 android:layout_height="298dp"
@@ -105,15 +111,16 @@
                 android:layout_marginTop="10dp">
 
                 <LinearLayout
+                    android:id="@+id/cookBookOurFavorites"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:id = "@+id/cookBookOurFavorites">
+                    android:orientation="horizontal">
 
                 </LinearLayout>
             </HorizontalScrollView>
 
             // You Should Try Title
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -127,6 +134,7 @@
                 android:textStyle="bold" />
 
             // You Should Try Horizontal View
+
             <HorizontalScrollView
                 android:layout_width="wrap_content"
                 android:layout_height="298dp"
@@ -134,15 +142,16 @@
                 android:layout_marginTop="10dp">
 
                 <LinearLayout
+                    android:id="@+id/cookBookYouShouldTry"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:id = "@+id/cookBookYouShouldTry">
+                    android:orientation="horizontal">
 
                 </LinearLayout>
             </HorizontalScrollView>
 
             // Bang for Your Buck Title
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -156,6 +165,7 @@
                 android:textStyle="bold" />
 
             // Bang for Your Buck Horizontal View
+
             <HorizontalScrollView
                 android:layout_width="wrap_content"
                 android:layout_height="298dp"
@@ -163,10 +173,10 @@
                 android:layout_marginTop="10dp">
 
                 <LinearLayout
+                    android:id="@+id/cookBookBangForYourBuck"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="horizontal"
-                    android:id = "@+id/cookBookBangForYourBuck">
+                    android:orientation="horizontal">
 
 
                 </LinearLayout>

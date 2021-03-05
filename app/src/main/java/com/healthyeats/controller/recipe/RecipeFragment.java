@@ -18,8 +18,10 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.healthyeats.R;
 import com.healthyeats.controller.searchAndFilter.SearchAndFilter;
+import com.healthyeats.model.json.UserJson;
 import com.healthyeats.model.recipe.Ingredient;
 import com.healthyeats.model.recipe.Recipe;
+import com.healthyeats.model.viewModels.ViewHelper;
 
 public class RecipeFragment extends Fragment {
 
@@ -104,7 +106,9 @@ public class RecipeFragment extends Fragment {
         }
     }
 
-    public ImageButton createIngredientButton(View root) {
+    public ImageButton createIngredientButton(View root, Ingredient ing) {
+        ViewHelper obj = new ViewHelper();
+
         //Image Button Creation - Height | Width
         ImageButton ingredButton = new ImageButton(getActivity());
         ingredButton.setLayoutParams(new LinearLayout.LayoutParams(toDP(35), toDP(50)));
@@ -120,6 +124,25 @@ public class RecipeFragment extends Fragment {
 
         ingredButton.setBackgroundColor(Color.parseColor("#F1F9FF"));
         ingredButton.setImageDrawable(root.getResources().getDrawable(R.drawable.addbluebackground_icon));
+
+        if (obj.ingredInFile(getContext(), ing)) {
+            ingredButton.setImageDrawable(getContext().getResources().getDrawable(R.drawable.checkgreenbackground_icon));
+        }
+
+        ingredButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                UserJson userJson = new UserJson(getContext());
+                boolean isIn = obj.ingredInFile(getContext(), ing);
+
+                if (isIn) {
+                    userJson.deleteFromFileIngredients(ing, getContext());
+                } else {
+                    userJson.writeToFileIngredient(ing, getContext());
+                }
+
+            }
+        });
 
         return ingredButton;
     }
@@ -158,7 +181,7 @@ public class RecipeFragment extends Fragment {
             tempLayout.setOrientation(LinearLayout.HORIZONTAL);
 
             ingredientList.addView(tempLayout);
-            tempLayout.addView(createIngredientButton((root)));
+            tempLayout.addView(createIngredientButton(root, ingredient[i]));
             tempLayout.addView(createIngredientText(root, ingredient[i]));
         }
     }

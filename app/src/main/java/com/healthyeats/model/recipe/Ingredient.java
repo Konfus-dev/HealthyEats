@@ -17,7 +17,9 @@ public class Ingredient {
 
     public String getAmount() { return amount; }
     public void setAmount(String amount) { this.amount = amount; }
-
+    public  void addToAmount(String amount){
+        this.amount = String.valueOf(Integer.parseInt(amount) + Integer.parseInt(this.amount));
+    }
     public boolean CheckIfUserHasIngredient() { return userHasIngredient; }
     public void SetUserHasIngredient(boolean yesNo) { this.userHasIngredient = yesNo; }
 

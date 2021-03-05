@@ -61,10 +61,10 @@ public class MainActivity extends AppCompatActivity {
         4, 1, "NA",3, 2, 1,5,
         2, 1, 3, "Hard", instructions,
                 new Ingredient[] {ingredient}, new String[]{"apple"});
-        userJson.writeToFile( recipe, getApplicationContext());
-        userJson.deleteFromFile(recipe,getApplicationContext());
+//        userJson.writeToFile( recipe, getApplicationContext());
+//        userJson.deleteFromFile(recipe,getApplicationContext());
             //testing
-        //System.out.println(recipeList.get(0).toString());
+//        System.out.println(recipeList.get(0).toString());
     }
 
     //Creating hard coded data on grocery list (Just to test)
