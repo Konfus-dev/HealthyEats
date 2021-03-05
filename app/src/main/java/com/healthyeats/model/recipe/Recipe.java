@@ -11,6 +11,7 @@ public class Recipe implements Comparable<Recipe> {
     private String name;
     private String source;
     private String difficultyLevel;
+    private String img;
     private int prepTime;
     private int waitTime;
     private int cookTime;
@@ -56,10 +57,11 @@ public class Recipe implements Comparable<Recipe> {
      * @param ingredients the ingredients in the recipe
      * @param tags tags for the recipe
      */
-    public Recipe(int id, String name, String source, int prepTime, int waitTime, int cookTime, int servings, String comments, int calories, int fat, int satFat, int carbs, int fiber, int sugar, int protein, String difficultyLevel, String[] instructions, Ingredient[] ingredients, String[] tags) {
+    public Recipe(int id, String name, String source, String img, int prepTime, int waitTime, int cookTime, int servings, String comments, int calories, int fat, int satFat, int carbs, int fiber, int sugar, int protein, String difficultyLevel, String[] instructions, Ingredient[] ingredients, String[] tags) {
         this.id = id;
         this.name = name;
         this.source = source;
+        this.img = img;
         this.prepTime = prepTime;
         this.waitTime = waitTime;
         this.cookTime = cookTime;
@@ -212,6 +214,8 @@ public class Recipe implements Comparable<Recipe> {
         this.tags = tags;
     }
 
+    public String getImg() { return img; }
+    public void setImg(String image) { this.img = image; }
 
     //ToDo:
     // Patch up exporting ingredients to the grocery list, make sure there are not duplicates,

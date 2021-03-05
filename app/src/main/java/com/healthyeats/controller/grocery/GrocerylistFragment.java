@@ -40,10 +40,18 @@ public class GrocerylistFragment extends Fragment {
         return root;
     }
 
-    public ImageButton createImageButton(View root, ViewHelper rec) {
+    public ImageButton createImageButton(View root, ViewHelper rec, Ingredient ing) {
         ImageButton but = new ImageButton(new ContextThemeWrapper(getActivity(), R.style.groceryItemImage), null, 0);
         but.setImageDrawable(root.getResources().getDrawable(R.drawable.checkgreenbackground_icon));
         but.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, rec.toDP(90, getContext())));
+
+        but.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                UserJson userJson = new UserJson(getContext());
+                userJson.deleteFromFileIngredients(ing, getContext());
+            }
+        });
 
         return but;
     }
@@ -65,11 +73,11 @@ public class GrocerylistFragment extends Fragment {
         return name;
     }
 
-    public TextView createGroceryItemQuantity(String quantity, ViewHelper rec) {
+    public TextView createGroceryItemQuantity(String quantity, ViewHelper rec, String measurement) {
         TextView quan = new TextView(getContext());
         quan.setTextAppearance(getActivity(), R.style.groceryItemPrice);
         quan.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-        quan.setText("Quantity: " + quantity);
+        quan.setText("Quantity: " + quantity + " " + measurement);
 
         quan.setTextSize(rec.toDP(5, getContext()));
 
@@ -97,9 +105,9 @@ public class GrocerylistFragment extends Fragment {
         inner.setBackgroundColor(getResources().getColor(R.color.white));
 
         parent.addView(inner);
-        inner.addView(createImageButton(root, rec));
+        inner.addView(createImageButton(root, rec, ingred));
         inner.addView(createGroceryItemName(ingred.getName(), rec));
-        inner.addView(createGroceryItemQuantity(ingred.getAmount(), rec));
+        inner.addView(createGroceryItemQuantity(ingred.getAmount(), rec, ingred.getMeasurement()));
     }
 
     public void populateGroceryList(View root) {

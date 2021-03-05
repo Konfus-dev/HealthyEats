@@ -51,8 +51,8 @@ public class UserJson {
         Type listRecipeType = new TypeToken<List<Recipe>>() {}.getType();
         List<Recipe> recipes = gson.fromJson(ret, listRecipeType);
 
-        for(int i = 0; i < recipes.size(); i++){
-            if( recipes.get(i).getId() == recipeID ){
+        for (int i = 0; i < recipes.size(); i++){
+            if (recipes.get(i).getId() == recipeID ){
                 recipes.remove(i);
             }
         }
@@ -72,12 +72,12 @@ public class UserJson {
         Type listRecipeType = new TypeToken<List<Recipe>>() {}.getType();
         List<Recipe> recipes = gson.fromJson(ret, listRecipeType);
 
-        if(recipes == null){
+        if (recipes == null){
             recipes = new ArrayList<Recipe>();
         }
 
-        for(int i = 0; i < recipes.size(); i++) {
-            if(recipes.get(i).getId() == recipeID) {
+        for (int i = 0; i < recipes.size(); i++) {
+            if (recipes.get(i).getId() == recipeID) {
                 return;
             }
         }
@@ -95,8 +95,8 @@ public class UserJson {
         String ret = streamReader(context, "ingredient.json");
         Type listRecipeType = new TypeToken<List<Ingredient>>() {}.getType();
         List<Ingredient> ingredients = gson.fromJson(ret, listRecipeType);
-        for(int i = 0; i < ingredients.size(); i++){
-            if( ingredients.get(i).getName().equals(ingredient.getName())){
+        for (int i = 0; i < ingredients.size(); i++){
+            if (ingredients.get(i).getName().equals(ingredient.getName())) {
                 ingredients.remove(i);
             }
         }
@@ -107,29 +107,25 @@ public class UserJson {
      * writeToFile recipe that you want to write to file, Note: can be
      * easily edited to instead of not adding duplicated ingredients,
      * it could add the items quantities together. :)
-     * @param ingredient the ingredient to write
+     * @param inputIngred the ingredient to write
      * @param context the method context
      */
-    public void writeToFileIngredient(Ingredient ingredient, Context context) {
+    public void writeToFileIngredient(Ingredient inputIngred, Context context) {
         Gson gson = new Gson();
         String ret = streamReader(context, "ingredient.json");
-        List<Ingredient> ingredients = Arrays.asList(gson.fromJson(ret, Ingredient.class));
+        Type listIngredientType = new TypeToken<List<Ingredient>>() {}.getType();
+        List<Ingredient> ingredient = gson.fromJson(ret, listIngredientType);
 
-        if(ingredients == null){
-            ingredients = new ArrayList<Ingredient>();
+        if (ingredient == null) {
+            ingredient = new ArrayList<Ingredient>();
         }
-        for(int i = 0; i < ingredients.size(); i++) {
-            if(ingredients.get(i).getName().equals(ingredient.getName()) && (ingredient.getMeasurement().equals(null) ||ingredient.getMeasurement().equals("pound")) ) {
-                ingredients.get(i).addToAmount(ingredient.getAmount());
-                System.out.println("TEST");
-                streamWriter(ingredient, context, "ingredient.json", gson);
-                return;
-            }else if(ingredients.get(i).getName().equals(ingredient.getName())){
+
+        for (int i = 0; i < ingredient.size(); i++) {
+            if (ingredient.get(i).getName().equals(inputIngred.getName())) {
                 return;
             }
         }
-        System.out.println("THIS LINE??");
-//        ingredients.add(ingredient);
+        ingredient.add(inputIngred);
         streamWriter(ingredient, context, "ingredient.json", gson);
     }
 
@@ -215,6 +211,4 @@ public class UserJson {
             e.printStackTrace();
         }
     }
-    }
-
-
+}
