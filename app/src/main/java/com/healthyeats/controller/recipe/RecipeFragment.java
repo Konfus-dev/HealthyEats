@@ -205,5 +205,28 @@ public class RecipeFragment extends Fragment {
         replaceRecipeNutrition(calories, carbs, protein, sugar, root);
         populateInstructions(instructions, root);
         populateIngredients(root, ingredient);
+
+        ViewHelper rec = new ViewHelper();
+
+        ImageButton heart = root.findViewById(R.id.recipeHeart);
+        if (rec.isInFile("recipesFav.json", getContext(), recipeId)) {
+            heart.setImageDrawable(getContext().getResources().getDrawable(R.drawable.heartfull_icon));
+        }
+
+        heart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                UserJson userJson = new UserJson(getContext());
+                boolean isIn = rec.isInFile("recipesFav.json", getContext(), recipeId);
+
+                if (isIn) {
+                    userJson.deleteFromFileRecipe(recipeId, getContext(), "recipesFav.json");
+                } else {
+                    userJson.writeToFileRecipe(recipeId, getContext(), "recipesFav.json");
+                }
+
+            }
+        });
+
     }
 }
