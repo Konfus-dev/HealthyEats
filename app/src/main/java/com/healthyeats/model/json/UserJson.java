@@ -51,8 +51,8 @@ public class UserJson {
         Type listRecipeType = new TypeToken<List<Recipe>>() {}.getType();
         List<Recipe> recipes = gson.fromJson(ret, listRecipeType);
 
-        for(int i = 0; i < recipes.size(); i++){
-            if( recipes.get(i).getId() == recipeID ){
+        for (int i = 0; i < recipes.size(); i++){
+            if (recipes.get(i).getId() == recipeID ){
                 recipes.remove(i);
             }
         }
@@ -72,12 +72,12 @@ public class UserJson {
         Type listRecipeType = new TypeToken<List<Recipe>>() {}.getType();
         List<Recipe> recipes = gson.fromJson(ret, listRecipeType);
 
-        if(recipes == null){
+        if (recipes == null){
             recipes = new ArrayList<Recipe>();
         }
 
-        for(int i = 0; i < recipes.size(); i++) {
-            if(recipes.get(i).getId() == recipeID) {
+        for (int i = 0; i < recipes.size(); i++) {
+            if (recipes.get(i).getId() == recipeID) {
                 return;
             }
         }
@@ -95,8 +95,8 @@ public class UserJson {
         String ret = streamReader(context, "ingredient.json");
         Type listRecipeType = new TypeToken<List<Ingredient>>() {}.getType();
         List<Ingredient> ingredients = gson.fromJson(ret, listRecipeType);
-        for(int i = 0; i < ingredients.size(); i++){
-            if( ingredients.get(i).getName().equals(ingredient.getName())){
+        for (int i = 0; i < ingredients.size(); i++){
+            if (ingredients.get(i).getName().equals(ingredient.getName())) {
                 ingredients.remove(i);
             }
         }
@@ -120,8 +120,8 @@ public class UserJson {
             ingredient = new ArrayList<Ingredient>();
         }
 
-        for(int i = 0; i < ingredient.size(); i++) {
-            if(ingredient.get(i).getName().equals(inputIngred.getName())) {
+        for (int i = 0; i < ingredient.size(); i++) {
+            if (ingredient.get(i).getName().equals(inputIngred.getName())) {
                 return;
             }
         }
