@@ -73,11 +73,11 @@ public class GrocerylistFragment extends Fragment {
         return name;
     }
 
-    public TextView createGroceryItemQuantity(String quantity, ViewHelper rec) {
+    public TextView createGroceryItemQuantity(String quantity, ViewHelper rec, String measurement) {
         TextView quan = new TextView(getContext());
         quan.setTextAppearance(getActivity(), R.style.groceryItemPrice);
         quan.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-        quan.setText("Quantity: " + quantity);
+        quan.setText("Quantity: " + quantity + " " + measurement);
 
         quan.setTextSize(rec.toDP(5, getContext()));
 
@@ -107,7 +107,7 @@ public class GrocerylistFragment extends Fragment {
         parent.addView(inner);
         inner.addView(createImageButton(root, rec, ingred));
         inner.addView(createGroceryItemName(ingred.getName(), rec));
-        inner.addView(createGroceryItemQuantity(ingred.getAmount(), rec));
+        inner.addView(createGroceryItemQuantity(ingred.getAmount(), rec, ingred.getMeasurement()));
     }
 
     public void populateGroceryList(View root) {
