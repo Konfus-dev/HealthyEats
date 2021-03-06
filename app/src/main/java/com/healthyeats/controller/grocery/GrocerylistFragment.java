@@ -17,7 +17,6 @@ import androidx.lifecycle.ViewModelProvider;
 import com.healthyeats.R;
 import com.healthyeats.model.json.UserJson;
 import com.healthyeats.model.recipe.Ingredient;
-import com.healthyeats.model.recipe.Recipe;
 import com.healthyeats.model.viewModels.GrocerylistViewModel;
 import com.healthyeats.model.viewModels.ViewHelper;
 
@@ -116,7 +115,9 @@ public class GrocerylistFragment extends Fragment {
         ViewHelper rec = new ViewHelper();
         UserJson userJson = new UserJson(getContext());
         List<Ingredient> yourIngredients = rec.getIngredient(getContext(), userJson);
-
+        if(yourIngredients == null){
+            return;
+        }
         for (int i = 0; i < yourIngredients.size(); i++) {
             if (i % 2 == 0) {
                 temp = new LinearLayout(getContext());
