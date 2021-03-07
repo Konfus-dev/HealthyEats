@@ -76,7 +76,7 @@ public class GrocerylistFragment extends Fragment {
         TextView quan = new TextView(getContext());
         quan.setTextAppearance(getActivity(), R.style.groceryItemPrice);
         quan.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-        quan.setText(measurement==null || quantity == null? "":"Quantity: " + quantity + " " + measurement);
+        quan.setText(measurement==null || quantity == null ? "": quantity + " " + measurement);
 
         quan.setTextSize(rec.toDP(5, getContext()));
 
