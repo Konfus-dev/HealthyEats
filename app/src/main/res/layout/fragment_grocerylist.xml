@@ -70,15 +70,15 @@
 
                 </TextView>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="Jan 4 to Jan 11, 2021"
-                    android:textSize = "20dp"
-                    android:layout_marginBottom="30dp">
+<!--                <TextView-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:text="Jan 4 to Jan 11, 2021"-->
+<!--                    android:textSize = "20dp"-->
+<!--                    android:layout_marginBottom="30dp">-->
 
-                </TextView>
+<!--                </TextView>-->
             </LinearLayout>
 
             <!-- Grocery List Starting Here -->
