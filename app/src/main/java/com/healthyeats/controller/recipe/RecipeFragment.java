@@ -3,7 +3,6 @@ package com.healthyeats.controller.recipe;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
-import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,7 +13,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 
 import com.healthyeats.R;
 import com.healthyeats.controller.searchAndFilter.SearchAndFilter;
@@ -159,7 +157,7 @@ public class RecipeFragment extends Fragment {
 
 //        ingredient.setTextSize(toDP(10));
 
-        ingredient.setText("\t" + ing.getAmount() + " " + ing.getMeasurement() + " " + ing.getName());
+        ingredient.setText("\t" + (ing.getAmount()== null ? "":ing.getAmount() + " ") + (ing.getMeasurement()==null ? "":ing.getMeasurement() + " " )+ ing.getName());
 
         return ingredient;
     }

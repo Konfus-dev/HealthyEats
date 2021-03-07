@@ -17,7 +17,6 @@ import androidx.lifecycle.ViewModelProvider;
 import com.healthyeats.R;
 import com.healthyeats.model.json.UserJson;
 import com.healthyeats.model.recipe.Ingredient;
-import com.healthyeats.model.recipe.Recipe;
 import com.healthyeats.model.viewModels.GrocerylistViewModel;
 import com.healthyeats.model.viewModels.ViewHelper;
 
@@ -77,7 +76,7 @@ public class GrocerylistFragment extends Fragment {
         TextView quan = new TextView(getContext());
         quan.setTextAppearance(getActivity(), R.style.groceryItemPrice);
         quan.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
-        quan.setText("Quantity: " + quantity + " " + measurement);
+        quan.setText(measurement==null || quantity == null ? "": quantity + " " + measurement);
 
         quan.setTextSize(rec.toDP(5, getContext()));
 
@@ -116,7 +115,9 @@ public class GrocerylistFragment extends Fragment {
         ViewHelper rec = new ViewHelper();
         UserJson userJson = new UserJson(getContext());
         List<Ingredient> yourIngredients = rec.getIngredient(getContext(), userJson);
-
+        if(yourIngredients == null){
+            return;
+        }
         for (int i = 0; i < yourIngredients.size(); i++) {
             if (i % 2 == 0) {
                 temp = new LinearLayout(getContext());
