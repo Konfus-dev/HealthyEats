@@ -14,6 +14,7 @@ import com.healthyeats.model.json.JsonReaderWriter;
 import com.healthyeats.model.json.UserJson;
 import com.healthyeats.model.recipe.Ingredient;
 import com.healthyeats.model.recipe.Recipe;
+import com.healthyeats.model.account.Account;
 
 import java.util.List;
 
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private static List<Recipe> loadedRecipes;
     private static List<Recipe> favoriteRecipes;
     private static List<GroceryItem> groceryList;
+    private static Account userAccount = Account.getInstance();
     private JsonReaderWriter json;
 
     public static List<Recipe> getLoadedRecipes() {
