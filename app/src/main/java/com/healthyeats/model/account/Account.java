@@ -83,7 +83,9 @@ public class Account {
     }
 
     public void setUnits(String units) {
-        this.units = units;
+        if(units.equals("imperial")|| units.equals("metric")|| units.equals("Imperial")||units.equals("Metric"))
+            this.units = units;
+        }
     }
 
     public void setCurrency(String currency) {
