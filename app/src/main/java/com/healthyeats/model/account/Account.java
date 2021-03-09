@@ -83,7 +83,7 @@ public class Account {
     }
 
     public void setUnits(String units) {
-        if(units.equals("imperial")|| units.equals("metric")|| units.equals("Imperial")||units.equals("Metric"))
+        if(units.equals("imperial")|| units.equals("metric")|| units.equals("Imperial")||units.equals("Metric")) {
             this.units = units;
         }
     }
