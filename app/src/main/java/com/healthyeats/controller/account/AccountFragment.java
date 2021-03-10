@@ -15,6 +15,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.healthyeats.R;
 import com.healthyeats.model.account.Account;
+import com.healthyeats.model.json.UserJson;
 import com.healthyeats.model.viewModels.AccountViewModel;
 
 public class AccountFragment extends Fragment {
@@ -25,15 +26,17 @@ public class AccountFragment extends Fragment {
         accountViewModel =
                 new ViewModelProvider(this).get(AccountViewModel.class);
         View root = inflater.inflate(R.layout.fragment_account, container, false);
+        UserJson user = new UserJson(getContext());
 
-        Account myAccount = Account.getInstance();
-        populateSpinner(root, myAccount);
+        Account myAccount = user.getAccount(getContext());
+        populateSpinner(root, myAccount, user);
+
 //        populateAccount();
-
         return root;
     }
 
-    public void populateSpinner(View root, Account myAccount) {
+    public void populateSpinner(View root, Account myAccount, UserJson user) {
+        System.out.println(" CURRENCY " + myAccount.getCurrency());
         Spinner notificationSpinner = (Spinner) root.findViewById(R.id.spinnerNotifications);
         ArrayAdapter<CharSequence> adapterNotif = ArrayAdapter.createFromResource(getContext(),
                 R.array.notifications_array, android.R.layout.simple_spinner_item);
@@ -46,6 +49,7 @@ public class AccountFragment extends Fragment {
                                        int position, long id) {
                 Log.v("item", (String) parent.getItemAtPosition(position));
                 myAccount.setNotifications((String) parent.getItemAtPosition(position));
+                user.writeToFileAccount(myAccount, getContext());
             }
 
             @Override
@@ -66,6 +70,7 @@ public class AccountFragment extends Fragment {
                                        int position, long id) {
                 Log.v("item", (String) parent.getItemAtPosition(position));
                 myAccount.setLanguage((String) parent.getItemAtPosition(position));
+                user.writeToFileAccount(myAccount, getContext());
             }
 
             @Override
@@ -86,6 +91,7 @@ public class AccountFragment extends Fragment {
                                        int position, long id) {
                 Log.v("item", (String) parent.getItemAtPosition(position));
                 myAccount.setCurrency((String) parent.getItemAtPosition(position));
+                user.writeToFileAccount(myAccount, getContext());
             }
 
             @Override
@@ -106,6 +112,7 @@ public class AccountFragment extends Fragment {
                                        int position, long id) {
                 Log.v("item", (String) parent.getItemAtPosition(position));
                 myAccount.setUnits((String) parent.getItemAtPosition(position));
+                user.writeToFileAccount(myAccount, getContext());
             }
 
             @Override
