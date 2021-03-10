@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.SeekBar;
 import android.widget.Spinner;
 
 import androidx.annotation.NonNull;
@@ -66,18 +67,21 @@ public class AccountFragment extends Fragment {
             default:
                 break;
         }
-        
+
+        // Grabs spinnner
         Spinner spinner = (Spinner) root.findViewById(id);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(),
                 arr, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
+        // Sets spinner value to value from json
         if (!value.equals("")) {
             int spinnerPosition = adapter.getPosition(value);
             spinner.setSelection(spinnerPosition);
         }
 
+        // Checks if changed
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view,
@@ -102,7 +106,54 @@ public class AccountFragment extends Fragment {
 
     }
 
+    // Set Seek bars
+    public void populateSeekBars(View root, Account myAccount, UserJson user, String type) {
+        int id = 0;
+        int val = 0;
+        if (type.equals("HouseHold")) {
+            id = R.id.peopleInHouseHold;
+            val = myAccount.getHouseholdSize();
+        } else if (type.equals("Budget")) {
+            id = R.id.weeklyBudget;
+            val = myAccount.getWeeklyBudget();
+        }
+
+        SeekBar seek = (SeekBar) root.findViewById(id);
+        if (val != 0) {
+            seek.setProgress(val);
+        }
+
+        seek.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seek, int newNum, boolean b) {
+                if (type.equals("HouseHold")) {
+                    myAccount.setHouseholdSize(newNum);
+                    seek.setProgress(newNum);
+                } else if (type.equals("Budget")) {
+                    myAccount.setWeeklyBudget(newNum);
+                    seek.setProgress(newNum);
+                }
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+    }
+
+    // Function that will faciliate all account settings
     public void facilitateAccount(View root, Account myAccount, UserJson user) {
+        // Populate seek bars
+        populateSeekBars(root, myAccount, user, "HouseHold");
+        populateSeekBars(root, myAccount, user, "Budget");
+
+        // Facilitates drop down menu choices
         populateSpinner(root, myAccount, user, "Notifications");
         populateSpinner(root, myAccount, user, "Language");
         populateSpinner(root, myAccount, user, "Currency");
