@@ -5,6 +5,8 @@ public class Account {
     private String lastName;
     private String units;
     private String currency;
+    private String notifications;
+    private String language;
     private int weeklyBudget;
     private int householdSize;
 
@@ -35,11 +37,13 @@ public class Account {
      * @param people the number of people in the user's household
      */
 
-    private Account(String fName, String lName, String units, String currency, int wBudget, int people) {
+    private Account(String fName, String lName, String units, String currency, String notification, String language, int wBudget, int people) {
         this.firstName = fName;
         this.lastName = lName;
         this.units = units;
         this.currency = currency;
+        this.notifications = notification;
+        this.language = language;
         this.weeklyBudget = wBudget;
         this.householdSize = people;
     }
@@ -62,6 +66,10 @@ public class Account {
     public String getCurrency() {
         return currency;
     }
+
+    public String getNotifications() { return notifications; }
+
+    public String getLanguage() { return language; }
 
     public int getWeeklyBudget() {
         return weeklyBudget;
@@ -92,6 +100,14 @@ public class Account {
         this.currency = currency;
     }
 
+    public void setNotifications(String notifications) {
+        this.notifications = notifications;
+    }
+
+    public void setLanguage(String language) {
+        this.language = language;
+    }
+
     public void setWeeklyBudget(int wBudget) {
         this.weeklyBudget = wBudget;
     }
@@ -99,6 +115,4 @@ public class Account {
     public void setHouseholdSize(int people) {
        this.householdSize = people;
     }
-
-
 }
