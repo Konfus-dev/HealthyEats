@@ -66,21 +66,31 @@ public class AccountFragment extends Fragment {
             default:
                 break;
         }
-
-        System.out.println(" CURRENCY " + myAccount.getCurrency());
+        
         Spinner spinner = (Spinner) root.findViewById(id);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(),
                 arr, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);
 
+        if (!value.equals("")) {
+            int spinnerPosition = adapter.getPosition(value);
+            spinner.setSelection(spinnerPosition);
+        }
 
         spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view,
                                        int position, long id) {
-                Log.v("item", (String) parent.getItemAtPosition(position));
-                myAccount.setNotifications((String) parent.getItemAtPosition(position));
+                if (type.equals("Notifications")) {
+                    myAccount.setNotifications((String) parent.getItemAtPosition(position));
+                } else if (type.equals("Language")) {
+                    myAccount.setLanguage((String) parent.getItemAtPosition(position));
+                } else if (type.equals("Currency")) {
+                    myAccount.setCurrency((String) parent.getItemAtPosition(position));
+                } else {
+                    myAccount.setUnits((String) parent.getItemAtPosition(position));
+                }
                 user.writeToFileAccount(myAccount, getContext());
             }
 
@@ -93,7 +103,7 @@ public class AccountFragment extends Fragment {
     }
 
     public void facilitateAccount(View root, Account myAccount, UserJson user) {
-        populateSpinner(root, myAccount, user, "Notificiations");
+        populateSpinner(root, myAccount, user, "Notifications");
         populateSpinner(root, myAccount, user, "Language");
         populateSpinner(root, myAccount, user, "Currency");
         populateSpinner(root, myAccount, user, "Measurement");
