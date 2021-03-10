@@ -29,21 +29,53 @@ public class AccountFragment extends Fragment {
         UserJson user = new UserJson(getContext());
 
         Account myAccount = user.getAccount(getContext());
-        populateSpinner(root, myAccount, user);
+        facilitateAccount(root, myAccount, user);
 
-//        populateAccount();
         return root;
     }
 
-    public void populateSpinner(View root, Account myAccount, UserJson user) {
-        System.out.println(" CURRENCY " + myAccount.getCurrency());
-        Spinner notificationSpinner = (Spinner) root.findViewById(R.id.spinnerNotifications);
-        ArrayAdapter<CharSequence> adapterNotif = ArrayAdapter.createFromResource(getContext(),
-                R.array.notifications_array, android.R.layout.simple_spinner_item);
-        adapterNotif.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        notificationSpinner.setAdapter(adapterNotif);
+    // Get propper id and array for corresponding item
+    // then populate value
+    public void populateSpinner(View root, Account myAccount, UserJson user, String type) {
+        int id = 0;
+        int arr = 0;
+        String value = "";
 
-        notificationSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        // Switch statement to get corresponding id / arr
+        switch (type) {
+            case "Notifications":
+                id = R.id.spinnerNotifications;
+                arr = R.array.notifications_array;
+                value = myAccount.getNotifications();
+                break;
+            case "Language":
+                id = R.id.spinnerLanguage;
+                arr = R.array.language_array;
+                value = myAccount.getLanguage();
+                break;
+            case "Currency":
+                id = R.id.spinnerCurrency;
+                arr = R.array.currency_array;
+                value = myAccount.getCurrency();
+                break;
+            case "Measurement":
+                id = R.id.spinnerMeasurement;
+                arr = R.array.measurement_array;
+                value = myAccount.getUnits();
+                break;
+            default:
+                break;
+        }
+
+        System.out.println(" CURRENCY " + myAccount.getCurrency());
+        Spinner spinner = (Spinner) root.findViewById(id);
+        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(),
+                arr, android.R.layout.simple_spinner_item);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(adapter);
+
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view,
                                        int position, long id) {
@@ -58,67 +90,12 @@ public class AccountFragment extends Fragment {
             }
         });
 
-        Spinner languageSpinner = (Spinner) root.findViewById(R.id.spinnerLanguage);
-        ArrayAdapter<CharSequence> adapterLanguage = ArrayAdapter.createFromResource(getContext(),
-                R.array.language_array, android.R.layout.simple_spinner_item);
-        adapterLanguage.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        languageSpinner.setAdapter(adapterLanguage);
+    }
 
-        languageSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view,
-                                       int position, long id) {
-                Log.v("item", (String) parent.getItemAtPosition(position));
-                myAccount.setLanguage((String) parent.getItemAtPosition(position));
-                user.writeToFileAccount(myAccount, getContext());
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                // TODO Auto-generated method stub
-            }
-        });
-
-        Spinner currencySpinner = (Spinner) root.findViewById(R.id.spinnerCurrency);
-        ArrayAdapter<CharSequence> adapterCurrency = ArrayAdapter.createFromResource(getContext(),
-                R.array.currency_array, android.R.layout.simple_spinner_item);
-        adapterCurrency.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        currencySpinner.setAdapter(adapterCurrency);
-
-        currencySpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view,
-                                       int position, long id) {
-                Log.v("item", (String) parent.getItemAtPosition(position));
-                myAccount.setCurrency((String) parent.getItemAtPosition(position));
-                user.writeToFileAccount(myAccount, getContext());
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                // TODO Auto-generated method stub
-            }
-        });
-
-        Spinner measurementSpinner = (Spinner) root.findViewById(R.id.spinnerMeasurement);
-        ArrayAdapter<CharSequence> adapterSpinner = ArrayAdapter.createFromResource(getContext(),
-                R.array.measurement_array, android.R.layout.simple_spinner_item);
-        adapterSpinner.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        measurementSpinner.setAdapter(adapterSpinner);
-
-        measurementSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view,
-                                       int position, long id) {
-                Log.v("item", (String) parent.getItemAtPosition(position));
-                myAccount.setUnits((String) parent.getItemAtPosition(position));
-                user.writeToFileAccount(myAccount, getContext());
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                // TODO Auto-generated method stub
-            }
-        });
+    public void facilitateAccount(View root, Account myAccount, UserJson user) {
+        populateSpinner(root, myAccount, user, "Notificiations");
+        populateSpinner(root, myAccount, user, "Language");
+        populateSpinner(root, myAccount, user, "Currency");
+        populateSpinner(root, myAccount, user, "Measurement");
     }
 }
