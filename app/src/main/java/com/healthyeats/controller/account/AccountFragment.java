@@ -110,6 +110,8 @@ public class AccountFragment extends Fragment {
     public void populateSeekBars(View root, Account myAccount, UserJson user, String type) {
         int id = 0;
         int val = 0;
+        int textViewID = 0;
+
         if (type.equals("HouseHold")) {
             id = R.id.peopleInHouseHold;
             val = myAccount.getHouseholdSize();
@@ -126,6 +128,7 @@ public class AccountFragment extends Fragment {
         seek.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seek, int newNum, boolean b) {
+                System.out.println("CHANGED PROGRESS?? " + newNum);
                 if (type.equals("HouseHold")) {
                     myAccount.setHouseholdSize(newNum);
                     seek.setProgress(newNum);
@@ -133,6 +136,7 @@ public class AccountFragment extends Fragment {
                     myAccount.setWeeklyBudget(newNum);
                     seek.setProgress(newNum);
                 }
+                user.writeToFileAccount(myAccount, getContext());
             }
 
             @Override

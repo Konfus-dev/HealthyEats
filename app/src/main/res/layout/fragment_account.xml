@@ -159,17 +159,31 @@
                     </TextView>
                 </LinearLayout>
 
-                <SeekBar
-                    android:layout_width="300dp"
-                    android:layout_height="20dp"
-                    android:layout_marginLeft = "10sp"
-                    android:layout_marginTop="20sp"
-                    android:layout_marginBottom="40sp"
-                    android:max="15"
-                    android:id="@+id/peopleInHouseHold">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:orientation="horizontal">
+                    <SeekBar
+                        android:layout_width="300dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft = "10sp"
+                        android:layout_marginTop="20sp"
+                        android:layout_marginBottom="40sp"
+                        android:max="15"
+                        android:id="@+id/peopleInHouseHold">
 
-                </SeekBar>
+                    </SeekBar>
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:textSize="20dp"
+                        android:id="@+id/houseHoldText"
+                        android:text="0">
+
+                    </TextView>
+                </LinearLayout>
 
                 <!-- weekly budget -->
                 <LinearLayout
@@ -194,16 +208,29 @@
                     </TextView>
                 </LinearLayout>
 
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:orientation="horizontal">
                 <SeekBar
                     android:layout_width="300dp"
                     android:layout_height="20dp"
                     android:layout_marginLeft = "10sp"
                     android:layout_marginTop="20sp"
                     android:layout_marginBottom="30sp"
-                    android:max="1000"
+                    android:max="500"
                     android:id="@+id/weeklyBudget">
 
                 </SeekBar>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:textSize="20dp"
+                    android:id="@+id/budgetText"
+                    android:text="0"></TextView>
+                </LinearLayout>
 
                 <!-- Notifications -->
                 <LinearLayout
