@@ -234,7 +234,9 @@
                     android:layout_marginLeft= "20sp"
                     android:layout_marginTop="10sp"
                     android:layout_marginBottom="10sp"
-                    android:background="@color/white">
+                    android:background="@color/white"
+                    android:spinnerMode="dropdown"
+                    android:id="@+id/spinnerNotifications">
 
                 </Spinner>
 
@@ -267,7 +269,9 @@
                     android:layout_marginLeft= "20sp"
                     android:layout_marginTop="10sp"
                     android:layout_marginBottom="10sp"
-                    android:background="@color/white">
+                    android:background="@color/white"
+                    android:spinnerMode="dropdown"
+                    android:id="@+id/spinnerLanguage">
 
                 </Spinner>
 
@@ -300,7 +304,9 @@
                     android:layout_marginLeft= "20sp"
                     android:layout_marginTop="10sp"
                     android:layout_marginBottom="10sp"
-                    android:background="@color/white">
+                    android:background="@color/white"
+                    android:spinnerMode="dropdown"
+                    android:id="@+id/spinnerCurrency">
 
                 </Spinner>
 
@@ -333,7 +339,9 @@
                     android:layout_marginLeft= "20sp"
                     android:layout_marginTop="10sp"
                     android:layout_marginBottom="10sp"
-                    android:background="@color/white">
+                    android:background="@color/white"
+                    android:spinnerMode="dropdown"
+                    android:id="@+id/spinnerMeasurement">
 
                 </Spinner>
 

@@ -4,4 +4,35 @@
     <string name="title_cookbook">Cookbook</string>
     <string name="title_grocerylist">Grocery List</string>
     <string name="title_account">Account</string>
+
+    <!--Spinner for Notifications -->
+    <string-array name="notifications_array">
+        <item>All Notifications</item>
+        <item>Notify Weekly Meals</item>
+        <item>Silent</item>
+    </string-array>
+
+    <!--Spinner for Language -->
+    <string-array name="language_array">
+        <item>English</item>
+        <item>Spanish</item>
+    </string-array>
+
+    <!--Spinner for Currency -->
+    <string-array name="currency_array">
+        <item>USD</item>
+        <item>CAD</item>
+        <item>EUR</item>
+        <item>GBP</item>
+        <item>CHF</item>
+        <item>NZD</item>
+        <item>AUD</item>
+        <item>JPY</item>
+    </string-array>
+
+    <!--Spinner for Measurement -->
+    <string-array name="measurement_array">
+        <item>Imperial</item>
+        <item>Metric</item>
+    </string-array>
 </resources>

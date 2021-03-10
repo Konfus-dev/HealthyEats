@@ -6,6 +6,7 @@ import android.util.Log;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.healthyeats.controller.searchAndFilter.SearchAndFilter;
+import com.healthyeats.model.account.Account;
 import com.healthyeats.model.recipe.Ingredient;
 import com.healthyeats.model.recipe.Recipe;
 
@@ -17,7 +18,6 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class UserJson {
@@ -32,6 +32,8 @@ public class UserJson {
             outputStreamWriter.close();
             OutputStreamWriter outputStreamWriter2 = new OutputStreamWriter(context.openFileOutput("ingredient.json", Context.MODE_APPEND| Context.MODE_PRIVATE));
             outputStreamWriter2.close();
+            OutputStreamWriter outputStreamWriter3 = new OutputStreamWriter(context.openFileOutput("account.json", Context.MODE_APPEND| Context.MODE_PRIVATE));
+            outputStreamWriter3.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
@@ -104,8 +106,7 @@ public class UserJson {
     }
 
     /**
-     * writeToFile recipe that you want to write to file, Note: can be
-     * easily edited to instead of not adding duplicated ingredients,
+     * writeToFile recipe that you want to write to file
      * it could add the items quantities together. :)
      * @param inputIngred the ingredient to write
      * @param context the method context
@@ -127,6 +128,18 @@ public class UserJson {
         }
         ingredient.add(inputIngred);
         streamWriter(ingredient, context, "ingredient.json", gson);
+    }
+
+    /**
+     * writeToFile account that you want to write to file, Since account
+     * is singleton, when called this method will destroy the stored data
+     * and put in the data given.
+     * @param account the account to write
+     * @param context the method context
+     */
+    public void writeToFileAccount(Account account, Context context) {
+        Gson gson = new Gson();
+        streamWriter(account, context, "account.json", gson);
     }
 
     /**
@@ -155,6 +168,18 @@ public class UserJson {
         return recipes;
     }
 
+    /**
+     * returns the account saved in the users files
+     * @param context of the methods
+     * @return the current account
+     */
+    public Account getAccount(Context context){
+        Gson gson = new Gson();
+        String ret = streamReader(context, "account.json");
+        Type listAccountType = new TypeToken<Account>() {}.getType();
+        Account account= gson.fromJson(ret, listAccountType);
+        return account;
+    }
     /**
      * streamWriter will write the object to a json. Given a file name
      * @param object object a user wants to store in a Json
