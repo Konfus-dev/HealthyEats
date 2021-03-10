@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.SeekBar;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
@@ -115,14 +116,23 @@ public class AccountFragment extends Fragment {
         if (type.equals("HouseHold")) {
             id = R.id.peopleInHouseHold;
             val = myAccount.getHouseholdSize();
+            textViewID = R.id.houseHoldText;
         } else if (type.equals("Budget")) {
             id = R.id.weeklyBudget;
             val = myAccount.getWeeklyBudget();
+            textViewID = R.id.budgetText;
         }
 
         SeekBar seek = (SeekBar) root.findViewById(id);
+        TextView text = (TextView) root.findViewById(textViewID);
+
         if (val != 0) {
             seek.setProgress(val);
+            if (type.equals("HouseHold")) {
+                text.setText(Integer.toString(val));
+            } else if (type.equals("Budget")) {
+                text.setText("$" + Integer.toString(val));
+            }
         }
 
         seek.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -131,11 +141,13 @@ public class AccountFragment extends Fragment {
                 System.out.println("CHANGED PROGRESS?? " + newNum);
                 if (type.equals("HouseHold")) {
                     myAccount.setHouseholdSize(newNum);
-                    seek.setProgress(newNum);
+                    text.setText(Integer.toString(newNum));
                 } else if (type.equals("Budget")) {
                     myAccount.setWeeklyBudget(newNum);
-                    seek.setProgress(newNum);
+                    text.setText("$" + Integer.toString(newNum));
                 }
+
+                seek.setProgress(newNum);
                 user.writeToFileAccount(myAccount, getContext());
             }
 
