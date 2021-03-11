@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundColor"
+    android:id="@+id/fragment_account"
     tools:context="com.healthyeats.controller.account.AccountFragment">
 
     <ScrollView
@@ -74,23 +75,27 @@
                             android:layout_width="match_parent"
                             android:layout_height="25dp"
                             android:textSize="20dp"
+                            android:id="@+id/nameView"
                             android:text="John Doe">
                         </TextView>
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="20dp"
+                            android:id="@+id/locationView"
                             android:text="San Francisco, CA">
                         </TextView>
                     </LinearLayout>
 
-                    <ImageView
+                    <ImageButton
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginLeft="30dp"
                         android:src="@drawable/edit_icon"
                         android:background="@color/backgroundColor"
+                        android:scaleType="fitXY"
+                        android:id="@+id/editSettings"
                         >
-                    </ImageView>
+                    </ImageButton>
 
                 </LinearLayout>
 
@@ -159,17 +164,31 @@
                     </TextView>
                 </LinearLayout>
 
-                <SeekBar
-                    android:layout_width="300dp"
-                    android:layout_height="20dp"
-                    android:layout_marginLeft = "10sp"
-                    android:layout_marginTop="20sp"
-                    android:layout_marginBottom="40sp"
-                    android:max="100"
-                    android:progress="0">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:orientation="horizontal">
+                    <SeekBar
+                        android:layout_width="300dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft = "10sp"
+                        android:layout_marginTop="20sp"
+                        android:layout_marginBottom="40sp"
+                        android:max="15"
+                        android:id="@+id/peopleInHouseHold">
 
-                </SeekBar>
+                    </SeekBar>
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:textSize="20dp"
+                        android:id="@+id/houseHoldText"
+                        android:text="0">
+
+                    </TextView>
+                </LinearLayout>
 
                 <!-- weekly budget -->
                 <LinearLayout
@@ -194,16 +213,29 @@
                     </TextView>
                 </LinearLayout>
 
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="60dp"
+                    android:orientation="horizontal">
                 <SeekBar
                     android:layout_width="300dp"
                     android:layout_height="20dp"
                     android:layout_marginLeft = "10sp"
                     android:layout_marginTop="20sp"
                     android:layout_marginBottom="30sp"
-                    android:max="100"
-                    android:progress="0">
+                    android:max="500"
+                    android:id="@+id/weeklyBudget">
 
                 </SeekBar>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:textSize="20dp"
+                    android:id="@+id/budgetText"
+                    android:text="0"></TextView>
+                </LinearLayout>
 
                 <!-- Notifications -->
                 <LinearLayout

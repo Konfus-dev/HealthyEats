@@ -12,6 +12,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.healthyeats.model.account.Account;
 import com.healthyeats.model.grocery.GroceryItem;
 import com.healthyeats.model.json.JsonReaderWriter;
+import com.healthyeats.model.json.UserJson;
 import com.healthyeats.model.recipe.Recipe;
 
 import java.util.List;
@@ -51,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
         //Import from JSON class
         json = new JsonReaderWriter();
         loadedRecipes = json.recipeParser(getApplicationContext());
+        UserJson user = new UserJson(getApplicationContext());
+        user.createJson(getApplicationContext());
     }
 
     //Creating hard coded data on grocery list (Just to test)
