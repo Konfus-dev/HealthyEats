@@ -9,6 +9,7 @@ public class Recipe implements Comparable<Recipe> {
 
     private int id;
     private String name;
+    private float price;
     private String source;
     private String difficultyLevel;
     private String img;
@@ -93,6 +94,13 @@ public class Recipe implements Comparable<Recipe> {
     }
     public void setName(String name) {
         this.name = name;
+    }
+
+    public float getPrice() {
+        return price;
+    }
+    public void setPrice(float price) {
+        this.price = price;
     }
 
     public String getDifficultyLevel() {
