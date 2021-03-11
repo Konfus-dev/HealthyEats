@@ -200,6 +200,20 @@
                 </TextView>
             </LinearLayout>
 
+            <Button
+                android:layout_width="160dp"
+                android:layout_height="45dp"
+                android:background="@color/navBackgroundColor"
+                android:text = "Add/Remove From Weekly Meals"
+                android:textSize = "16dp"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:id="@+id/addToWeeklyMeals"
+                >
+
+            </Button>
+
             // Description
             <TextView
                 android:layout_width="match_parent"
