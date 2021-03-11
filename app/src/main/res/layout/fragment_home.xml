@@ -214,25 +214,25 @@
                         app:layout_constraintStart_toEndOf="@+id/WeeklyBudgetSpent"
                         app:layout_constraintTop_toTopOf="@+id/WeeklyBudgetSpent" />
 
-                    <TextView
-                        android:id="@+id/AverageWeeklySpending"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="15dp"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginTop="10dp"
-                        android:text="Average Weekly Spending:"
-                        android:textColor="#2C2C2C"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/WeeklyBudgetSpent" />
+<!--                    <TextView-->
+<!--                        android:id="@+id/AverageWeeklySpending"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginStart="15dp"-->
+<!--                        android:layout_marginLeft="15dp"-->
+<!--                        android:layout_marginTop="10dp"-->
+<!--                        android:text="Average Weekly Spending:"-->
+<!--                        android:textColor="#2C2C2C"-->
+<!--                        app:layout_constraintStart_toStartOf="parent"-->
+<!--                        app:layout_constraintTop_toBottomOf="@+id/WeeklyBudgetSpent" />-->
 
-                    <TextView
-                        android:id="@+id/BudgetWeeklyAverage"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="$30"
-                        app:layout_constraintStart_toEndOf="@+id/AverageWeeklySpending"
-                        app:layout_constraintTop_toTopOf="@+id/AverageWeeklySpending" />
+<!--                    <TextView-->
+<!--                        android:id="@+id/BudgetWeeklyAverage"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:text="$30"-->
+<!--                        app:layout_constraintStart_toEndOf="@+id/AverageWeeklySpending"-->
+<!--                        app:layout_constraintTop_toTopOf="@+id/AverageWeeklySpending" />-->
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>

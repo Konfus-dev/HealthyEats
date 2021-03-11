@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -16,6 +17,7 @@ import androidx.lifecycle.ViewModelProvider;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.healthyeats.R;
+import com.healthyeats.model.account.Account;
 import com.healthyeats.model.json.UserJson;
 import com.healthyeats.model.recipe.Recipe;
 import com.healthyeats.model.viewModels.HomeViewModel;
@@ -40,6 +42,7 @@ public class HomeFragment extends Fragment {
 
         populateThisWeeksMeals(root, obj);
         populateYourFavorites(root, obj);
+        populateBudget(root, obj);
 
         return root;
     }
@@ -110,5 +113,15 @@ public class HomeFragment extends Fragment {
         } else {
             System.out.println("THIS IS NULL");
         }
+    }
+
+    public void populateBudget(View root, ViewHelper obj) {
+        UserJson user = new UserJson(getContext());
+        Account myAccount = user.getAccount(getContext());
+
+        TextView weeklyBudget = root.findViewById(R.id.BudgetTotal);
+        weeklyBudget.setText(myAccount.getWeeklyBudget());
+
+
     }
 }

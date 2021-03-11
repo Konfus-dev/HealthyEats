@@ -1,6 +1,9 @@
 package com.healthyeats.model.budget;
 
+import com.healthyeats.model.recipe.Recipe;
+
 import java.util.LinkedList;
+import java.util.List;
 
 public class Budget {
     private static Budget single_instance = null;
@@ -20,13 +23,21 @@ public class Budget {
     /**
      * Creates the budget and puts in 10 fake entries
      */
-    private Budget() {
-        budgetOverTime = new LinkedList<WeeklyBudget>();
-        //temp values
-        for(int i = 0; i < 10; i++){
-            budgetOverTime.addFirst(
-                    new WeeklyBudget(i > 4 ? 55: 50,
-                            Math.round(((Math.random() * (60 - 40)) + 40)*100.0)/100.0));
+//    private Budget() {
+//        budgetOverTime = new LinkedList<WeeklyBudget>();
+//        //temp values
+//        for(int i = 0; i < 10; i++){
+//            budgetOverTime.addFirst(
+//                    new WeeklyBudget(i > 4 ? 55: 50,
+//                            Math.round(((Math.random() * (60 - 40)) + 40)*100.0)/100.0));
+//        }
+//    }
+
+    public int getAdditionOfRecipes(List<Recipe> week) {
+        int total = 0;
+
+        for (int i = 0; i < week.size(); i++) {
+//            total += week.get(i).get
         }
     }
 
