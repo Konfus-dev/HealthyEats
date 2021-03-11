@@ -138,7 +138,6 @@ public class AccountFragment extends Fragment {
         seek.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seek, int newNum, boolean b) {
-                System.out.println("CHANGED PROGRESS?? " + newNum);
                 if (type.equals("HouseHold")) {
                     myAccount.setHouseholdSize(newNum);
                     text.setText(Integer.toString(newNum));
