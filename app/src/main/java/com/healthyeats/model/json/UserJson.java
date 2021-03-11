@@ -34,6 +34,8 @@ public class UserJson {
             outputStreamWriter2.close();
             OutputStreamWriter outputStreamWriter3 = new OutputStreamWriter(context.openFileOutput("account.json", Context.MODE_APPEND| Context.MODE_PRIVATE));
             outputStreamWriter3.close();
+            OutputStreamWriter outputStreamWriter4 = new OutputStreamWriter(context.openFileOutput("weeklyMeals.json", Context.MODE_APPEND| Context.MODE_PRIVATE));
+            outputStreamWriter4.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
