@@ -35,9 +35,27 @@ public class AccountFragment extends Fragment {
         UserJson user = new UserJson(getContext());
 
         Account myAccount = user.getAccount(getContext());
+
+        defaultAccount(myAccount, user);
         facilitateAccount(root, myAccount, user);
 
         return root;
+    }
+
+    public void defaultAccount(Account myAccount, UserJson user) {
+        if (myAccount == null) {
+            myAccount = new Account();
+            myAccount.setName("John Doe");
+            myAccount.setLocation("San Francisco, CA");
+            myAccount.setHouseholdSize(0);
+            myAccount.setWeeklyBudget(0);
+            myAccount.setNotifications("All Notifications");
+            myAccount.setUnits("Imperial");
+            myAccount.setLanguage("English");
+            myAccount.setCurrency("USD");
+
+            user.writeToFileAccount(myAccount, getContext());
+        }
     }
 
     // Get propper id and array for corresponding item
@@ -117,11 +135,11 @@ public class AccountFragment extends Fragment {
         int val = 0;
         int textViewID = 0;
 
-        if (type.equals("HouseHold")) {
+        if (type.equals("HouseHold") && myAccount != null) {
             id = R.id.peopleInHouseHold;
             val = myAccount.getHouseholdSize();
             textViewID = R.id.houseHoldText;
-        } else if (type.equals("Budget")) {
+        } else if (type.equals("Budget") && myAccount != null) {
             id = R.id.weeklyBudget;
             val = myAccount.getWeeklyBudget();
             textViewID = R.id.budgetText;
@@ -171,6 +189,17 @@ public class AccountFragment extends Fragment {
         ImageButton editButton = root.findViewById(R.id.editSettings);
         TextView name = root.findViewById(R.id.nameView);
         TextView location = root.findViewById(R.id.locationView);
+
+        if (myAccount != null) {
+            System.out.println("TEST");
+            if (myAccount.getName() != null) {
+                name.setText(myAccount.getName());
+            }
+
+            if (myAccount.getLocation() != null) {
+                location.setText(myAccount.getLocation());
+            }
+        }
 
         editButton.setOnClickListener(new View.OnClickListener() {
             @Override

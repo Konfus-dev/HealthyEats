@@ -25,32 +25,6 @@ public class Account {
     }
 
     /**
-     * Basic constructor for an Account
-     */
-    private Account() {}
-
-    /**
-     * Constructor for an Account
-     * @param name the user's name
-     * @param location the user's location
-     * @param units the desired units (metric/imperial)
-     * @param currency the desired currency (dollar/pound/euro)
-     * @param wBudget the user's weekly budget
-     * @param people the number of people in the user's household
-     */
-
-    private Account(String name, String location, String units, String currency, String notification, String language, int wBudget, int people) {
-        this.name = name;
-        this.location = location;
-        this.units = units;
-        this.currency = currency;
-        this.notifications = notification;
-        this.language = language;
-        this.weeklyBudget = wBudget;
-        this.householdSize = people;
-    }
-
-    /**
      * Getters
      */
     public String getFirstName() {
@@ -62,6 +36,8 @@ public class Account {
     }
 
     public String getName() { return name; }
+
+    public String getLocation() { return location; }
 
     public String getUnits() {
         return units;

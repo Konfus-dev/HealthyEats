@@ -41,6 +41,21 @@ public class UserJson {
         }
     }
 
+    public void createJson(Context context) {
+        try {
+            OutputStreamWriter outputStreamWriter = new OutputStreamWriter(context.openFileOutput("recipesFav.json", Context.MODE_APPEND| Context.MODE_PRIVATE));
+            outputStreamWriter.close();
+            OutputStreamWriter outputStreamWriter2 = new OutputStreamWriter(context.openFileOutput("ingredient.json", Context.MODE_APPEND| Context.MODE_PRIVATE));
+            outputStreamWriter2.close();
+            OutputStreamWriter outputStreamWriter3 = new OutputStreamWriter(context.openFileOutput("account.json", Context.MODE_APPEND| Context.MODE_PRIVATE));
+            outputStreamWriter3.close();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     /**
      *  deleteFromFile will delete a recipe from the file
      * @param recipeID ID of the recipe you want to delete
