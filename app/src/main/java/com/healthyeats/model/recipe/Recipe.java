@@ -11,6 +11,7 @@ public class Recipe implements Comparable<Recipe> {
     private String name;
     private String source;
     private String difficultyLevel;
+    private String img;
     private int prepTime;
     private int waitTime;
     private int cookTime;
@@ -26,6 +27,58 @@ public class Recipe implements Comparable<Recipe> {
     private String[] instructions;
     private Ingredient[] ingredients;
     private String[] tags;
+
+    /**
+     * basic constructor for Recipe
+     */
+    public Recipe(){
+
+    }
+
+    /**
+     * Constructor for Recipe
+     * @param id the id of the recipe
+     * @param name the recipe name
+     * @param source where to find the recipe
+     * @param prepTime the length of time to make
+     * @param waitTime how long is the wait
+     * @param cookTime how long is the cooking time
+     * @param servings how many servings
+     * @param comments any additional comments
+     * @param calories Recipes calories per serving
+     * @param fat Recipes fats per serving
+     * @param satFat Recipes saturated fats per serving
+     * @param carbs Recipes carbs per serving
+     * @param fiber Recipes fiber per serving
+     * @param sugar Recipes sugar per serving
+     * @param protein Recipes protein per serving
+     * @param difficultyLevel how hard the recipe is
+     * @param instructions the instructions of the recipe
+     * @param ingredients the ingredients in the recipe
+     * @param tags tags for the recipe
+     */
+    public Recipe(int id, String name, String source, String img, int prepTime, int waitTime, int cookTime, int servings, String comments, int calories, int fat, int satFat, int carbs, int fiber, int sugar, int protein, String difficultyLevel, String[] instructions, Ingredient[] ingredients, String[] tags) {
+        this.id = id;
+        this.name = name;
+        this.source = source;
+        this.img = img;
+        this.prepTime = prepTime;
+        this.waitTime = waitTime;
+        this.cookTime = cookTime;
+        this.servings = servings;
+        this.comments = comments;
+        this.calories = calories;
+        this.fat = fat;
+        this.satFat = satFat;
+        this.carbs = carbs;
+        this.fiber = fiber;
+        this.sugar = sugar;
+        this.protein = protein;
+        this.difficultyLevel = difficultyLevel;
+        this.instructions = instructions;
+        this.ingredients = ingredients;
+        this.tags = tags;
+    }
 
     //Getters and setters organized by variable
     public int getId() {
@@ -161,13 +214,32 @@ public class Recipe implements Comparable<Recipe> {
         this.tags = tags;
     }
 
+    public String getImg() { return img; }
+    public void setImg(String image) { this.img = image; }
 
+    //ToDo:
+    // Patch up exporting ingredients to the grocery list, make sure there are not duplicates,
+    // if there are more than a certain amount increment else ignore and keep one
+    // ex: no need to have 2x 1 cup of flower, just have flower
+    public void exportToGroceryList(List<GroceryItem> list) {
+        for (int i = 0; i < ingredients.length; i++) {
+            list.add(ingredients[i].toGroceryItem());
+        }
+    }
+
+    /**
+     * comparing two recipes to each other
+     * @param g the recipe to compare
+     * @return the result of the comparison
+     */
     @Override
     public int compareTo(Recipe g){
         return this.name.compareTo(g.name);
     }
 
-    //Comparator to sort array by item name alphabetically from A-Z
+    /**
+     * Comparator to sort array by item name alphabetically from A-Z
+     */
     public static final Comparator<Recipe> recipeAZComparator = new Comparator<Recipe>() {
         @Override
         public int compare(Recipe recipe1, Recipe recipe2) {
@@ -183,17 +255,16 @@ public class Recipe implements Comparable<Recipe> {
         }
     };
 
-    //ToDo:
-    // Patch up exporting ingredients to the grocery list, make sure there are not duplicates,
-    // if there are more than a certain amount increment else ignore and keep one
-    // ex: no need to have 2x 1 cup of flower, just have flower
-    public void exportToGroceryList(List<GroceryItem> list) {
+    //Export ingredients to the grocery list
+/*    public void exportToGroceryList(ArrayList<GroceryItem> list) {
         for (int i = 0; i < ingredients.length; i++) {
-            list.add(ingredients[i].toGroceryItem());
+            list.add(ingredients[i]);
         }
-    }
+    }*/
 
-    //Comparator to sort array by item name alphabetically from Z-A
+    /**
+     *     Comparator to sort array by item name alphabetically from Z-A
+     */
     public static final Comparator<Recipe> recipeZAComparator = new Comparator<Recipe>() {
         @Override
         public int compare(Recipe recipe1, Recipe recipe2) {
@@ -209,7 +280,9 @@ public class Recipe implements Comparable<Recipe> {
         }
     };
 
-    //Sort by calories low to high
+    /**
+     * Sort by calories low to high
+     */
     public static final Comparator<Recipe> recipeLowHighCalComparator = new Comparator<Recipe>() {
         @Override
         public int compare(Recipe recipe1, Recipe recipe2) {
@@ -225,7 +298,10 @@ public class Recipe implements Comparable<Recipe> {
         }
     };
 
-    //Sort by calories high to low
+
+    /**
+     *  Sort by calories high to low
+     */
     public static final Comparator<Recipe> recipeHighLowCalComparator = new Comparator<Recipe>() {
         @Override
         public int compare(Recipe recipe1, Recipe recipe2) {
@@ -241,7 +317,10 @@ public class Recipe implements Comparable<Recipe> {
         }
     };
 
-    //For testing turns Recipe to string for printing
+    /**
+     * toString of the recipe
+     * @return the string of the recipe 
+     */
     public String toString() {
         String recipeString =
              "------------------------------\n" +

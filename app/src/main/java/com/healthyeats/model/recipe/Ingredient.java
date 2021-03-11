@@ -17,14 +17,28 @@ public class Ingredient {
 
     public String getAmount() { return amount; }
     public void setAmount(String amount) { this.amount = amount; }
-
+    public  void addToAmount(String amount){
+        this.amount = String.valueOf(Integer.parseInt(amount) + Integer.parseInt(this.amount));
+    }
     public boolean CheckIfUserHasIngredient() { return userHasIngredient; }
     public void SetUserHasIngredient(boolean yesNo) { this.userHasIngredient = yesNo; }
 
     public GroceryItem toGroceryItem() {
         GroceryItem item = new GroceryItem();
         item.setName(name);
-        //ToDo: Finish conversion between ingredients to groceryItems.
+        item.setQuantity(Integer.parseInt(amount));
+
+        //Placeholder price
+        item.setPrice(.30);
+        item.setDisplay(true);
+        if (userHasIngredient)
+        {
+            item.setCheckOff(true);
+        }
+        else
+        {
+            item.setCheckOff(false);
+        }
 
         return item;
     }

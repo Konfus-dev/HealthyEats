@@ -9,9 +9,12 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.healthyeats.model.account.Account;
 import com.healthyeats.model.grocery.GroceryItem;
 import com.healthyeats.model.json.JsonReaderWriter;
+import com.healthyeats.model.json.UserJson;
 import com.healthyeats.model.recipe.Recipe;
+
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private static List<Recipe> loadedRecipes;
     private static List<Recipe> favoriteRecipes;
     private static List<GroceryItem> groceryList;
+    private static Account userAccount = Account.getInstance();
     private JsonReaderWriter json;
 
     public static List<Recipe> getLoadedRecipes() {
@@ -48,9 +52,8 @@ public class MainActivity extends AppCompatActivity {
         //Import from JSON class
         json = new JsonReaderWriter();
         loadedRecipes = json.recipeParser(getApplicationContext());
-
-        //testing
-        //System.out.println(recipeList.get(0).toString());
+        UserJson user = new UserJson(getApplicationContext());
+        user.createJson(getApplicationContext());
     }
 
     //Creating hard coded data on grocery list (Just to test)
