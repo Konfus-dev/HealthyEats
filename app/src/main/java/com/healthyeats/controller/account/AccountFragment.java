@@ -177,7 +177,6 @@ public class AccountFragment extends Fragment {
             public void onClick(View view) {
                 SettingsFragment obj = SettingsFragment.newInstance(name.getText().toString(), location.getText().toString());
                 FragmentTransaction fr = getChildFragmentManager().beginTransaction();
-                System.out.println("DOES THIS RUN?");
                 fr.replace(R.id.fragment_account, obj);
                 fr.addToBackStack(null);
                 fr.commit();
