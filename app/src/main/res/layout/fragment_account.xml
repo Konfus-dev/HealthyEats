@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/backgroundColor"
+    android:id="@+id/fragment_account"
     tools:context="com.healthyeats.controller.account.AccountFragment">
 
     <ScrollView
@@ -83,14 +84,16 @@
                         </TextView>
                     </LinearLayout>
 
-                    <ImageView
+                    <ImageButton
                         android:layout_width="50dp"
                         android:layout_height="50dp"
                         android:layout_marginLeft="30dp"
                         android:src="@drawable/edit_icon"
                         android:background="@color/backgroundColor"
+                        android:scaleType="fitXY"
+                        android:id="@+id/editSettings"
                         >
-                    </ImageView>
+                    </ImageButton>
 
                 </LinearLayout>
 

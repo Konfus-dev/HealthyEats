@@ -7,15 +7,19 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.SeekBar;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.healthyeats.R;
+import com.healthyeats.controller.recipe.RecipeFragment;
+import com.healthyeats.controller.settings.SettingsFragment;
 import com.healthyeats.model.account.Account;
 import com.healthyeats.model.json.UserJson;
 import com.healthyeats.model.viewModels.AccountViewModel;
@@ -162,8 +166,28 @@ public class AccountFragment extends Fragment {
         });
     }
 
+    // Populate name and location
+    public void populateNameLocation(View root, Account myAccount, UserJson user) {
+        ImageButton editButton = root.findViewById(R.id.editSettings);
+
+        editButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SettingsFragment obj = SettingsFragment.newInstance();
+                FragmentTransaction fr = getChildFragmentManager().beginTransaction();
+                System.out.println("DOES THIS RUN?");
+                fr.replace(R.id.fragment_account, obj);
+                fr.addToBackStack(null);
+                fr.commit();
+            }
+        });
+    }
+
     // Function that will faciliate all account settings
     public void facilitateAccount(View root, Account myAccount, UserJson user) {
+        // Populate name / location
+        populateNameLocation(root, myAccount, user);
+
         // Populate seek bars
         populateSeekBars(root, myAccount, user, "HouseHold");
         populateSeekBars(root, myAccount, user, "Budget");
