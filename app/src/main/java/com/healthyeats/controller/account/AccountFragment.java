@@ -169,11 +169,13 @@ public class AccountFragment extends Fragment {
     // Populate name and location
     public void populateNameLocation(View root, Account myAccount, UserJson user) {
         ImageButton editButton = root.findViewById(R.id.editSettings);
+        TextView name = root.findViewById(R.id.nameView);
+        TextView location = root.findViewById(R.id.locationView);
 
         editButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                SettingsFragment obj = SettingsFragment.newInstance();
+                SettingsFragment obj = SettingsFragment.newInstance(name.getText().toString(), location.getText().toString());
                 FragmentTransaction fr = getChildFragmentManager().beginTransaction();
                 System.out.println("DOES THIS RUN?");
                 fr.replace(R.id.fragment_account, obj);

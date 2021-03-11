@@ -75,11 +75,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="25dp"
                             android:textSize="20dp"
+                            android:id="@+id/nameView"
                             android:text="John Doe">
                         </TextView>
                         <TextView
                             android:layout_width="match_parent"
                             android:layout_height="20dp"
+                            android:id="@+id/locationView"
                             android:text="San Francisco, CA">
                         </TextView>
                     </LinearLayout>

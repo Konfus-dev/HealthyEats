@@ -22,10 +22,13 @@ public class SettingsFragment extends Fragment {
         return root;
     }
 
-    // Pass data from cookbook page
-    public static SettingsFragment newInstance() {
+    // Pass data from accounts page
+    public static SettingsFragment newInstance(String name, String location) {
         SettingsFragment f = new SettingsFragment();
-
+        Bundle args = new Bundle();
+        args.putString("name", name);
+        args.putString("location", location);
+        f.setArguments(args);
         return f;
     }
 }
