@@ -3,6 +3,8 @@ public class Account {
     private static Account single_instance = null;
     private String firstName;
     private String lastName;
+    private String name;
+    private String location;
     private String units;
     private String currency;
     private String notifications;
@@ -29,17 +31,17 @@ public class Account {
 
     /**
      * Constructor for an Account
-     * @param fName the user's first name
-     * @param lName the user's last name
+     * @param name the user's name
+     * @param location the user's location
      * @param units the desired units (metric/imperial)
      * @param currency the desired currency (dollar/pound/euro)
      * @param wBudget the user's weekly budget
      * @param people the number of people in the user's household
      */
 
-    private Account(String fName, String lName, String units, String currency, String notification, String language, int wBudget, int people) {
-        this.firstName = fName;
-        this.lastName = lName;
+    private Account(String name, String location, String units, String currency, String notification, String language, int wBudget, int people) {
+        this.name = name;
+        this.location = location;
         this.units = units;
         this.currency = currency;
         this.notifications = notification;
@@ -58,6 +60,8 @@ public class Account {
     public String getLastName() {
         return lastName;
     }
+
+    public String getName() { return name; }
 
     public String getUnits() {
         return units;
@@ -89,6 +93,10 @@ public class Account {
     public void setLastName(String lName) {
         this.lastName = lName;
     }
+
+    public void setName(String name) { this.name = name; }
+
+    public void setLocation(String location) { this.location = location; }
 
     public void setUnits(String units) {
         if(units.equals("imperial")|| units.equals("metric")|| units.equals("Imperial")||units.equals("Metric")) {
