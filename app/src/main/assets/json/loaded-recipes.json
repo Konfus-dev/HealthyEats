@@ -2,6 +2,7 @@
   {
     "id": 1,
     "name": "Baked Shrimp Scampi",
+    "price": 5,
     "source": "Ina Garten: Barefoot Contessa Back to Basics",
     "difficultyLevel" : "Intermediate",
     "image" : "../imgs/ShrimpScampi.jpg",
@@ -120,6 +121,7 @@
   {
     "id": 2,
     "name": "Strawberries Romanov",
+    "price": 5,
     "source": "http:\/\/cookeatshare.com\/recipes\/la-madeleine-s-strawberries-romanov-318025",
     "difficultyLevel" : "Beginner",
     "image" : "../imgs/StrawberriesRomanoff.jpg",
@@ -175,6 +177,7 @@
   {
   "id": 3,
   "name": "Tomato Basil Soup",
+  "price": 5,
   "source": "http:\/\/cookeatshare.com\/recipes\/la-madeleine-s-tomato-basil-soup-318026",
   "difficultyLevel" : "Beginner",
   "prepTime": 0,
