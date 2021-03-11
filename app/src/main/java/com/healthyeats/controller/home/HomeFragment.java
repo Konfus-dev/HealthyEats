@@ -38,7 +38,7 @@ public class HomeFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
         ViewHelper obj = new ViewHelper();
 
-//        populateThisWeeksMeals(root, obj);
+        populateThisWeeksMeals(root, obj);
         populateYourFavorites(root, obj);
 
         return root;
@@ -69,26 +69,26 @@ public class HomeFragment extends Fragment {
         return lin;
     }
 
-//    public void populateThisWeeksMeals(View root, ViewHelper obj) {
-//        thisWeeksMeals = root.findViewById(R.id.homeThisWeeksMeals);
-//        UserJson userJson = new UserJson(getContext());
-//        ViewHelper rec = new ViewHelper();
-//
-//        List<Recipe> favRecipe = rec.getRecipe(getContext(), "recipesFav.json", userJson);
-//
-//        if (favRecipe != null) {
-//            System.out.println("HERE????");
-//            HorizontalScrollView horiz = createHorizontalScroll();
-//            LinearLayout lin = createLinearLayout();
-//            System.out.println("IS THIS RUNNING?");
-//            thisWeeksMeals.addView(horiz);
-//            horiz.addView(lin);
-//
-//            for(int i = 0; i < favRecipe.size(); i++){
-//                obj.createFullCard(favRecipe.get(i).getName(), 0, favRecipe.get(i).getDifficultyLevel(), lin, favRecipe.get(i).getId(), getActivity(), getContext(), getResources(), getFragmentManager());
-//            }
-//        }
-//    }
+    public void populateThisWeeksMeals(View root, ViewHelper obj) {
+        thisWeeksMeals = root.findViewById(R.id.homeThisWeeksMeals);
+        UserJson userJson = new UserJson(getContext());
+        ViewHelper rec = new ViewHelper();
+
+        List<Recipe> favRecipe = rec.getRecipe(getContext(), "weeklyMeals.json", userJson);
+
+        if (favRecipe != null) {
+            System.out.println("HERE????");
+            HorizontalScrollView horiz = createHorizontalScroll();
+            LinearLayout lin = createLinearLayout();
+            System.out.println("IS THIS RUNNING?");
+            thisWeeksMeals.addView(horiz);
+            horiz.addView(lin);
+
+            for(int i = 0; i < favRecipe.size(); i++){
+                obj.createFullCard(favRecipe.get(i).getName(), 0, favRecipe.get(i).getDifficultyLevel(), lin, favRecipe.get(i).getId(), getActivity(), getContext(), getResources(), getFragmentManager());
+            }
+        }
+    }
 
     public void populateYourFavorites(View root, ViewHelper obj) {
         yourFavorites = root.findViewById(R.id.homeYourFavorites);

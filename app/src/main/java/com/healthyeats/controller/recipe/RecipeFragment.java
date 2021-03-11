@@ -6,6 +6,7 @@ import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -184,6 +185,26 @@ public class RecipeFragment extends Fragment {
         }
     }
 
+    public void weeklyMeals(View root, int recipeId) {
+        Button weeklyMeals = root.findViewById(R.id.addToWeeklyMeals);
+        ViewHelper rec = new ViewHelper();
+
+        weeklyMeals.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                UserJson userJson = new UserJson(getContext());
+                boolean isIn = rec.isInFile("weeklyMeals.json", getContext(), recipeId);
+
+                if (isIn) {
+                    userJson.deleteFromFileRecipe(recipeId, getContext(), "weeklyMeals.json");
+                } else {
+                    userJson.writeToFileRecipe(recipeId, getContext(), "weeklyMeals.json");
+                }
+
+            }
+        });
+    }
+
     public void getRecipeData(int recipeId, View root) {
         SearchAndFilter search = new SearchAndFilter();
         Recipe retrievedRecipe = search.searchById(recipeId);
@@ -225,6 +246,8 @@ public class RecipeFragment extends Fragment {
 
             }
         });
+
+        weeklyMeals(root, recipeId);
 
     }
 }
