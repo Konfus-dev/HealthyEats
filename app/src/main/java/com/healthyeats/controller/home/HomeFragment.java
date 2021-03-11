@@ -18,6 +18,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.healthyeats.R;
 import com.healthyeats.model.account.Account;
+import com.healthyeats.model.budget.Budget;
 import com.healthyeats.model.json.UserJson;
 import com.healthyeats.model.recipe.Recipe;
 import com.healthyeats.model.viewModels.HomeViewModel;
@@ -119,9 +120,16 @@ public class HomeFragment extends Fragment {
         UserJson user = new UserJson(getContext());
         Account myAccount = user.getAccount(getContext());
 
+        System.out.println("Budget afterwords");
+        System.out.println(myAccount.getWeeklyBudget());
         TextView weeklyBudget = root.findViewById(R.id.BudgetTotal);
         weeklyBudget.setText(myAccount.getWeeklyBudget());
 
+        List<Recipe> myWeekRecipe = obj.getRecipe(getContext(), "weeklyMeals.json", user);
+        Budget weekBudget = new Budget();
+        float price = weekBudget.getAdditionOfRecipes(myWeekRecipe);
 
+        TextView spent = root.findViewById(R.id.BudgetSpent);
+        spent.setText(Float.toString(price));
     }
 }

@@ -33,12 +33,14 @@ public class Budget {
 //        }
 //    }
 
-    public int getAdditionOfRecipes(List<Recipe> week) {
-        int total = 0;
+    public float getAdditionOfRecipes(List<Recipe> week) {
+        float total = 0;
 
         for (int i = 0; i < week.size(); i++) {
-//            total += week.get(i).get
+            total += week.get(i).getPrice();
         }
+
+        return total;
     }
 
     /**
