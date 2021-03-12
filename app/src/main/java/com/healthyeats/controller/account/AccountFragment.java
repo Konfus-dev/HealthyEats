@@ -1,7 +1,6 @@
 package com.healthyeats.controller.account;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +17,6 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.healthyeats.R;
-import com.healthyeats.controller.recipe.RecipeFragment;
 import com.healthyeats.controller.settings.SettingsFragment;
 import com.healthyeats.model.account.Account;
 import com.healthyeats.model.json.UserJson;
@@ -101,9 +99,13 @@ public class AccountFragment extends Fragment {
         spinner.setAdapter(adapter);
 
         // Sets spinner value to value from json
-        if (!value.equals("")) {
-            int spinnerPosition = adapter.getPosition(value);
-            spinner.setSelection(spinnerPosition);
+        try {
+            if (!value.equals("")) {
+                int spinnerPosition = adapter.getPosition(value);
+                spinner.setSelection(spinnerPosition);
+            }
+        }catch (NullPointerException e){
+
         }
 
         // Checks if changed
