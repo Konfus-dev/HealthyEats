@@ -248,6 +248,7 @@
     "name": "Berry Sauce",
     "price": 5,
     "source": "Yuri Elkaim",
+    "difficultyLevel" : "Beginner",
     "prepTime": 0,
     "waitTime": 0,
     "cookTime": 300,
