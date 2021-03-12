@@ -135,6 +135,8 @@ public class AccountFragment extends Fragment {
         int val = 0;
         int textViewID = 0;
 
+        if (myAccount == null) return;
+
         if (type.equals("HouseHold") && myAccount != null) {
             id = R.id.peopleInHouseHold;
             val = myAccount.getHouseholdSize();

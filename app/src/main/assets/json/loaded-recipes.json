@@ -245,8 +245,8 @@
   },
   {
     "id": 4,
-    "price": 5,
     "name": "Berry Sauce",
+    "price": 5,
     "source": "Yuri Elkaim",
     "prepTime": 0,
     "waitTime": 0,

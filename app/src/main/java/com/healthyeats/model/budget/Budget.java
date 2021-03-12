@@ -36,6 +36,9 @@ public class Budget {
     public float getAdditionOfRecipes(List<Recipe> week) {
         float total = 0;
 
+        if (week == null || week.size() == 0)
+            return total;
+
         for (int i = 0; i < week.size(); i++) {
             total += week.get(i).getPrice();
         }

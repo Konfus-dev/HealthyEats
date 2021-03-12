@@ -120,10 +120,18 @@ public class HomeFragment extends Fragment {
         UserJson user = new UserJson(getContext());
         Account myAccount = user.getAccount(getContext());
 
+        if (myAccount == null) return;
+
         System.out.println("Budget afterwords");
         System.out.println(myAccount.getWeeklyBudget());
         TextView weeklyBudget = root.findViewById(R.id.BudgetTotal);
+<<<<<<< HEAD
         weeklyBudget.setText("$" + Integer.toString(myAccount.getWeeklyBudget()));
+=======
+        System.out.println(myAccount.getWeeklyBudget());
+        weeklyBudget.setText(Integer.toString(myAccount.getWeeklyBudget()));
+        System.out.println("past weeklu set text total");
+>>>>>>> 8f1428329ae9101d7e8ace76d9fdd20589c150a1
 
         List<Recipe> myWeekRecipe = obj.getRecipe(getContext(), "weeklyMeals.json", user);
         Budget weekBudget = new Budget();
