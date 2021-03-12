@@ -160,7 +160,7 @@ public class ViewHelper {
     }
 
     // Sets the price on the CookBook page
-    public TextView setRecipePrice(int price, Activity activity, Context context) {
+    public TextView setRecipePrice(float price, Activity activity, Context context) {
         // Text View Creation - Height | Width
         TextView recipePrice = new TextView(activity);
         recipePrice.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT));
@@ -173,7 +173,7 @@ public class ViewHelper {
 
         //Set Text and Change Size
         recipePrice.setTextSize(toDP(5, context));
-        recipePrice.setText("$" + Integer.toString(price));
+        recipePrice.setText("$" + Float.toString(price));
 
         return recipePrice;
     }
@@ -276,7 +276,7 @@ public class ViewHelper {
     }
 
     // Creates the Card for each recipe and calls other helpers to allocate the object
-    public void createFullCard(String name, int price, String difficulty, LinearLayout parent, int id, Activity activity, Context context, Resources resources, FragmentManager frag) {
+    public void createFullCard(String name, float price, String difficulty, LinearLayout parent, int id, Activity activity, Context context, Resources resources, FragmentManager frag) {
         CardView card = createCard(context);
         parent.addView(card);
 
