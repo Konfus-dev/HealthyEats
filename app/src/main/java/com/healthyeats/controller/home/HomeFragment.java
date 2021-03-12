@@ -89,7 +89,7 @@ public class HomeFragment extends Fragment {
             horiz.addView(lin);
 
             for(int i = 0; i < favRecipe.size(); i++){
-                obj.createFullCard(favRecipe.get(i).getName(), 0, favRecipe.get(i).getDifficultyLevel(), lin, favRecipe.get(i).getId(), getActivity(), getContext(), getResources(), getFragmentManager());
+                obj.createFullCard(favRecipe.get(i).getName(), favRecipe.get(i).getPrice(), favRecipe.get(i).getDifficultyLevel(), lin, favRecipe.get(i).getId(), getActivity(), getContext(), getResources(), getFragmentManager());
             }
         }
     }
@@ -109,7 +109,7 @@ public class HomeFragment extends Fragment {
             horiz.addView(lin);
 
             for(int i = 0; i < favRecipe.size(); i++){
-                obj.createFullCard(favRecipe.get(i).getName(), 0, favRecipe.get(i).getDifficultyLevel(), lin, favRecipe.get(i).getId(), getActivity(), getContext(), getResources(), getFragmentManager());
+                obj.createFullCard(favRecipe.get(i).getName(), favRecipe.get(i).getPrice(), favRecipe.get(i).getDifficultyLevel(), lin, favRecipe.get(i).getId(), getActivity(), getContext(), getResources(), getFragmentManager());
             }
         } else {
             System.out.println("THIS IS NULL");

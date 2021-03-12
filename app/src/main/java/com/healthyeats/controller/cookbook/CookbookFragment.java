@@ -54,7 +54,7 @@ public class CookbookFragment extends Fragment {
 
         for (int i = 0; i < 5; i++) {
             com.healthyeats.model.recipe.Recipe rec = generateRandomRecipe();
-            obj.createFullCard(rec.getName(), 0, rec.getDifficultyLevel(), trending, rec.getId(), getActivity(), getContext(), getResources(), getFragmentManager());
+            obj.createFullCard(rec.getName(), rec.getPrice(), rec.getDifficultyLevel(), trending, rec.getId(), getActivity(), getContext(), getResources(), getFragmentManager());
         }
     }
 
@@ -64,7 +64,7 @@ public class CookbookFragment extends Fragment {
 
         for (int i = 0; i < 5; i++) {
             com.healthyeats.model.recipe.Recipe rec = generateRandomRecipe();
-            obj.createFullCard(rec.getName(), 0, rec.getDifficultyLevel(), ourFavs, rec.getId(), getActivity(), getContext(), getResources(), getFragmentManager());
+            obj.createFullCard(rec.getName(), rec.getPrice(), rec.getDifficultyLevel(), ourFavs, rec.getId(), getActivity(), getContext(), getResources(), getFragmentManager());
         }
     }
 
@@ -74,7 +74,7 @@ public class CookbookFragment extends Fragment {
 
         for (int i = 0; i < 5; i++) {
             com.healthyeats.model.recipe.Recipe rec = generateRandomRecipe();
-            obj.createFullCard(rec.getName(), 0, rec.getDifficultyLevel(), youShouldTry, rec.getId(), getActivity(), getContext(), getResources(), getFragmentManager());
+            obj.createFullCard(rec.getName(), rec.getPrice(), rec.getDifficultyLevel(), youShouldTry, rec.getId(), getActivity(), getContext(), getResources(), getFragmentManager());
         }
     }
     
@@ -84,7 +84,7 @@ public class CookbookFragment extends Fragment {
 
         for (int i = 0; i < 5; i++) {
             com.healthyeats.model.recipe.Recipe rec = generateRandomRecipe();
-            obj.createFullCard(rec.getName(), 0, rec.getDifficultyLevel(), bangForBuck, rec.getId(), getActivity(), getContext(), getResources(), getFragmentManager());
+            obj.createFullCard(rec.getName(), rec.getPrice(), rec.getDifficultyLevel(), bangForBuck, rec.getId(), getActivity(), getContext(), getResources(), getFragmentManager());
         }
     }
 }
