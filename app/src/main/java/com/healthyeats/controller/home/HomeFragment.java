@@ -123,7 +123,7 @@ public class HomeFragment extends Fragment {
         System.out.println("Budget afterwords");
         System.out.println(myAccount.getWeeklyBudget());
         TextView weeklyBudget = root.findViewById(R.id.BudgetTotal);
-        weeklyBudget.setText(myAccount.getWeeklyBudget());
+        weeklyBudget.setText("$" + Integer.toString(myAccount.getWeeklyBudget()));
 
         List<Recipe> myWeekRecipe = obj.getRecipe(getContext(), "weeklyMeals.json", user);
         Budget weekBudget = new Budget();
