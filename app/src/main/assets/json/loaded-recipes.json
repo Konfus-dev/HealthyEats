@@ -2,6 +2,7 @@
   {
     "id": 1,
     "name": "Baked Shrimp Scampi",
+    "price": 5,
     "source": "Ina Garten: Barefoot Contessa Back to Basics",
     "difficultyLevel" : "Intermediate",
     "image" : "../imgs/ShrimpScampi.jpg",
@@ -120,6 +121,7 @@
   {
     "id": 2,
     "name": "Strawberries Romanov",
+    "price": 5,
     "source": "http:\/\/cookeatshare.com\/recipes\/la-madeleine-s-strawberries-romanov-318025",
     "difficultyLevel" : "Beginner",
     "image" : "../imgs/StrawberriesRomanoff.jpg",
@@ -173,71 +175,113 @@
     ]
   },
   {
-  "id": 3,
-  "name": "Tomato Basil Soup",
-  "source": "http:\/\/cookeatshare.com\/recipes\/la-madeleine-s-tomato-basil-soup-318026",
-  "difficultyLevel" : "Beginner",
-  "prepTime": 0,
-  "waitTime": 0,
-  "cookTime": 0,
-  "servings": 4,
-  "comments": "",
-  "calories": 0,
-  "fat": 0,
-  "satFat": 0,
-  "carbs": 0,
-  "fiber": 0,
-  "sugar": 0,
-  "protein": 0,
-  "comments": "",
-  "instructions": [
-    "Combine tomatoes, juice and/or possibly stock in saucepan. Simmer 30 min.",
-    "Puree, along with the basil leaves, in small batches, in blender or food processor or use an immersion blender in the pan.",
-    "Return to saucepan and add in cream and butter, while stirring over low heat.",
-    "Garnish with basil leaves and serve with your favorite bread."
-  ],
-  "ingredients": [
-    {
-      "amount": "4",
-      "measurement": "cups",
-      "name": "tomatoes"
-    },
-    {
-      "amount": "4",
-      "measurement": "cups",
-      "name": "vegetable stock"
-    },
-    {
-      "amount": "12",
-      "measurement": null,
-      "name": "basil leaves"
-    },
-    {
-      "amount": "1",
-      "measurement": "cup",
-      "name": "heavy cream"
-    },
-    {
-      "amount": "1/4",
-      "measurement": "pound",
-      "name": "unsalted butter"
-    },
-    {
-      "amount": null,
-      "measurement": null,
-      "name": "salt"
-    },
-    {
-      "amount": null,
-      "measurement": null,
-      "name": "pepper"
-    }
-  ],
-  "tags": [
-    "soup",
-    "tomatoes",
-    "copycat",
-    "main"
-  ]
-}
+    "id": 3,
+    "name": "Tomato Basil Soup",
+    "price": 5,
+    "source": "http:\/\/cookeatshare.com\/recipes\/la-madeleine-s-tomato-basil-soup-318026",
+    "difficultyLevel" : "Beginner",
+    "prepTime": 0,
+    "waitTime": 0,
+    "cookTime": 0,
+    "servings": 4,
+    "comments": "",
+    "calories": 0,
+    "fat": 0,
+    "satFat": 0,
+    "carbs": 0,
+    "fiber": 0,
+    "sugar": 0,
+    "protein": 0,
+    "comments": "",
+    "instructions": [
+      "Combine tomatoes, juice and/or possibly stock in saucepan. Simmer 30 min.",
+      "Puree, along with the basil leaves, in small batches, in blender or food processor or use an immersion blender in the pan.",
+      "Return to saucepan and add in cream and butter, while stirring over low heat.",
+      "Garnish with basil leaves and serve with your favorite bread."
+    ],
+    "ingredients": [
+      {
+        "amount": "4",
+        "measurement": "cups",
+        "name": "tomatoes"
+      },
+      {
+        "amount": "4",
+        "measurement": "cups",
+        "name": "vegetable stock"
+      },
+      {
+        "amount": "12",
+        "measurement": null,
+        "name": "basil leaves"
+      },
+      {
+        "amount": "1",
+        "measurement": "cup",
+        "name": "heavy cream"
+      },
+      {
+        "amount": "1/4",
+        "measurement": "pound",
+        "name": "unsalted butter"
+      },
+      {
+        "amount": null,
+        "measurement": null,
+        "name": "salt"
+      },
+      {
+        "amount": null,
+        "measurement": null,
+        "name": "pepper"
+      }
+    ],
+    "tags": [
+      "soup",
+      "tomatoes",
+      "copycat",
+      "main"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Berry Sauce",
+    "price": 5,
+    "source": "Yuri Elkaim",
+    "difficultyLevel" : "Beginner",
+    "prepTime": 0,
+    "waitTime": 0,
+    "cookTime": 300,
+    "servings": 1,
+    "comments": "",
+    "calories": 0,
+    "fat": 0,
+    "satFat": 0,
+    "carbs": 0,
+    "fiber": 0,
+    "sugar": 0,
+    "protein": 0,
+    "comments": "",
+    "instructions": [
+      "Lightly warm berries and maple syrup in a saucepan",
+      "Pour over pancakes dessert as desired"
+    ],
+    "ingredients": [
+      {
+        "amount": "1/2",
+        "measurement": "cups",
+        "name": "mixed berries"
+      },
+      {
+        "amount": "2",
+        "measurement": "tablespoon",
+        "name": "maple syrup"
+      }
+    ],
+    "tags": [
+      "sauce",
+      "components",
+      "berries"
+    ]
+  }
 ]

@@ -43,6 +43,7 @@ dependencies {
     implementation 'androidx.gridlayout:gridlayout:1.0.0'
     implementation "androidx.cardview:cardview:1.0.0"
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'com.jjoe64:graphview:4.2.2'
     implementation files('libs/json-simple-1.1.1.jar')
     implementation files('libs\\json-simple-1.1.1.jar')
     implementation files('libs/json-simple-1.1.1.jar')

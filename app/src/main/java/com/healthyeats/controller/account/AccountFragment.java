@@ -65,6 +65,8 @@ public class AccountFragment extends Fragment {
         int arr = 0;
         String value = "";
 
+        if (myAccount == null) return;
+
         // Switch statement to get corresponding id / arr
         switch (type) {
             case "Notifications":
@@ -134,6 +136,8 @@ public class AccountFragment extends Fragment {
         int id = 0;
         int val = 0;
         int textViewID = 0;
+
+        if (myAccount == null) return;
 
         if (type.equals("HouseHold") && myAccount != null) {
             id = R.id.peopleInHouseHold;
