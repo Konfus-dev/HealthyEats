@@ -136,8 +136,11 @@ public class RecipeFragment extends Fragment {
 
                 if (isIn) {
                     userJson.deleteFromFileIngredients(ing, getContext());
+                    ingredButton.setImageDrawable(getContext().getResources().getDrawable((R.drawable.addbluebackground_icon)));
+
                 } else {
                     userJson.writeToFileIngredient(ing, getContext());
+                    ingredButton.setImageDrawable(getContext().getResources().getDrawable((R.drawable.checkgreenbackground_icon)));
                 }
 
             }
@@ -240,8 +243,10 @@ public class RecipeFragment extends Fragment {
 
                 if (isIn) {
                     userJson.deleteFromFileRecipe(recipeId, getContext(), "recipesFav.json");
+                    heart.setImageDrawable(getContext().getResources().getDrawable((R.drawable.heartempty_icon)));
                 } else {
                     userJson.writeToFileRecipe(recipeId, getContext(), "recipesFav.json");
+                    heart.setImageDrawable(getContext().getResources().getDrawable((R.drawable.heartfull_icon)));
                 }
 
             }

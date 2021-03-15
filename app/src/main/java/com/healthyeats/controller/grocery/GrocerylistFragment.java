@@ -49,6 +49,7 @@ public class GrocerylistFragment extends Fragment {
             public void onClick(View view) {
                 UserJson userJson = new UserJson(getContext());
                 userJson.deleteFromFileIngredients(ing, getContext());
+                but.setImageDrawable(getContext().getResources().getDrawable((R.drawable.addbluebackground_icon)));
             }
         });
 

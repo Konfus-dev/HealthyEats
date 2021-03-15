@@ -134,8 +134,10 @@ public class ViewHelper {
 
                 if (isIn) {
                     userJson.deleteFromFileRecipe(id, context, "recipesFav.json");
+                    heart.setImageDrawable(context.getResources().getDrawable((R.drawable.heartempty_icon)));
                 } else {
                     userJson.writeToFileRecipe(id, context, "recipesFav.json");
+                    heart.setImageDrawable(context.getResources().getDrawable((R.drawable.heartfull_icon)));
                 }
 
             }
